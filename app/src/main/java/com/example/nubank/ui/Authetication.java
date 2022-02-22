@@ -47,90 +47,40 @@ public class Authetication extends AppCompatActivity {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_authetication);
 
+        incializarFacebook();
+        incializarGoogle();
+
+        registerCallbackFacebook();
+        clickListenerButtonGoogle();
+        clickListenerButtonEmailPassword();
+
+    }
+
+    private void incializarFacebook() {
         binding.buttonFacebook.setReadPermissions("email", "public_profile");
 
         mCallbackManagerFace = CallbackManager.Factory.create();
+    }
 
-        //auth.signOut();
-        //signOutGoogle();
-        registerCallbackFacebook();
-        //clickListenerButtonGoogle();
-        clickListenerButtonEmailPassword();
-
-
+    private void incializarGoogle() {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
 
-
-
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+    }
 
+
+
+    private void clickListenerButtonGoogle() {
         binding.buttonGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (view.getId()) {
-                    case R.id.buttonGoogle:
-                        signIn();
-                        break;
-                    // ...
-                    default:
-                        throw new IllegalStateException("Unexpected value: " + view.getId());
-                }
+                signIn();
             }
         });
-        /* ------------------------------------------------------------------*/
-
-
-
-        /* -------------------- Login com e-mail e senha --------------------*/
-
-
-        /* -------------------- Login --------------------*/
-        /*auth.signInWithEmailAndPassword("maria@gmail.com", "123456")
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Log.i("signIn", "Sucesso ao logar usuário");
-                        } else {
-                            Log.i("signIn", "Erro ao logar usuário");
-                        }
-                    }
-                });*/
-
-
-
-        /* Logout */
-        //auth.signOut();
-
-        /* Verifica se usuário está logado*/
-        /*if (auth.getCurrentUser() != null) {
-            Log.i("CreateUser", "Usuário logado");
-        } else {
-            Log.i("CreateUser", "Usuário não logado");
-        }*/
-
-        /* -------------------- Cria um usuário --------------------*/
-        /*
-        auth.createUserWithEmailAndPassword("maria@gmail.com", "123456")
-                .addOnCompleteListener(Authetication.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Log.i("CreateUser", "Sucesso ao cadastrar usuário");
-                        } else {
-                            Log.i("CreateUser", "Erro ao cadastrar usuário");
-                        }
-                    }
-                });*/
-        /* ------------------------------------------------------------------*/
-
     }
 
-    private void clickListenerButtonGoogle() {
-
-    }
     private void clickListenerButtonEmailPassword() {
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,7 +89,7 @@ public class Authetication extends AppCompatActivity {
                 String senha = binding.editPassword.getText().toString();
                 Toast.makeText(getApplicationContext(), email, Toast.LENGTH_SHORT).show();
 
-                //auth.signOut();
+
                 auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -149,7 +99,6 @@ public class Authetication extends AppCompatActivity {
                         } else {
                             Log.i("signIn", "Erro ao logar usuário");
                             Log.i("signIn", task.getResult().toString());
-                            //Toast.makeText(getApplicationContext(), "", Toast.LENGTH_SHORT).show();
 
                         }
                     }
@@ -189,7 +138,6 @@ public class Authetication extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-
         if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handleSignInResult(task);
@@ -202,33 +150,15 @@ public class Authetication extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             nextAcitivity();
-            updateUIGoogle(account);
+
         } catch (ApiException e) {
             Log.w("Error message", "signInResult:failed code=" + e.getStatusCode());
-            updateUIGoogle(null);
+
         }
     }
 
 
-    private void updateUIGoogle(GoogleSignInAccount user) {
-        AuthCredential credential = GoogleAuthProvider.getCredential(user.getIdToken(), null);
-        auth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d("GoogleActivity", "signInWithCredential:success");
-                            FirebaseUser user = auth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w("GoogleActivity", "signInWithCredential:failure", task.getException());
-                            updateUI(null);
-                        }
-                    }
-                });
-    }
+
 
     @Override
     public void onStart() {
@@ -238,13 +168,11 @@ public class Authetication extends AppCompatActivity {
         FirebaseUser currentUser = auth.getCurrentUser();
 
         if (currentUser != null || account != null) {
-            Log.i("CreateUser", "Usuário Logado");
-            //mGoogleSignInClient.signOut();
+            Log.i("Mensagem", "Usuário Logado");
             nextAcitivity();
         } else {
-            Log.i("CreateUser", "Usuário não logado");
+            Log.i("Mensagem", "Usuário não logado");
         }
-        updateUI(currentUser);
     }
 
 
@@ -278,7 +206,6 @@ public class Authetication extends AppCompatActivity {
         auth.getInstance().signOut();
     }
     private void signOutFacebook() {
-        //auth.getInstance().signOut();
         LoginManager.getInstance().logOut();
     }
     private void signOutGoogle() {

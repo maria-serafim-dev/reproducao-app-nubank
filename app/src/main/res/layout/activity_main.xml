@@ -68,8 +68,8 @@
                     android:id="@+id/image_celular_baixo0"
                     android:layout_width="24dp"
                     android:layout_height="16dp"
-                    android:layout_marginStart="204dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="164dp"
+                    android:layout_marginTop="28dp"
                     app:layout_constraintStart_toEndOf="@+id/image_user"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_eyes" />
@@ -601,6 +601,18 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/view"
                     app:srcCompat="@drawable/ic_users" />
+
+                <ImageView
+                    android:id="@+id/imgLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="24dp"
+                    app:layout_constraintEnd_toEndOf="@+id/view"
+                    app:layout_constraintHorizontal_bias="0.937"
+                    app:layout_constraintStart_toEndOf="@+id/imgFavorite"
+                    app:layout_constraintTop_toTopOf="@+id/view"
+                    app:srcCompat="@drawable/ic_logout" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>

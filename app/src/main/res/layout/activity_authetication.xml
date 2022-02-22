@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data></data>
+    <data />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="30dp"
-                android:text="Faça seu Login "
+                android:text="@string/titulo"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -42,11 +42,13 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="20dp"
                 android:ems="10"
-                android:hint="E-mail"
+                android:hint="@string/hint_email"
                 android:inputType="textEmailAddress"
                 android:lineSpacingExtra="10sp"
                 android:textColor="@color/letras_cinzas"
-                android:textColorHint="@color/letras_cinzas" />
+                android:textColorHint="@color/letras_cinzas"
+                android:textStyle="bold"
+                android:autofillHints="emailAddress"/>
 
             <EditText
                 android:id="@+id/editPassword"
@@ -56,10 +58,12 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:ems="10"
-                android:hint="Senha"
+                android:hint="@string/hint_senha"
                 android:inputType="textPassword"
                 android:textColor="@color/letras_cinzas"
-                android:textColorHint="@color/letras_cinzas" />
+                android:textColorHint="@color/letras_cinzas"
+                android:textStyle="bold"
+                android:autofillHints="password"/>
 
             <Button
                 android:id="@+id/button"
@@ -69,8 +73,9 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:background="@color/white"
-                android:text="CONTINUAR"
-                android:textColor="@color/letras_cinzas" />
+                android:text="@string/botao_continuar"
+                android:textColor="@color/letras_cinzas"
+                android:textStyle="bold" />
 
             <com.google.android.gms.common.SignInButton
                 android:id="@+id/buttonGoogle"
@@ -98,7 +103,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                android:text="Esqueci minha senha"
+                android:text="@string/txt_esqueci_senha"
                 android:textAlignment="center"
                 android:textColor="@color/roxo_fundo"
                 android:textStyle="bold" />
@@ -111,7 +116,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="80dp"
-                android:text="Ainda não sou cliente"
+                android:text="@string/txt_nao_cliente"
                 android:textAlignment="center"
                 android:textColor="@color/roxo_fundo"
                 android:textStyle="bold" />
