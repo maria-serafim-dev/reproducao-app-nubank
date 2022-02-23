@@ -44,7 +44,7 @@
             android:layout_marginTop="50dp"
             android:layout_marginRight="20dp"
             android:ems="10"
-            android:hint="E-mail"
+            android:hint="@string/hint_email"
             android:inputType="textEmailAddress"
             android:lineSpacingExtra="10sp"
             android:textColor="@color/letras_cinzas"
@@ -58,7 +58,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:ems="10"
-            android:hint="Senha"
+            android:hint="@string/hint_senha"
             android:inputType="textPassword"
             android:textColor="@color/letras_cinzas"
             android:textColorHint="@color/letras_cinzas" />
