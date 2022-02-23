@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -46,6 +47,7 @@ public class Authetication extends AppCompatActivity {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_authetication);
 
+
         incializarFacebook();
         incializarGoogle();
 
@@ -57,6 +59,26 @@ public class Authetication extends AppCompatActivity {
 
     }
 
+    private boolean validarCampos() {
+        if (TextUtils.isEmpty(binding.editEmail.getText())) {
+            binding.editEmail.setError("Dígite um email");
+            binding.editEmail.requestFocus();
+            return false;
+        } else if(!android.util.Patterns.EMAIL_ADDRESS.matcher(binding.editEmail.getText()).matches()){
+            binding.editEmail.setError("E-mail inválido");
+            binding.editEmail.requestFocus();
+            return false;
+        }
+
+        if(TextUtils.isEmpty(binding.editPassword.getText())) {
+            binding.editPassword.setError("Dígite uma senha");
+            binding.editPassword.requestFocus();
+            return false;
+        }
+
+        return true;
+
+    }
 
 
     private void incializarFacebook() {
@@ -89,24 +111,25 @@ public class Authetication extends AppCompatActivity {
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = binding.editEmail.getText().toString();
-                String senha = binding.editPassword.getText().toString();
-                Toast.makeText(getApplicationContext(), email, Toast.LENGTH_SHORT).show();
+                if(validarCampos()) {
+                    String email = binding.editEmail.getText().toString();
+                    String senha = binding.editPassword.getText().toString();
 
+                    auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Log.i("signIn", "Sucesso ao logar usuário");
+                                nextActivity();
+                            } else {
+                                mensagemErro();
+                                Log.i("signIn", "Erro ao logar usuário");
+                                Log.i("signIn", task.getResult().toString());
 
-                auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Log.i("signIn", "Sucesso ao logar usuário");
-                            nextActivity();
-                        } else {
-                            Log.i("signIn", "Erro ao logar usuário");
-                            Log.i("signIn", task.getResult().toString());
-
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
         });
     }
@@ -153,9 +176,7 @@ public class Authetication extends AppCompatActivity {
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            //nextActivity();
             firebaseAuthWithGoogle(account.getIdToken());
-
 
         } catch (ApiException e) {
             Log.w("Error message", "signInResult:failed code=" + e.getStatusCode());
@@ -170,12 +191,11 @@ public class Authetication extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
                             Log.d("GoogleLogin", "signInWithCredential:success");
                             FirebaseUser user = auth.getCurrentUser();
                             nextActivity();
                         } else {
-                            // If sign in fails, display a message to the user.
+                            mensagemErro();
                             Log.w("GoogleLogin", "signInWithCredential:failure", task.getException());
                             updateUI(null);
                         }
@@ -216,8 +236,7 @@ public class Authetication extends AppCompatActivity {
                         } else {
 
                             Log.w("FaceBookLogin", "signInWithCredential:failure", task.getException());
-                            Toast.makeText(Authetication.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            mensagemErro();
                             updateUI(null);
                         }
                     }
@@ -256,8 +275,11 @@ public class Authetication extends AppCompatActivity {
                 nextActivityNewUser();
             }
         });
+    }
 
-
+    private void mensagemErro(){
+        Toast.makeText(Authetication.this, "Falha na autenticação",
+                Toast.LENGTH_SHORT).show();
     }
 }
 
