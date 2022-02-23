@@ -26,8 +26,6 @@
 
     <string name="facebook_app_id">273794421397764</string>
     <string name="fb_login_protocol_scheme">fb273794421397764</string>
-    <string name="web_client_id">57298370003-sf4cbk3s76i9da7fqgnspd26ucrdcrih.apps.googleusercontent.com</string>
-
 
     <!-- Activity Authetication -->
     <string name="titulo">Faça seu login</string>
