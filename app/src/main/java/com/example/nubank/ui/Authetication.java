@@ -36,7 +36,6 @@ public class Authetication extends AppCompatActivity {
 
     private FirebaseAuth auth = FirebaseAuth.getInstance();
     ActivityAutheticationBinding binding;
-    //private GoogleSignInClient mGoogleSignInClient;
     private GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 9001;
     private CallbackManager mCallbackManagerFace;
@@ -54,7 +53,11 @@ public class Authetication extends AppCompatActivity {
         clickListenerButtonGoogle();
         clickListenerButtonEmailPassword();
 
+        clickListenerNewUser();
+
     }
+
+
 
     private void incializarFacebook() {
         binding.buttonFacebook.setReadPermissions("email", "public_profile");
@@ -64,6 +67,7 @@ public class Authetication extends AppCompatActivity {
 
     private void incializarGoogle() {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
@@ -95,7 +99,7 @@ public class Authetication extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.i("signIn", "Sucesso ao logar usuário");
-                            nextAcitivity();
+                            nextActivity();
                         } else {
                             Log.i("signIn", "Erro ao logar usuário");
                             Log.i("signIn", task.getResult().toString());
@@ -149,7 +153,9 @@ public class Authetication extends AppCompatActivity {
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            nextAcitivity();
+            //nextActivity();
+            firebaseAuthWithGoogle(account.getIdToken());
+
 
         } catch (ApiException e) {
             Log.w("Error message", "signInResult:failed code=" + e.getStatusCode());
@@ -157,8 +163,25 @@ public class Authetication extends AppCompatActivity {
         }
     }
 
-
-
+    private void firebaseAuthWithGoogle(String idToken) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
+        auth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d("GoogleLogin", "signInWithCredential:success");
+                            FirebaseUser user = auth.getCurrentUser();
+                            nextActivity();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w("GoogleLogin", "signInWithCredential:failure", task.getException());
+                            updateUI(null);
+                        }
+                    }
+                });
+    }
 
     @Override
     public void onStart() {
@@ -169,7 +192,7 @@ public class Authetication extends AppCompatActivity {
 
         if (currentUser != null || account != null) {
             Log.i("Mensagem", "Usuário Logado");
-            nextAcitivity();
+            nextActivity();
         } else {
             Log.i("Mensagem", "Usuário não logado");
         }
@@ -186,10 +209,9 @@ public class Authetication extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-
                             Log.d("FaceBookLogin", "signInWithCredential:success");
                             FirebaseUser user = auth.getCurrentUser();
-                            nextAcitivity();
+                            nextActivity();
                             updateUI(user);
                         } else {
 
@@ -203,7 +225,7 @@ public class Authetication extends AppCompatActivity {
     }
 
     private void signOut() {
-        auth.getInstance().signOut();
+        auth.signOut();
     }
     private void signOutFacebook() {
         LoginManager.getInstance().logOut();
@@ -216,9 +238,26 @@ public class Authetication extends AppCompatActivity {
 
     }
 
-    public void nextAcitivity(){
+    public void nextActivity(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    public void nextActivityNewUser(){
+        Intent intent = new Intent(this, CreateUserActivity.class);
+        startActivity(intent);
+    }
+
+    private void clickListenerNewUser() {
+
+        binding.txtNovoUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nextActivityNewUser();
+            }
+        });
+
+
     }
 }
 

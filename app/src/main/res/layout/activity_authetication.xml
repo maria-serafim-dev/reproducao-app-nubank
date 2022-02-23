@@ -97,7 +97,7 @@
                 />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/txtEsqueciSenha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -109,7 +109,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/txtNovoUsuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
