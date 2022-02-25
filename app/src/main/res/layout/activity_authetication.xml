@@ -28,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="30dp"
-                android:text="@string/titulo"
+                android:text="@string/txt_title"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -58,7 +58,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:ems="10"
-                android:hint="@string/hint_senha"
+                android:hint="@string/hint_password"
                 android:inputType="textPassword"
                 android:textColor="@color/letras_cinzas"
                 android:textColorHint="@color/letras_cinzas"
@@ -73,7 +73,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:background="@color/white"
-                android:text="@string/botao_continuar"
+                android:text="@string/button_continue"
                 android:textColor="@color/letras_cinzas"
                 android:textStyle="bold" />
 
@@ -103,7 +103,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                android:text="@string/txt_esqueci_senha"
+                android:text="@string/txt_forget_password"
                 android:textAlignment="center"
                 android:textColor="@color/roxo_fundo"
                 android:textStyle="bold" />
@@ -116,7 +116,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="80dp"
-                android:text="@string/txt_nao_cliente"
+                android:text="@string/txt_no_client"
                 android:textAlignment="center"
                 android:textColor="@color/roxo_fundo"
                 android:textStyle="bold" />

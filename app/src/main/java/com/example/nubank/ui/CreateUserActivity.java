@@ -36,10 +36,9 @@ public class CreateUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String email = binding.editEmail.getText().toString();
-                String senha = binding.editPassword.getText().toString();
-                Toast.makeText(getApplicationContext(), email, Toast.LENGTH_SHORT).show();
+                String password = binding.editPassword.getText().toString();
 
-                auth.createUserWithEmailAndPassword(email, senha)
+                auth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(CreateUserActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {

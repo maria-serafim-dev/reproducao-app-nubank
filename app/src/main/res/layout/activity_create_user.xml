@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="30dp"
-            android:text="Crie seu usuário"
+            android:text="@string/txt_title_create_user"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -48,7 +48,8 @@
             android:inputType="textEmailAddress"
             android:lineSpacingExtra="10sp"
             android:textColor="@color/letras_cinzas"
-            android:textColorHint="@color/letras_cinzas" />
+            android:textColorHint="@color/letras_cinzas"
+            android:autofillHints="emailAddress" />
 
         <EditText
             android:id="@+id/editPassword"
@@ -58,10 +59,11 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:ems="10"
-            android:hint="@string/hint_senha"
+            android:hint="@string/hint_password"
             android:inputType="textPassword"
             android:textColor="@color/letras_cinzas"
-            android:textColorHint="@color/letras_cinzas" />
+            android:textColorHint="@color/letras_cinzas"
+            android:autofillHints="password" />
 
         <Button
             android:id="@+id/button"
@@ -72,7 +74,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="80dp"
             android:background="@color/white"
-            android:text="CONTINUAR"
+            android:text="@string/button_continue"
             android:textColor="@color/letras_cinzas" />
 
         </LinearLayout>

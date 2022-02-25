@@ -37,12 +37,12 @@ public class MainActivity extends AppCompatActivity {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        incializarGoogle();
+        initializeGoogle();
         clickListenerButtonLogout();
 
     }
 
-    private void incializarGoogle() {
+    private void initializeGoogle() {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
