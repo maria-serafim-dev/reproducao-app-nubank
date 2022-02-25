@@ -48,8 +48,8 @@ public class Authetication extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_authetication);
 
 
-        incializarFacebook();
-        incializarGoogle();
+        initializeFacebook();
+        initializeGoogle();
 
         registerCallbackFacebook();
         clickListenerButtonGoogle();
@@ -81,13 +81,13 @@ public class Authetication extends AppCompatActivity {
     }
 
 
-    private void incializarFacebook() {
+    private void initializeFacebook() {
         binding.buttonFacebook.setReadPermissions("email", "public_profile");
 
         mCallbackManagerFace = CallbackManager.Factory.create();
     }
 
-    private void incializarGoogle() {
+    private void initializeGoogle() {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -113,16 +113,16 @@ public class Authetication extends AppCompatActivity {
             public void onClick(View view) {
                 if(validarCampos()) {
                     String email = binding.editEmail.getText().toString();
-                    String senha = binding.editPassword.getText().toString();
+                    String password = binding.editPassword.getText().toString();
 
-                    auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Log.i("signIn", "Sucesso ao logar usuário");
                                 nextActivity();
                             } else {
-                                mensagemErro();
+                                messageErro();
                                 Log.i("signIn", "Erro ao logar usuário");
                                 Log.i("signIn", task.getResult().toString());
 
@@ -195,7 +195,7 @@ public class Authetication extends AppCompatActivity {
                             FirebaseUser user = auth.getCurrentUser();
                             nextActivity();
                         } else {
-                            mensagemErro();
+                            messageErro();
                             Log.w("GoogleLogin", "signInWithCredential:failure", task.getException());
                             updateUI(null);
                         }
@@ -211,10 +211,10 @@ public class Authetication extends AppCompatActivity {
         FirebaseUser currentUser = auth.getCurrentUser();
 
         if (currentUser != null || account != null) {
-            Log.i("Mensagem", "Usuário Logado");
+            Log.i("Message", "Usuário Logado");
             nextActivity();
         } else {
-            Log.i("Mensagem", "Usuário não logado");
+            Log.i("Message", "Usuário não logado");
         }
     }
 
@@ -236,7 +236,7 @@ public class Authetication extends AppCompatActivity {
                         } else {
 
                             Log.w("FaceBookLogin", "signInWithCredential:failure", task.getException());
-                            mensagemErro();
+                            messageErro();
                             updateUI(null);
                         }
                     }
@@ -277,7 +277,7 @@ public class Authetication extends AppCompatActivity {
         });
     }
 
-    private void mensagemErro(){
+    private void messageErro(){
         Toast.makeText(Authetication.this, "Falha na autenticação",
                 Toast.LENGTH_SHORT).show();
     }

@@ -36,9 +36,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="171dp"
                     android:background="@color/roxo_fundo"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
                     android:id="@+id/textGreetings"
@@ -58,6 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
+                    android:contentDescription="@string/dc_heart"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/imgHelp"
@@ -65,11 +68,12 @@
                     app:srcCompat="@drawable/ic_favorite" />
 
                 <ImageView
-                    android:id="@+id/image_celular_baixo0"
+                    android:id="@+id/imgEyes"
                     android:layout_width="24dp"
                     android:layout_height="16dp"
                     android:layout_marginStart="164dp"
                     android:layout_marginTop="28dp"
+                    android:contentDescription="@string/dc_eyes"
                     app:layout_constraintStart_toEndOf="@+id/image_user"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_eyes" />
@@ -80,7 +84,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
-                    app:layout_constraintStart_toEndOf="@+id/image_celular_baixo0"
+                    android:contentDescription="@string/dc_help"
+                    app:layout_constraintStart_toEndOf="@+id/imgEyes"
                     app:layout_constraintTop_toTopOf="@+id/view"
                     app:srcCompat="@drawable/ic_help" />
 
@@ -99,11 +104,12 @@
                     app:layout_constraintTop_toBottomOf="@+id/textConta" />
 
                 <ImageView
-                    android:id="@+id/img_seta"
+                    android:id="@+id/img_arrow_right"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="280dp"
                     android:layout_marginTop="20dp"
+                    android:contentDescription="@string/dc_arrow_right"
                     app:layout_constraintStart_toEndOf="@+id/textConta"
                     app:layout_constraintTop_toBottomOf="@+id/view"
                     app:srcCompat="@drawable/ic_flecha_direita" />
@@ -136,9 +142,10 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:id="@+id/imageView11"
+                                android:id="@+id/img_first_div_gray"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:contentDescription="@string/dc_div_gray"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="1.0"
@@ -154,11 +161,11 @@
                                 android:layout_weight="1"
                                 android:text="@string/txt_emprestimos"
                                 android:textColor="@color/black"
-                                app:layout_constraintBottom_toBottomOf="@+id/imageView11"
-                                app:layout_constraintEnd_toEndOf="@+id/imageView11"
+                                app:layout_constraintBottom_toBottomOf="@+id/img_first_div_gray"
+                                app:layout_constraintEnd_toEndOf="@+id/img_first_div_gray"
                                 app:layout_constraintHorizontal_bias="0.293"
-                                app:layout_constraintStart_toStartOf="@+id/imageView11"
-                                app:layout_constraintTop_toTopOf="@+id/imageView11"
+                                app:layout_constraintStart_toStartOf="@+id/img_first_div_gray"
+                                app:layout_constraintTop_toTopOf="@+id/img_first_div_gray"
                                 app:layout_constraintVertical_bias="0.363" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -169,10 +176,11 @@
                             android:layout_marginStart="15dp">
 
                             <ImageView
-                                android:id="@+id/imageView12"
+                                android:id="@+id/img_second_div_gray"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:contentDescription="@string/dc_div_gray"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
@@ -186,10 +194,10 @@
                                 android:layout_marginEnd="74dp"
                                 android:text="@string/txt_buracia"
                                 android:textColor="@color/black"
-                                app:layout_constraintEnd_toEndOf="@+id/imageView12"
+                                app:layout_constraintEnd_toEndOf="@+id/img_second_div_gray"
                                 app:layout_constraintHorizontal_bias="1.0"
-                                app:layout_constraintStart_toStartOf="@+id/imageView12"
-                                app:layout_constraintTop_toTopOf="@+id/imageView12" />
+                                app:layout_constraintStart_toStartOf="@+id/img_second_div_gray"
+                                app:layout_constraintTop_toTopOf="@+id/img_second_div_gray" />
 
                             <TextView
                                 android:id="@+id/textView11"
@@ -197,9 +205,9 @@
                                 android:layout_height="wrap_content"
                                 android:text="@string/txt_convite_Nubank"
                                 android:textColor="@color/roxo_fundo"
-                                app:layout_constraintEnd_toEndOf="@+id/imageView12"
+                                app:layout_constraintEnd_toEndOf="@+id/img_second_div_gray"
                                 app:layout_constraintHorizontal_bias="0.144"
-                                app:layout_constraintStart_toStartOf="@+id/imageView12"
+                                app:layout_constraintStart_toStartOf="@+id/img_second_div_gray"
                                 app:layout_constraintTop_toBottomOf="@+id/textView10" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -236,6 +244,7 @@
                                     android:id="@+id/circle_pix"
                                     android:layout_width="80dp"
                                     android:layout_height="wrap_content"
+                                    android:contentDescription="@string/dc_circle_gray"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
@@ -247,6 +256,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:scaleType="centerInside"
+                                    android:contentDescription="@string/dc_pix"
                                     app:layout_constraintBottom_toTopOf="@+id/circle_pix"
                                     app:layout_constraintEnd_toStartOf="@+id/circle_pix"
                                     app:layout_constraintHorizontal_bias="0.5"
@@ -283,6 +293,7 @@
                                     android:id="@+id/circle_pagar"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:contentDescription="@string/dc_circle_gray"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
@@ -293,6 +304,7 @@
                                     android:id="@+id/pagar"
                                     android:layout_width="wrap_content"
                                     android:layout_height="45dp"
+                                    android:contentDescription="@string/dc_barcode"
                                     app:layout_constraintBottom_toTopOf="@+id/circle_pagar"
                                     app:layout_constraintEnd_toStartOf="@+id/circle_pagar"
                                     app:layout_constraintHorizontal_bias="0.5"
@@ -328,6 +340,7 @@
                                     android:id="@+id/circle_transferir"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:contentDescription="@string/dc_circle_gray"
                                     app:srcCompat="@drawable/ic_circulo"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -338,6 +351,7 @@
                                     android:id="@+id/transferir"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:contentDescription="@string/dc_transfer"
                                     app:layout_constraintBottom_toTopOf="@+id/circle_transferir"
                                     app:layout_constraintEnd_toStartOf="@+id/circle_transferir"
                                     app:layout_constraintHorizontal_bias="0.5"
@@ -368,9 +382,10 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:id="@+id/circle_depositar"
+                                    android:id="@+id/circle_deposit"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:contentDescription="@string/dc_circle_gray"
                                     app:srcCompat="@drawable/ic_circulo"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -378,14 +393,15 @@
                                     app:layout_constraintTop_toTopOf="parent"/>
 
                                 <ImageView
-                                    android:id="@+id/imageView9"
+                                    android:id="@+id/img_deposit"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    app:layout_constraintBottom_toTopOf="@+id/circle_depositar"
-                                    app:layout_constraintEnd_toStartOf="@+id/circle_depositar"
+                                    android:contentDescription="@string/dc_deposit"
+                                    app:layout_constraintBottom_toTopOf="@+id/circle_deposit"
+                                    app:layout_constraintEnd_toStartOf="@+id/circle_deposit"
                                     app:layout_constraintHorizontal_bias="0.5"
-                                    app:layout_constraintStart_toEndOf="@+id/circle_depositar"
-                                    app:layout_constraintTop_toBottomOf="@+id/circle_depositar"
+                                    app:layout_constraintStart_toEndOf="@+id/circle_deposit"
+                                    app:layout_constraintTop_toBottomOf="@+id/circle_deposit"
                                     app:srcCompat="@drawable/ic_depositar" />
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -415,7 +431,7 @@
                                     android:id="@+id/circle_recarregar"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-
+                                    android:contentDescription="@string/dc_circle_gray"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
@@ -426,6 +442,7 @@
                                     android:id="@+id/recarregar"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:contentDescription="@string/dc_cell_phone"
                                     app:layout_constraintBottom_toTopOf="@+id/circle_recarregar"
                                     app:layout_constraintEnd_toStartOf="@+id/circle_recarregar"
                                     app:layout_constraintHorizontal_bias="0.5"
@@ -464,6 +481,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="36dp"
+                    android:contentDescription="@string/dc_div_gray"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
@@ -484,22 +502,24 @@
                     app:layout_constraintVertical_bias="0.463" />
 
                 <ImageView
-                    android:id="@+id/image_celular"
+                    android:id="@+id/img_card"
                     android:layout_width="16dp"
                     android:layout_height="33dp"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="12dp"
+                    android:contentDescription="@string/dc_credit_car"
                     app:layout_constraintEnd_toStartOf="@+id/text_meus_cartoes"
                     app:layout_constraintStart_toStartOf="@+id/div_meus_cartoes"
                     app:layout_constraintTop_toTopOf="@+id/div_meus_cartoes"
                     app:srcCompat="@drawable/ic_celular" />
 
                 <ImageView
-                    android:id="@+id/image_celular_baixo"
+                    android:id="@+id/img_card_baixo"
                     android:layout_width="16dp"
                     android:layout_height="38dp"
                     android:layout_marginStart="28dp"
                     android:layout_marginTop="8dp"
+                    android:contentDescription="@string/dc_credit_car"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/divider"
                     app:srcCompat="@drawable/ic_celular" />
@@ -516,7 +536,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.093"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/image_celular_baixo" />
+                    app:layout_constraintTop_toBottomOf="@+id/img_card_baixo" />
 
                 <ImageView
                     android:id="@+id/image_seta_baixo"
@@ -524,7 +544,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="324dp"
                     android:layout_marginTop="52dp"
-                    app:layout_constraintStart_toEndOf="@+id/image_celular_baixo"
+                    android:contentDescription="@string/dc_credit_car"
+                    app:layout_constraintStart_toEndOf="@+id/img_card_baixo"
                     app:layout_constraintTop_toBottomOf="@+id/divider"
                     app:srcCompat="@drawable/ic_flecha_direita" />
 
@@ -573,6 +594,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="28dp"
                     android:layout_marginTop="16dp"
+                    android:contentDescription="@string/dc_div_gray"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/text_limite"
                     app:srcCompat="@drawable/ic_celular_xml" />
@@ -596,10 +618,13 @@
                     android:id="@+id/image_user"
                     android:layout_width="46dp"
                     android:layout_height="43dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="16dp"
+                    android:contentDescription="@string/dc_user"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.043"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/view"
+                    app:layout_constraintVertical_bias="0.021"
                     app:srcCompat="@drawable/ic_users" />
 
                 <ImageView
@@ -608,6 +633,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="24dp"
+                    android:contentDescription="@string/dc_logout"
                     app:layout_constraintEnd_toEndOf="@+id/view"
                     app:layout_constraintHorizontal_bias="0.937"
                     app:layout_constraintStart_toEndOf="@+id/imgFavorite"

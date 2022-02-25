@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">nubank</string>
+
+    <!-- Activity Main -->
     <string name="greetings">Olá, Veridiana</string>
 
     <string name="conta">Conta</string>
@@ -24,6 +26,24 @@
     <string name="txt_limite">Limite disponível de R$ 2.485,83</string>
     <string name="txt_parcelar_compras">Parcelar compras</string>
 
+    <!-- Content Description-->
+    <string name="dc_heart">Icone de um coração</string>
+    <string name="dc_user">Icone de um boneco representando um usuário</string>
+    <string name="dc_eyes">Icone de um olho fechado, representando que os valores da conta não podem ser exibidos.</string>
+    <string name="dc_help">Icone de um círculo com ponto de interrogação, indicando um local para ajuda.</string>
+    <string name="dc_logout">Icone de logout, uma porta com uma seta indicando que deseja sair</string>
+    <string name="dc_pix">Logo do PIX</string>
+    <string name="dc_barcode">Icone de códigos de barras</string>
+    <string name="dc_transfer">Icone quadrado com uma seta subindo, indicando saída de dinheiro. </string>
+    <string name="dc_deposit">Icone quadrado com uma seta decendo, indicando entrada de dinheiro. </string>
+    <string name="dc_cell_phone">Icone de celular</string>
+    <string name="dc_credit_car">Icone de cartão de crédito</string>
+    <string name="dc_arrow_right">Seta apontando para a direita</string>
+    <string name="dc_div_gray">Retângulo cinza</string>
+    <string name="dc_circle_gray">Círculo cinza</string>
+
+
+    <!-- Facebook -->
     <string name="facebook_app_id">273794421397764</string>
     <string name="fb_login_protocol_scheme">fb273794421397764</string>
 
@@ -34,6 +54,7 @@
     <string name="botao_continuar">CONTINUAR</string>
     <string name="txt_esqueci_senha">Esqueci minha senha</string>
     <string name="txt_nao_cliente">Ainda não sou cliente</string>
+
 
 
 </resources>
