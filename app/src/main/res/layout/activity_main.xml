@@ -18,7 +18,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <View
                 android:id="@+id/view"
@@ -31,19 +31,19 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:id="@+id/textGreetings"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="44dp"
-                android:text="@string/txt_greetings"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+            <ImageView
+                android:id="@+id/image_user"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="12dp"
+                android:contentDescription="@string/dc_user"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/imgEyes"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_user" />
+                app:layout_constraintTop_toTopOf="@+id/view"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_users" />
 
             <ImageView
                 android:id="@+id/imgEyes"
@@ -86,12 +86,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="18dp"
                 android:contentDescription="@string/dc_logout"
                 app:layout_constraintEnd_toEndOf="@+id/view"
                 app:layout_constraintStart_toEndOf="@+id/imgFavorite"
                 app:layout_constraintTop_toTopOf="@+id/view"
                 app:srcCompat="@drawable/ic_logout" />
+
+
+            <TextView
+                android:id="@+id/textGreetings"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="44dp"
+                android:text="@string/txt_greetings"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_user" />
+
 
             <TextView
                 android:id="@+id/text_saldo_conta"
@@ -619,19 +635,6 @@
                 app:layout_constraintEnd_toEndOf="@+id/div_parcelar_compra"
                 app:layout_constraintStart_toStartOf="@+id/div_parcelar_compra"
                 app:layout_constraintTop_toTopOf="@+id/div_parcelar_compra" />
-
-            <ImageView
-                android:id="@+id/image_user"
-                android:layout_width="46dp"
-                android:layout_height="43dp"
-                android:contentDescription="@string/dc_user"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.043"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/view"
-                app:layout_constraintVertical_bias="0.021"
-                app:srcCompat="@drawable/ic_users" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
