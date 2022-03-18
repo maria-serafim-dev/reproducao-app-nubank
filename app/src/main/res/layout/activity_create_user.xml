@@ -38,7 +38,7 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_email"
+                android:id="@+id/textEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -48,7 +48,9 @@
                 android:textColorHint="@color/roxo_fundo"
                 app:hintTextColor="@color/roxo_fundo"
                 app:boxStrokeColor="@color/roxo_fundo"
-                app:boxBackgroundColor="@color/white">
+                app:boxBackgroundColor="@color/white"
+                app:helperTextTextColor="@color/letras_cinzas"
+                app:helperText="@string/txt_required_fields">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editEmail"
@@ -63,7 +65,7 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_senha"
+                android:id="@+id/textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -75,7 +77,9 @@
                 app:boxStrokeColor="@color/roxo_fundo"
                 app:endIconTint="@color/roxo_fundo"
                 app:boxBackgroundColor="@color/white"
-                app:endIconMode="password_toggle">
+                app:endIconMode="password_toggle"
+                app:helperText="@string/txt_required_fields"
+                app:helperTextTextColor="@color/letras_cinzas">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editPassword"
