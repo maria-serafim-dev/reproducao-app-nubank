@@ -50,7 +50,8 @@
                 app:boxStrokeColor="@color/roxo_fundo"
                 app:boxBackgroundColor="@color/white"
                 app:helperTextTextColor="@color/letras_cinzas"
-                app:helperText="@string/txt_required_fields">
+                app:helperText="@string/txt_required_fields"
+                app:errorEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editEmail"
@@ -79,7 +80,8 @@
                 app:boxBackgroundColor="@color/white"
                 app:endIconMode="password_toggle"
                 app:helperText="@string/txt_required_fields"
-                app:helperTextTextColor="@color/letras_cinzas">
+                app:helperTextTextColor="@color/letras_cinzas"
+                app:errorEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editPassword"
