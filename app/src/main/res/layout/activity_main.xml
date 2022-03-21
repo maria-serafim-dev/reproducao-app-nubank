@@ -35,11 +35,10 @@
                 android:id="@+id/image_user"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginStart="18dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="12dp"
                 android:contentDescription="@string/dc_user"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/imgEyes"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/view"
                 app:layout_constraintVertical_bias="0.0"
@@ -112,11 +111,14 @@
                 android:id="@+id/textConta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="20dp"
                 android:text="@string/txt_account"
                 android:textColor="@color/black"
                 android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/img_arrow_right"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view" />
 
@@ -126,9 +128,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="280dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="24dp"
                 android:contentDescription="@string/dc_arrow_right"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/textConta"
                 app:layout_constraintTop_toBottomOf="@+id/view"
                 app:srcCompat="@drawable/ic_flecha_direita" />
@@ -137,13 +140,14 @@
                 android:id="@+id/text_saldo_conta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/txt_balance"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.091"
+                app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textConta" />
 
@@ -151,248 +155,219 @@
                 android:id="@+id/horizontalScrollView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="12dp"
+
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/text_saldo_conta">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:id="@+id/linearLayout1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:orientation="vertical">
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_pix"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="0dp"
+                        app:cardPreventCornerOverlap="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/card_parcelar">
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
 
-                            <ImageView
-                                android:id="@+id/circle_pix"
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/img_circle_pix"
                                 android:layout_width="80dp"
-                                android:layout_height="wrap_content"
-                                android:contentDescription="@string/dc_circle_gray"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_circulo" />
-
-                            <ImageView
-                                android:id="@+id/pix"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_height="80dp"
+                                android:background="@color/circulo"
                                 android:contentDescription="@string/dc_pix"
                                 android:scaleType="centerInside"
-                                app:layout_constraintBottom_toTopOf="@+id/circle_pix"
-                                app:layout_constraintEnd_toStartOf="@+id/circle_pix"
-                                app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toEndOf="@+id/circle_pix"
-                                app:layout_constraintTop_toBottomOf="@+id/circle_pix"
+                                app:shapeAppearanceOverlay="@style/circulo"
                                 app:srcCompat="@drawable/ic_area_pix" />
 
-                        </androidx.constraintlayout.widget.ConstraintLayout>
+                            <TextView
+                                android:id="@+id/text_pix"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/txt_pix"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
 
-                        <TextView
-                            android:id="@+id/text_pix"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/txt_pix"
-                            android:textAlignment="center"
-                            android:textAllCaps="false"
-                            android:textColor="@color/black" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/linearLayout2"
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_pay"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:orientation="vertical">
+                        android:layout_marginEnd="15dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="0dp"
+                        app:cardPreventCornerOverlap="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/card_parcelar">
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
 
-                            <ImageView
-                                android:id="@+id/circle_pagar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:contentDescription="@string/dc_circle_gray"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_circulo" />
-
-                            <ImageView
-                                android:id="@+id/pagar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="45dp"
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/img_circle_pay"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:background="@color/circulo"
                                 android:contentDescription="@string/dc_barcode"
-                                app:layout_constraintBottom_toTopOf="@+id/circle_pagar"
-                                app:layout_constraintEnd_toStartOf="@+id/circle_pagar"
-                                app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toEndOf="@+id/circle_pagar"
-                                app:layout_constraintTop_toBottomOf="@+id/circle_pagar"
+                                android:scaleType="centerInside"
+                                app:shapeAppearanceOverlay="@style/circulo"
                                 app:srcCompat="@drawable/ic_pagar" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                        <TextView
-                            android:id="@+id/text_pagar"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/txt_pay"
-                            android:textAlignment="center"
-                            android:textAllCaps="false"
-                            android:textColor="@color/black" />
-                    </LinearLayout>
+                            <TextView
+                                android:id="@+id/text_pay"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/txt_pay"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
 
-                    <LinearLayout
-                        android:id="@+id/linearLayout4"
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_transfer"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:layout_marginEnd="15dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="0dp"
+                        app:cardPreventCornerOverlap="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/card_parcelar">
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
 
-                            <ImageView
-                                android:id="@+id/circle_transferir"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:contentDescription="@string/dc_circle_gray"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_circulo" />
-
-                            <ImageView
-                                android:id="@+id/transferir"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/img_circle_transfer"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:background="@color/circulo"
                                 android:contentDescription="@string/dc_transfer"
-                                app:layout_constraintBottom_toTopOf="@+id/circle_transferir"
-                                app:layout_constraintEnd_toStartOf="@+id/circle_transferir"
-                                app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toEndOf="@+id/circle_transferir"
-                                app:layout_constraintTop_toBottomOf="@+id/circle_transferir"
+                                android:scaleType="centerInside"
+                                app:shapeAppearanceOverlay="@style/circulo"
                                 app:srcCompat="@drawable/ic_tranferir" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                        <TextView
-                            android:id="@+id/text_transferir"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/txt_transfer"
-                            android:textAlignment="center"
-                            android:textColor="@color/black" />
-                    </LinearLayout>
+                            <TextView
+                                android:id="@+id/text_trasfer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/txt_transfer"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
 
-                    <LinearLayout
-                        android:id="@+id/linearLayout5"
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_deposit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:orientation="vertical">
+                        android:layout_marginEnd="15dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="0dp"
+                        app:cardPreventCornerOverlap="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/card_parcelar">
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
 
-                            <ImageView
-                                android:id="@+id/circle_deposit"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:contentDescription="@string/dc_circle_gray"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_circulo" />
-
-                            <ImageView
-                                android:id="@+id/img_deposit"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/img_circle_deposit"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:background="@color/circulo"
                                 android:contentDescription="@string/dc_deposit"
-                                app:layout_constraintBottom_toTopOf="@+id/circle_deposit"
-                                app:layout_constraintEnd_toStartOf="@+id/circle_deposit"
-                                app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toEndOf="@+id/circle_deposit"
-                                app:layout_constraintTop_toBottomOf="@+id/circle_deposit"
+                                android:scaleType="centerInside"
+                                app:shapeAppearanceOverlay="@style/circulo"
                                 app:srcCompat="@drawable/ic_depositar" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                        <TextView
-                            android:id="@+id/text_depositar"
+                            <TextView
+                                android:id="@+id/text_deposit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/txt_deposit"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_recharge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="0dp"
+                        app:cardPreventCornerOverlap="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/card_parcelar">
+
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/txt_deposit"
-                            android:textAlignment="center"
-                            android:textColor="@color/black" />
-                    </LinearLayout>
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
 
-                    <LinearLayout
-                        android:id="@+id/linearLayout6"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <ImageView
-                                android:id="@+id/circle_recarregar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:contentDescription="@string/dc_circle_gray"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_circulo" />
-
-                            <ImageView
-                                android:id="@+id/recarregar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/img_circle_recharge"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:background="@color/circulo"
                                 android:contentDescription="@string/dc_cell_phone"
-                                app:layout_constraintBottom_toTopOf="@+id/circle_recarregar"
-                                app:layout_constraintEnd_toStartOf="@+id/circle_recarregar"
-                                app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toEndOf="@+id/circle_recarregar"
-                                app:layout_constraintTop_toBottomOf="@+id/circle_recarregar"
+                                android:scaleType="centerInside"
+                                app:shapeAppearanceOverlay="@style/circulo"
                                 app:srcCompat="@drawable/ic_recarga" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                        <TextView
-                            android:id="@+id/text_recarregar"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/txt_recharge"
-                            android:textAlignment="center"
-                            android:textAllCaps="false"
-                            android:textColor="@color/black" />
-                    </LinearLayout>
+                            <TextView
+                                android:id="@+id/text_recharge"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/txt_recharge"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
 
                 </LinearLayout>
             </HorizontalScrollView>
@@ -401,9 +376,9 @@
                 android:id="@+id/card_meus_cartoes"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginStart="28dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="36dp"
-                android:layout_marginEnd="28dp"
+                android:layout_marginEnd="24dp"
                 app:cardBackgroundColor="@color/circulo"
                 app:cardElevation="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -436,20 +411,19 @@
                         android:paddingEnd="20dp"
                         android:text="@string/txt_card"
                         android:textColor="@color/black"
-                        android:textStyle="bold"
-                        />
+                        android:textStyle="bold" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-
-
             <HorizontalScrollView
                 android:id="@+id/horizontal_scroll_cards"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/card_meus_cartoes">
 
@@ -513,10 +487,8 @@
                     </com.google.android.material.card.MaterialCardView>
 
 
-
                 </LinearLayout>
             </HorizontalScrollView>
-
 
             <com.google.android.material.divider.MaterialDivider
                 android:id="@+id/divider"
@@ -534,7 +506,7 @@
                 android:id="@+id/img_card_baixo"
                 android:layout_width="16dp"
                 android:layout_height="38dp"
-                android:layout_marginStart="28dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:contentDescription="@string/dc_credit_car"
                 app:layout_constraintStart_toStartOf="parent"
@@ -545,13 +517,16 @@
                 android:id="@+id/text_cartao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/txt_credit_card"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.093"
+                app:layout_constraintEnd_toStartOf="@+id/image_seta_baixo"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img_card_baixo" />
 
@@ -559,10 +534,12 @@
                 android:id="@+id/image_seta_baixo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="324dp"
                 android:layout_marginTop="52dp"
+                android:layout_marginEnd="20dp"
                 android:contentDescription="@string/dc_credit_car"
-                app:layout_constraintStart_toEndOf="@+id/img_card_baixo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/text_cartao"
                 app:layout_constraintTop_toBottomOf="@+id/divider"
                 app:srcCompat="@drawable/ic_flecha_direita" />
 
@@ -570,7 +547,7 @@
                 android:id="@+id/text_fatura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/txt_current_invoice"
                 android:textColor="@color/letras_cinzas"
@@ -583,7 +560,7 @@
                 android:id="@+id/text_valor_fatura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/txt_invoice_amount"
                 android:textColor="@color/black"
@@ -596,7 +573,7 @@
                 android:id="@+id/text_limite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/txt_limit"
                 android:textColor="@color/letras_cinzas"
@@ -605,35 +582,36 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/text_valor_fatura" />
 
-            <ImageView
-                android:id="@+id/div_parcelar_compra"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_parcelar"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
-                android:contentDescription="@string/dc_div_gray"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/circulo"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/text_limite"
-                app:srcCompat="@drawable/ic_celular_xml" />
+                app:shapeAppearanceOverlay="@style/card_parcelar_compras">
 
-            <TextView
-                android:id="@+id/text_parcelar_compra"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="6dp"
-                android:text="@string/txt_split_purchases"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/div_parcelar_compra"
-                app:layout_constraintEnd_toEndOf="@+id/div_parcelar_compra"
-                app:layout_constraintStart_toStartOf="@+id/div_parcelar_compra"
-                app:layout_constraintTop_toTopOf="@+id/div_parcelar_compra" />
-            
+                <TextView
+                    android:id="@+id/text_card_parcelar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/txt_split_purchases"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.card.MaterialCardView>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.core.widget.NestedScrollView>
 
 </layout>
