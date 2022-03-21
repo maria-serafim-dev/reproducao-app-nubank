@@ -29,7 +29,6 @@ public class CreateUserActivity extends AppCompatActivity {
 
     private void clickListenerButtonEmailPassword() {
         binding.button.setOnClickListener(view -> {
-            binding.textEmail.setError(null);
             if (validarCampos()) {
                 String email = binding.editEmail.getText().toString();
                 String password = binding.editPassword.getText().toString();
@@ -51,23 +50,29 @@ public class CreateUserActivity extends AppCompatActivity {
     }
 
     private boolean validarCampos() {
-        if (TextUtils.isEmpty(binding.editEmail.getText())) {
-            binding.textEmail.setError("Dígite um email");
-            binding.editEmail.requestFocus();
-            return false;
-        } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(binding.editEmail.getText()).matches()) {
-            binding.textEmail.setError("E-mail inválido");
-            binding.editEmail.requestFocus();
-            return false;
-        }
+        binding.textEmail.setError(null);
+        binding.textPassword.setError(null);
+
+        Boolean retorno = true;
+
 
         if (TextUtils.isEmpty(binding.editPassword.getText())) {
             binding.textPassword.setError("Dígite uma senha");
             binding.editPassword.requestFocus();
-            return false;
+            retorno = false;
         }
 
-        return true;
+        if (TextUtils.isEmpty(binding.editEmail.getText())) {
+            binding.textEmail.setError("Dígite um email");
+            binding.editEmail.requestFocus();
+            retorno = false;
+        } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(binding.editEmail.getText()).matches()) {
+            binding.textEmail.setError("E-mail inválido");
+            binding.editEmail.requestFocus();
+            retorno = false;
+        }
+
+        return retorno;
 
     }
 

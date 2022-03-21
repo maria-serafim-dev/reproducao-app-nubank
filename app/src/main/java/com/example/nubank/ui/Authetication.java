@@ -57,26 +57,34 @@ public class Authetication extends AppCompatActivity {
 
         clickListenerNewUser();
 
+
     }
 
+
     private boolean validarCampos() {
-        if (TextUtils.isEmpty(binding.editEmail.getText())) {
-            binding.editEmail.setError("Dígite um email");
-            binding.editEmail.requestFocus();
-            return false;
-        } else if(!android.util.Patterns.EMAIL_ADDRESS.matcher(binding.editEmail.getText()).matches()){
-            binding.editEmail.setError("E-mail inválido");
-            binding.editEmail.requestFocus();
-            return false;
-        }
+        binding.textEmail.setError(null);
+        binding.textPassword.setError(null);
 
-        if(TextUtils.isEmpty(binding.editPassword.getText())) {
-            binding.editPassword.setError("Dígite uma senha");
+        Boolean retorno = true;
+
+
+        if (TextUtils.isEmpty(binding.editPassword.getText())) {
+            binding.textPassword.setError("Dígite uma senha");
             binding.editPassword.requestFocus();
-            return false;
+            retorno = false;
         }
 
-        return true;
+        if (TextUtils.isEmpty(binding.editEmail.getText())) {
+            binding.textEmail.setError("Dígite um email");
+            binding.editEmail.requestFocus();
+            retorno = false;
+        } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(binding.editEmail.getText()).matches()) {
+            binding.textEmail.setError("E-mail inválido");
+            binding.editEmail.requestFocus();
+            retorno = false;
+        }
+
+        return retorno;
 
     }
 
@@ -108,28 +116,26 @@ public class Authetication extends AppCompatActivity {
     }
 
     private void clickListenerButtonEmailPassword() {
-        binding.button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(validarCampos()) {
-                    String email = binding.editEmail.getText().toString();
-                    String password = binding.editPassword.getText().toString();
+        binding.button.setOnClickListener(view -> {
 
-                    auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                Log.i("signIn", "Sucesso ao logar usuário");
-                                nextActivity();
-                            } else {
-                                messageErro();
-                                Log.i("signIn", "Erro ao logar usuário");
-                                Log.i("signIn", task.getResult().toString());
+            if(validarCampos()) {
+                String email = binding.editEmail.getText().toString();
+                String password = binding.editPassword.getText().toString();
 
-                            }
+                auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Log.i("signIn", "Sucesso ao logar usuário");
+                            nextActivity();
+                        } else {
+                            messageErro();
+                            Log.i("signIn", "Erro ao logar usuário");
+                            Log.i("signIn", task.getResult().toString());
+
                         }
-                    });
-                }
+                    }
+                });
             }
         });
     }
