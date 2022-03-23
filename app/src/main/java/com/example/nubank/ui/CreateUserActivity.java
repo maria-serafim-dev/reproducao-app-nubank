@@ -1,14 +1,15 @@
 package com.example.nubank.ui;
 
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
-import com.example.nubank.R;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.nubank.databinding.ActivityCreateUserBinding;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -16,13 +17,14 @@ public class CreateUserActivity extends AppCompatActivity {
 
     private FirebaseAuth auth = FirebaseAuth.getInstance();
 
-    ActivityCreateUserBinding binding;
+    private ActivityCreateUserBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_create_user);
+        binding = ActivityCreateUserBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
         clickListenerButtonEmailPassword();
     }

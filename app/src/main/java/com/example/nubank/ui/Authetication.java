@@ -1,15 +1,14 @@
 package com.example.nubank.ui;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nubank.R;
 import com.example.nubank.databinding.ActivityAutheticationBinding;
@@ -36,7 +35,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class Authetication extends AppCompatActivity {
 
     private FirebaseAuth auth = FirebaseAuth.getInstance();
-    ActivityAutheticationBinding binding;
+    private ActivityAutheticationBinding binding;
     private GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 9001;
     private CallbackManager mCallbackManagerFace;
@@ -44,8 +43,9 @@ public class Authetication extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_authetication);
+        binding = ActivityAutheticationBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
 
         initializeFacebook();
