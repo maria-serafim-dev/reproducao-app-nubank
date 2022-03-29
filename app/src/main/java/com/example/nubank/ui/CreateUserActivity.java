@@ -55,16 +55,15 @@ public class CreateUserActivity extends AppCompatActivity {
         binding.tfEmail.setError(null);
         binding.tfPassword.setError(null);
 
-        Boolean retorno = true;
+        boolean retorno = true;
 
-
-        if (TextUtils.isEmpty(binding.editPassword.getText())) {
+        if (TextUtils.isEmpty(binding.editPassword.getText()) || binding.editPassword.getText() == null) {
             binding.tfPassword.setError("Dígite uma senha");
             binding.editPassword.requestFocus();
             retorno = false;
         }
 
-        if (TextUtils.isEmpty(binding.editEmail.getText())) {
+        if (TextUtils.isEmpty(binding.editEmail.getText()) || binding.editEmail.getText() == null) {
             binding.tfEmail.setError("Dígite um email");
             binding.editEmail.requestFocus();
             retorno = false;

@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nubank.R;
@@ -16,17 +15,14 @@ import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
-import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -56,25 +52,22 @@ public class Authetication extends AppCompatActivity {
         clickListenerButtonEmailPassword();
 
         clickListenerNewUser();
-
-
     }
-
 
     private boolean validarCampos() {
         binding.tfEmail.setError(null);
         binding.tfPassword.setError(null);
 
-        Boolean retorno = true;
+        boolean retorno = true;
 
 
-        if (TextUtils.isEmpty(binding.editPassword.getText())) {
+        if (TextUtils.isEmpty(binding.editPassword.getText()) || binding.editPassword.getText() == null) {
             binding.tfPassword.setError("Dígite uma senha");
             binding.editPassword.requestFocus();
             retorno = false;
         }
 
-        if (TextUtils.isEmpty(binding.editEmail.getText())) {
+        if (TextUtils.isEmpty(binding.editEmail.getText()) || binding.editEmail.getText() == null) {
             binding.tfEmail.setError("Dígite um email");
             binding.editEmail.requestFocus();
             retorno = false;
@@ -104,36 +97,26 @@ public class Authetication extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
     }
 
-
-
     private void clickListenerButtonGoogle() {
-        binding.btGoogle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                signIn();
-            }
-        });
+        binding.btGoogle.setOnClickListener(view -> signIn());
     }
 
     private void clickListenerButtonEmailPassword() {
         binding.btContinue.setOnClickListener(view -> {
 
-            if(validarCampos()) {
+            if (validarCampos()) {
                 String email = binding.editEmail.getText().toString();
                 String password = binding.editPassword.getText().toString();
 
-                auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Log.i("signIn", "Sucesso ao logar usuário");
-                            nextActivity();
-                        } else {
-                            messageErro();
-                            Log.i("signIn", "Erro ao logar usuário");
-                            Log.i("signIn", task.getResult().toString());
+                auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Log.i("signIn", "Sucesso ao logar usuário");
+                        nextActivity();
+                    } else {
+                        messageErro();
+                        Log.i("signIn", "Erro ao logar usuário");
+                        Log.i("signIn", task.getResult().toString());
 
-                        }
                     }
                 });
             }
@@ -145,7 +128,7 @@ public class Authetication extends AppCompatActivity {
         binding.btFacebook.registerCallback(mCallbackManagerFace, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Log.d("FaceBookLogin", "facebook:onSuccess:" +loginResult);
+                Log.d("FaceBookLogin", "facebook:onSuccess:" + loginResult);
                 handleFacebookAccessToken(loginResult.getAccessToken());
             }
 
@@ -161,7 +144,6 @@ public class Authetication extends AppCompatActivity {
         });
     }
 
-
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -174,7 +156,7 @@ public class Authetication extends AppCompatActivity {
         if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handleSignInResult(task);
-        }else{
+        } else {
             mCallbackManagerFace.onActivityResult(requestCode, resultCode, data);
         }
     }
@@ -193,18 +175,14 @@ public class Authetication extends AppCompatActivity {
     private void firebaseAuthWithGoogle(String idToken) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         auth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Log.d("GoogleLogin", "signInWithCredential:success");
-                            FirebaseUser user = auth.getCurrentUser();
-                            nextActivity();
-                        } else {
-                            messageErro();
-                            Log.w("GoogleLogin", "signInWithCredential:failure", task.getException());
-                            updateUI(null);
-                        }
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        Log.d("GoogleLogin", "signInWithCredential:success");
+                        FirebaseUser user = auth.getCurrentUser();
+                        nextActivity();
+                    } else {
+                        messageErro();
+                        Log.w("GoogleLogin", "signInWithCredential:failure", task.getException());
                     }
                 });
     }
@@ -231,59 +209,34 @@ public class Authetication extends AppCompatActivity {
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
 
         auth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Log.d("FaceBookLogin", "signInWithCredential:success");
-                            FirebaseUser user = auth.getCurrentUser();
-                            nextActivity();
-                            updateUI(user);
-                        } else {
-
-                            Log.w("FaceBookLogin", "signInWithCredential:failure", task.getException());
-                            messageErro();
-                            updateUI(null);
-                        }
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        Log.d("FaceBookLogin", "signInWithCredential:success");
+                        FirebaseUser user = auth.getCurrentUser();
+                        nextActivity();
+                    } else {
+                        Log.w("FaceBookLogin", "signInWithCredential:failure", task.getException());
+                        messageErro();
                     }
                 });
     }
 
-    private void signOut() {
-        auth.signOut();
-    }
-    private void signOutFacebook() {
-        LoginManager.getInstance().logOut();
-    }
-    private void signOutGoogle() {
-        mGoogleSignInClient.signOut();
-    }
-
-    private void updateUI(FirebaseUser user) {
-
-    }
-
-    public void nextActivity(){
+    public void nextActivity() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
-    public void nextActivityNewUser(){
+    public void nextActivityNewUser() {
         Intent intent = new Intent(this, CreateUserActivity.class);
         startActivity(intent);
     }
 
     private void clickListenerNewUser() {
 
-        binding.tvNewUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                nextActivityNewUser();
-            }
-        });
+        binding.tvNewUser.setOnClickListener(view -> nextActivityNewUser());
     }
 
-    private void messageErro(){
+    private void messageErro() {
         Toast.makeText(Authetication.this, "Falha na autenticação",
                 Toast.LENGTH_SHORT).show();
     }

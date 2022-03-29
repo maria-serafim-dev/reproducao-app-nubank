@@ -45,15 +45,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void clickListenerButtonLogout() {
-        binding.imgLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mGoogleSignInClient.signOut();
-                signOut();
-                signOutGoogle();
-                signOutFacebook();
-                nextAcitivity();
-            }
+        binding.imgLogout.setOnClickListener(view -> {
+            mGoogleSignInClient.signOut();
+            signOut();
+            signOutGoogle();
+            signOutFacebook();
+            nextAcitivity();
         });
     }
 
@@ -63,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void signOut() {
-        auth.getInstance().signOut();
+        auth.signOut();
     }
     private void signOutFacebook() {
         LoginManager.getInstance().logOut();
