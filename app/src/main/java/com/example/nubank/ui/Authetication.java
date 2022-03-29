@@ -62,24 +62,24 @@ public class Authetication extends AppCompatActivity {
 
 
     private boolean validarCampos() {
-        binding.textEmail.setError(null);
-        binding.textPassword.setError(null);
+        binding.tfEmail.setError(null);
+        binding.tfPassword.setError(null);
 
         Boolean retorno = true;
 
 
         if (TextUtils.isEmpty(binding.editPassword.getText())) {
-            binding.textPassword.setError("Dígite uma senha");
+            binding.tfPassword.setError("Dígite uma senha");
             binding.editPassword.requestFocus();
             retorno = false;
         }
 
         if (TextUtils.isEmpty(binding.editEmail.getText())) {
-            binding.textEmail.setError("Dígite um email");
+            binding.tfEmail.setError("Dígite um email");
             binding.editEmail.requestFocus();
             retorno = false;
         } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(binding.editEmail.getText()).matches()) {
-            binding.textEmail.setError("E-mail inválido");
+            binding.tfEmail.setError("E-mail inválido");
             binding.editEmail.requestFocus();
             retorno = false;
         }
@@ -90,7 +90,7 @@ public class Authetication extends AppCompatActivity {
 
 
     private void initializeFacebook() {
-        binding.buttonFacebook.setReadPermissions("email", "public_profile");
+        binding.btFacebook.setReadPermissions("email", "public_profile");
 
         mCallbackManagerFace = CallbackManager.Factory.create();
     }
@@ -107,7 +107,7 @@ public class Authetication extends AppCompatActivity {
 
 
     private void clickListenerButtonGoogle() {
-        binding.buttonGoogle.setOnClickListener(new View.OnClickListener() {
+        binding.btGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signIn();
@@ -116,7 +116,7 @@ public class Authetication extends AppCompatActivity {
     }
 
     private void clickListenerButtonEmailPassword() {
-        binding.button.setOnClickListener(view -> {
+        binding.btContinue.setOnClickListener(view -> {
 
             if(validarCampos()) {
                 String email = binding.editEmail.getText().toString();
@@ -142,7 +142,7 @@ public class Authetication extends AppCompatActivity {
 
     private void registerCallbackFacebook() {
 
-        binding.buttonFacebook.registerCallback(mCallbackManagerFace, new FacebookCallback<LoginResult>() {
+        binding.btFacebook.registerCallback(mCallbackManagerFace, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 Log.d("FaceBookLogin", "facebook:onSuccess:" +loginResult);
@@ -275,7 +275,7 @@ public class Authetication extends AppCompatActivity {
 
     private void clickListenerNewUser() {
 
-        binding.txtNovoUsuario.setOnClickListener(new View.OnClickListener() {
+        binding.tvNewUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 nextActivityNewUser();
