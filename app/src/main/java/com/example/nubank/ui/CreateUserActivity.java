@@ -29,6 +29,7 @@ public class CreateUserActivity extends AppCompatActivity {
         setContentView(view);
 
         clickListenerButtonEmailPassword();
+        clickListenerButtonCancel();
     }
 
     private void clickListenerButtonEmailPassword() {
@@ -57,6 +58,9 @@ public class CreateUserActivity extends AppCompatActivity {
     }
 
 
+    private void clickListenerButtonCancel() {
+        binding.btCancel.setOnClickListener(view -> backActivity());
+    }
 
     private void atualizarUsuario(FirebaseUser userId, String nome) {
         UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
@@ -100,6 +104,10 @@ public class CreateUserActivity extends AppCompatActivity {
     public void nextActivity() {
         Intent intent = new Intent(this, Authetication.class);
         startActivity(intent);
+        finish();
+    }
+
+    public void backActivity() {
         finish();
     }
 }

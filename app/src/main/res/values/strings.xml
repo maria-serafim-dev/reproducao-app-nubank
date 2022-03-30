@@ -55,6 +55,7 @@
     <string name="hint_email">E-mail*</string>
     <string name="hint_password">Senha*</string>
     <string name="button_continue">CONTINUAR</string>
+    <string name="button_cancel">CANCELAR</string>
     <string name="txt_forget_password">Esqueci minha senha</string>
     <string name="txt_no_client">Ainda não sou cliente</string>
 

@@ -62,7 +62,7 @@
                 android:id="@+id/tf_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="20dp"
                 android:hint="@string/hint_email"
                 android:textColorHint="@color/roxo_fundo"
                 app:hintTextColor="@color/roxo_fundo"
@@ -118,10 +118,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="20dp"
+                android:backgroundTint="@color/roxo_fundo"
+                android:text="@string/button_continue"
+                android:textColor="@color/white"
+                style="@style/Widget.MaterialComponents.Button"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bt_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="30dp"
                 android:backgroundTint="@android:color/transparent"
                 app:strokeColor="@color/roxo_fundo"
-                android:text="@string/button_continue"
+                android:text="@string/button_cancel"
                 android:textColor="@color/roxo_fundo"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
