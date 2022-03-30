@@ -7,6 +7,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.nubank.R;
 import com.example.nubank.databinding.ActivityMainBinding;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -32,8 +33,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 
         initializeGoogle();
+        initializeName();
         clickListenerButtonLogout();
 
+    }
+
+    private void initializeName() {
+        String nome = this.getIntent().getStringExtra("nome");
+        binding.tvGreetings.setText(getString(R.string.txt_greetings, nome));
     }
 
     private void initializeGoogle() {

@@ -111,8 +111,7 @@ public class Authetication extends AppCompatActivity {
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         Log.i("signIn", "Sucesso ao logar usuário");
-                        Log.i("Informações Dados", auth.getCurrentUser().getDisplayName());
-                        nextActivity();
+                        nextActivity(auth.getCurrentUser().getDisplayName());
                     } else {
                         messageErro();
                         Log.i("signIn", "Erro ao logar usuário");
@@ -180,7 +179,7 @@ public class Authetication extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         Log.d("GoogleLogin", "signInWithCredential:success");
                         FirebaseUser user = auth.getCurrentUser();
-                        nextActivity();
+                        nextActivity(user.getDisplayName());
                     } else {
                         messageErro();
                         Log.w("GoogleLogin", "signInWithCredential:failure", task.getException());
@@ -197,7 +196,7 @@ public class Authetication extends AppCompatActivity {
 
         if (currentUser != null || account != null) {
             Log.i("Message", "Usuário Logado");
-            nextActivity();
+            nextActivity(currentUser.getDisplayName());
         } else {
             Log.i("Message", "Usuário não logado");
         }
@@ -214,7 +213,7 @@ public class Authetication extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         Log.d("FaceBookLogin", "signInWithCredential:success");
                         FirebaseUser user = auth.getCurrentUser();
-                        nextActivity();
+                        nextActivity(user.getDisplayName());
                     } else {
                         Log.w("FaceBookLogin", "signInWithCredential:failure", task.getException());
                         messageErro();
@@ -222,8 +221,9 @@ public class Authetication extends AppCompatActivity {
                 });
     }
 
-    public void nextActivity() {
+    public void nextActivity(String nome) {
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("nome", nome);
         startActivity(intent);
     }
 

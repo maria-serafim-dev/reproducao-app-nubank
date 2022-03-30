@@ -45,7 +45,7 @@ public class CreateUserActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "Usuário Criado com sucesso", Toast.LENGTH_LONG).show();
                                 FirebaseUser userId = auth.getCurrentUser();
                                 atualizarUsuario(userId, nome);
-                                nextActivity();
+
                             } else {
                                 Log.i("signIn", "Erro ao logar usuário");
                                 Log.i("signIn", task.getResult().toString());
@@ -66,7 +66,7 @@ public class CreateUserActivity extends AppCompatActivity {
         userId.updateProfile(profileUpdates)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        Log.d("Atualização", "Com sucesso");
+                        nextActivity();
                     }
                 });
     }
@@ -100,5 +100,6 @@ public class CreateUserActivity extends AppCompatActivity {
     public void nextActivity() {
         Intent intent = new Intent(this, Authetication.class);
         startActivity(intent);
+        finish();
     }
 }

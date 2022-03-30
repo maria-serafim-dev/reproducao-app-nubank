@@ -2,7 +2,7 @@
     <string name="app_name">nubank</string>
 
     <!-- Activity Main -->
-    <string name="txt_greetings">Olá, Veridiana</string>
+    <string name="txt_greetings">Olá, %s</string>
 
     <string name="txt_account">Conta</string>
     <string name="txt_balance">R$1.752,90</string>
