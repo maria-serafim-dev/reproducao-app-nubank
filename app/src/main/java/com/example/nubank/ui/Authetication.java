@@ -1,9 +1,11 @@
 package com.example.nubank.ui;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
@@ -22,6 +24,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,7 +48,6 @@ public class Authetication extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-
         initializeFacebook();
         initializeGoogle();
 
@@ -52,6 +56,7 @@ public class Authetication extends AppCompatActivity {
         clickListenerButtonEmailPassword();
 
         clickListenerNewUser();
+        clickListenerForgotPassword();
     }
 
     private boolean validarCampos() {
@@ -239,6 +244,40 @@ public class Authetication extends AppCompatActivity {
         Toast.makeText(Authetication.this, "Falha na autenticação com " + provedor,
                 Toast.LENGTH_LONG).show();
     }
+
+    private void clickListenerForgotPassword() {
+
+        binding.tvEsqueciSenha.setOnClickListener(view -> {
+            View customAlertDialogView = LayoutInflater.from(this)
+                    .inflate(R.layout.custom_dialog, null, false);
+            MaterialAlertDialogBuilder materialAlertDialogBuilder = new MaterialAlertDialogBuilder(Authetication.this);
+            materialAlertDialogBuilder.setView(customAlertDialogView)
+                    .setTitle("Recuperar senha")
+                    .setMessage("Insira o e-mail para recuperar a senha")
+                    .setPositiveButton("Enviar", (dialogInterface, i) -> {
+                        TextInputLayout inputEmail = customAlertDialogView.findViewById(R.id.tf_email_reset_password);
+                        String email = inputEmail.getEditText().getText().toString();
+                        sendPasswordResetEmail(email);
+                    })
+                    .setNegativeButton("Cancelar", (dialogInterface, i) -> dialogInterface.cancel())
+                    .show();
+        });
+
+    }
+
+    private void sendPasswordResetEmail(String email) {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+
+        auth.sendPasswordResetEmail(email)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Snackbar.make(binding.tvEsqueciSenha, R.string.txt_send_email, Snackbar.LENGTH_SHORT).show();
+                    } else {
+                        Snackbar.make(binding.tvEsqueciSenha, R.string.txt_not_send_email, Snackbar.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
 }
 
 

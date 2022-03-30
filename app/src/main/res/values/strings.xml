@@ -62,5 +62,8 @@
 
     <string name="txt_title_create_user">Crie sua conta</string>
     <string name="txt_required_fields">*Campo Obrigatório</string>
+    <string name="txt_send_email">Instruções para redefinir senha foram enviadas para o e-mail</string>
+    <string name="txt_not_send_email">E-mail não existente</string>
+    <string name="text_reset_password">Insira o e-mail para recuperar a senha</string>
 
 </resources>
