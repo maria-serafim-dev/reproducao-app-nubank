@@ -113,10 +113,8 @@ public class Authetication extends AppCompatActivity {
                         Log.i("signIn", "Sucesso ao logar usuário");
                         nextActivity(auth.getCurrentUser().getDisplayName());
                     } else {
-                        messageErro();
-                        Log.i("signIn", "Erro ao logar usuário");
-                        Log.i("signIn", task.getResult().toString());
-
+                        messageErro("e-mail e senha");
+                        Log.i("signIn", "Erro ao logar usuário", task.getException());
                     }
                 });
             }
@@ -181,7 +179,7 @@ public class Authetication extends AppCompatActivity {
                         FirebaseUser user = auth.getCurrentUser();
                         nextActivity(user.getDisplayName());
                     } else {
-                        messageErro();
+                        messageErro("Google");
                         Log.w("GoogleLogin", "signInWithCredential:failure", task.getException());
                     }
                 });
@@ -216,7 +214,7 @@ public class Authetication extends AppCompatActivity {
                         nextActivity(user.getDisplayName());
                     } else {
                         Log.w("FaceBookLogin", "signInWithCredential:failure", task.getException());
-                        messageErro();
+                        messageErro("Facebook");
                     }
                 });
     }
@@ -237,9 +235,9 @@ public class Authetication extends AppCompatActivity {
         binding.tvNewUser.setOnClickListener(view -> nextActivityNewUser());
     }
 
-    private void messageErro() {
-        Toast.makeText(Authetication.this, "Falha na autenticação",
-                Toast.LENGTH_SHORT).show();
+    private void messageErro(String provedor) {
+        Toast.makeText(Authetication.this, "Falha na autenticação com " + provedor,
+                Toast.LENGTH_LONG).show();
     }
 }
 
