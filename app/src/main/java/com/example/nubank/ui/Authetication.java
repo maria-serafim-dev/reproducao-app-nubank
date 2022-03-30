@@ -111,6 +111,7 @@ public class Authetication extends AppCompatActivity {
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         Log.i("signIn", "Sucesso ao logar usuário");
+                        Log.i("Informações Dados", auth.getCurrentUser().getDisplayName());
                         nextActivity();
                     } else {
                         messageErro();

@@ -49,6 +49,7 @@
 
     <!-- Activity Authetication -->
     <string name="txt_title">Faça seu login</string>
+    <string name="hint_nome">Nome*</string>
     <string name="hint_email">E-mail*</string>
     <string name="hint_password">Senha*</string>
     <string name="button_continue">CONTINUAR</string>

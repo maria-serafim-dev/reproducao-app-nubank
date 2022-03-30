@@ -2,9 +2,11 @@ package com.example.nubank.ui;
 
 public class Usuario {
     private String nome;
-    private int idade;
+    private String email;
 
-    public Usuario() {
+    public Usuario(String nome, String email) {
+        this.nome = nome;
+        this.email = email;
     }
 
     public String getNome() {
@@ -15,11 +17,11 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public int getIdade() {
-        return idade;
+    public String getIdade() {
+        return email;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setIdade(String email) {
+        this.email = email;
     }
 }

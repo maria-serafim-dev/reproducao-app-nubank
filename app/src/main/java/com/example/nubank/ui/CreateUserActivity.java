@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nubank.databinding.ActivityCreateUserBinding;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class CreateUserActivity extends AppCompatActivity {
 
@@ -32,6 +34,7 @@ public class CreateUserActivity extends AppCompatActivity {
     private void clickListenerButtonEmailPassword() {
         binding.btContinue.setOnClickListener(view -> {
             if (validarCampos()) {
+                String nome = binding.editNome.getText().toString();
                 String email = binding.editEmail.getText().toString();
                 String password = binding.editPassword.getText().toString();
 
@@ -40,6 +43,8 @@ public class CreateUserActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 Log.i("signIn", "Sucesso ao logar usuário");
                                 Toast.makeText(getApplicationContext(), "Usuário Criado com sucesso", Toast.LENGTH_LONG).show();
+                                FirebaseUser userId = auth.getCurrentUser();
+                                atualizarUsuario(userId, nome);
                                 nextActivity();
                             } else {
                                 Log.i("signIn", "Erro ao logar usuário");
@@ -49,6 +54,21 @@ public class CreateUserActivity extends AppCompatActivity {
                         });
             }
         });
+    }
+
+
+
+    private void atualizarUsuario(FirebaseUser userId, String nome) {
+        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                .setDisplayName(nome)
+                .build();
+
+        userId.updateProfile(profileUpdates)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Log.d("Atualização", "Com sucesso");
+                    }
+                });
     }
 
     private boolean validarCampos() {
