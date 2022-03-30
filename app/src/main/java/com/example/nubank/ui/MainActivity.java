@@ -34,7 +34,26 @@ public class MainActivity extends AppCompatActivity {
 
         initializeGoogle();
         initializeName();
+        initializeListennerImageEye();
         clickListenerButtonLogout();
+
+    }
+
+    private void initializeListennerImageEye() {
+        binding.imgEyes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (binding.imgEyes.getContentDescription().equals(getString(R.string.dc_eyes_open))) {
+                    binding.tvSaldoConta.setText("R$--------");
+                    binding.imgEyes.setImageDrawable(getDrawable(R.drawable.ic_eyes_closed));
+                    binding.imgEyes.setContentDescription(getString(R.string.dc_eyes_closed));
+                }else{
+                    binding.tvSaldoConta.setText(R.string.txt_balance);
+                    binding.imgEyes.setImageDrawable(getDrawable(R.drawable.ic_eyes_open));
+                    binding.imgEyes.setContentDescription(getString(R.string.dc_eyes_open));
+                }
+            }
+        });
 
     }
 

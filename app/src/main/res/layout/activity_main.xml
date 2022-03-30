@@ -42,12 +42,12 @@
             android:layout_height="24dp"
             android:layout_marginStart="200dp"
             android:layout_marginTop="20dp"
-            android:contentDescription="@string/dc_eyes"
+            android:contentDescription="@string/dc_eyes_open"
             app:layout_constraintEnd_toStartOf="@id/img_help"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toEndOf="@+id/img_user"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_eyes" />
+            app:srcCompat="@drawable/ic_eyes_open" />
 
         <ImageView
             android:id="@+id/img_help"

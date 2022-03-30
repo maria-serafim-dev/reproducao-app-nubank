@@ -29,7 +29,8 @@
     <!-- Content Description-->
     <string name="dc_heart">Icone de um coração</string>
     <string name="dc_user">Icone de um boneco representando um usuário</string>
-    <string name="dc_eyes">Icone de um olho fechado, representando que os valores da conta não podem ser exibidos.</string>
+    <string name="dc_eyes_closed">Icone de um olho fechado, representando que os valores da conta não podem ser exibidos.</string>
+    <string name="dc_eyes_open">Icone de um olho aberto, representando que os valores da conta podem ser exibidos.</string>
     <string name="dc_help">Icone de um círculo com ponto de interrogação, indicando um local para ajuda.</string>
     <string name="dc_logout">Icone de logout, uma porta com uma seta indicando que deseja sair</string>
     <string name="dc_pix">Logo do PIX</string>
