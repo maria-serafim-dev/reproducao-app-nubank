@@ -6,6 +6,7 @@
 
     <string name="txt_account">Conta</string>
     <string name="txt_balance">R$1.752,90</string>
+    <string name="txt_balance_hidden">R$---------</string>
 
     <string name="txt_pix">Área Pix</string>
     <string name="txt_pay">Pagar</string>

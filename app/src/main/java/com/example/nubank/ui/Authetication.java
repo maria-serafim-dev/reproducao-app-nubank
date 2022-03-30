@@ -225,6 +225,7 @@ public class Authetication extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("nome", nome);
         startActivity(intent);
+        finish();
     }
 
     public void nextActivityNewUser() {
@@ -233,7 +234,6 @@ public class Authetication extends AppCompatActivity {
     }
 
     private void clickListenerNewUser() {
-
         binding.tvNewUser.setOnClickListener(view -> nextActivityNewUser());
     }
 

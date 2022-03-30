@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (binding.imgEyes.getContentDescription().equals(getString(R.string.dc_eyes_open))) {
-                    binding.tvSaldoConta.setText("R$--------");
+                    binding.tvSaldoConta.setText(R.string.txt_balance_hidden);
                     binding.imgEyes.setImageDrawable(getDrawable(R.drawable.ic_eyes_closed));
                     binding.imgEyes.setContentDescription(getString(R.string.dc_eyes_closed));
                 }else{
@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
     public void nextAcitivity(){
         Intent intent = new Intent(this, Authetication.class);
         startActivity(intent);
+        finish();
     }
 
     private void signOut() {
