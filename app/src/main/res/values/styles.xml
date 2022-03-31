@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.AppNubank.TextView.Subtitle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:minHeight">24dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/letras_cinzas</item>
+        <item name="android:textAppearance">?attr/textAppearanceSubtitle2</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="Widget.AppNubank.TextView.Circle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:minHeight">24dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody2</item>
+    </style>
+
+    <style name="Widget.AppNubank.TextInput" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:textColorHint">@color/roxo_fundo</item>
+        <item name="hintTextColor">@color/roxo_fundo</item>
+        <item name="boxStrokeColor">@color/roxo_fundo</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="helperText">@string/txt_required_fields</item>
+        <item name="errorEnabled">true</item>
+    </style>
+</resources>

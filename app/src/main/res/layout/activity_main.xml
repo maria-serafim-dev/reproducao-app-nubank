@@ -194,8 +194,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="@string/txt_pix"
-                            android:textColor="@color/black"
-                            android:textSize="14sp" />
+                            style="@style/Widget.AppNubank.TextView.Circle" />
 
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -234,8 +233,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="@string/txt_pay"
-                            android:textColor="@color/black"
-                            android:textSize="14sp" />
+                            style="@style/Widget.AppNubank.TextView.Circle" />
 
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -270,12 +268,11 @@
 
                         <TextView
                             android:id="@+id/text_trasfer"
+                            style="@style/Widget.AppNubank.TextView.Circle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="@string/txt_transfer"
-                            android:textColor="@color/black"
-                            android:textSize="14sp" />
+                            android:text="@string/txt_transfer" />
 
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -314,8 +311,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="@string/txt_deposit"
-                            android:textColor="@color/black"
-                            android:textSize="14sp" />
+                            style="@style/Widget.AppNubank.TextView.Circle" />
 
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -354,8 +350,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="@string/txt_recharge"
-                            android:textColor="@color/black"
-                            android:textSize="14sp" />
+                            style="@style/Widget.AppNubank.TextView.Circle" />
 
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -539,14 +534,10 @@
             android:id="@+id/tv_fatura"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
             android:text="@string/txt_current_invoice"
-            android:textColor="@color/letras_cinzas"
-            android:textSize="14sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_cartao" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_cartao"
+            style="@style/Widget.AppNubank.TextView.Subtitle"/>
 
         <TextView
             android:id="@+id/tv_valor_fatura"
@@ -565,12 +556,8 @@
             android:id="@+id/tv_limite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
+            style="@style/Widget.AppNubank.TextView.Subtitle"
             android:text="@string/txt_limit"
-            android:textColor="@color/letras_cinzas"
-            android:textSize="14sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_valor_fatura" />
 
