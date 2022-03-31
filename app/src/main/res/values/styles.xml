@@ -24,4 +24,11 @@
         <item name="helperText">@string/txt_required_fields</item>
         <item name="errorEnabled">true</item>
     </style>
+
+    <style name="Widget.AppNubank.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/roxo_fundo</item>
+        <item name="android:text">@string/button_continue</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
 </resources>

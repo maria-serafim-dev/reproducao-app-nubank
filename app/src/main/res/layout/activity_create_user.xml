@@ -99,11 +99,7 @@
                 android:id="@+id/bt_continue"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/roxo_fundo"
-                android:text="@string/button_continue"
-                android:textColor="@color/white"
-                style="@style/Widget.MaterialComponents.Button"/>
+                style="@style/Widget.AppNubank.Button"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/bt_cancel"
