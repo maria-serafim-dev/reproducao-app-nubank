@@ -10,5 +10,6 @@
     <color name="red">#FF0000</color>
     <color name="circulo">#F0F1F5</color>
     <color name="letras_cinzas">#7E8081</color>
+    <color name="input_letras_cinzas">#555657</color>
     <color name="roxo_fundo" tools:override="true">#7500CB</color>
 </resources>

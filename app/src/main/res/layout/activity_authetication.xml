@@ -48,7 +48,7 @@
                 android:autofillHints="emailAddress"
                 android:ems="10"
                 android:inputType="textEmailAddress"
-                android:textColor="@color/letras_cinzas" />
+                android:textColor="@color/input_letras_cinzas" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -60,6 +60,7 @@
             android:layout_marginTop="20dp"
             android:hint="@string/hint_password"
             app:endIconMode="password_toggle"
+            app:endIconTint="@color/roxo_fundo"
             style="@style/Widget.AppNubank.TextInput">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -69,7 +70,7 @@
                 android:autofillHints="emailAddress"
                 android:ems="10"
                 android:inputType="textPassword"
-                android:textColor="@color/letras_cinzas" />
+                android:textColor="@color/input_letras_cinzas" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

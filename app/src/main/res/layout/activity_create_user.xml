@@ -48,7 +48,7 @@
                 android:autofillHints="emailAddress"
                 android:ems="10"
                 android:inputType="textEmailAddress"
-                android:textColor="@color/letras_cinzas" />
+                android:textColor="@color/input_letras_cinzas" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,7 +67,7 @@
                 android:autofillHints="emailAddress"
                 android:ems="10"
                 android:inputType="textEmailAddress"
-                android:textColor="@color/letras_cinzas" />
+                android:textColor="@color/input_letras_cinzas" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,7 +89,7 @@
                 android:autofillHints="emailAddress"
                 android:ems="10"
                 android:inputType="textPassword"
-                android:textColor="@color/letras_cinzas" />
+                android:textColor="@color/input_letras_cinzas" />
 
 
         </com.google.android.material.textfield.TextInputLayout>
