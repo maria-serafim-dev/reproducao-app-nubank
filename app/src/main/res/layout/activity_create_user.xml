@@ -1,118 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/roxo_fundo"
+    tools:context=".ui.CreateUserActivity">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/roxo_fundo"
-        tools:context=".ui.CreateUserActivity">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/tv_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:text="@string/txt_title_create_user"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tf_nome"
+            style="@style/Widget.AppNubank.TextInput"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:background="@color/white"
-            android:orientation="vertical"
-            android:padding="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_marginTop="50dp"
+            android:hint="@string/hint_nome">
 
-            <TextView
-                android:id="@+id/tv_titulo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
-                android:text="@string/txt_title_create_user"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tf_nome"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_nome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:hint="@string/hint_nome"
-                style="@style/Widget.AppNubank.TextInput">
+                android:autofillHints="emailAddress"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/letras_cinzas" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_nome"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:autofillHints="emailAddress"
-                    android:ems="10"
-                    android:inputType="textEmailAddress"
-                    android:textColor="@color/letras_cinzas" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tf_email"
+            style="@style/Widget.AppNubank.TextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="@string/hint_email">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tf_email"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="@string/hint_email"
-                style="@style/Widget.AppNubank.TextInput">
+                android:autofillHints="emailAddress"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/letras_cinzas" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:autofillHints="emailAddress"
-                    android:ems="10"
-                    android:inputType="textEmailAddress"
-                    android:textColor="@color/letras_cinzas" />
-
-            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tf_password"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tf_password"
+            style="@style/Widget.AppNubank.TextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="@string/hint_password"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/roxo_fundo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="@string/hint_password"
-                app:endIconTint="@color/roxo_fundo"
-                app:endIconMode="password_toggle"
-                style="@style/Widget.AppNubank.TextInput">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:autofillHints="emailAddress"
-                    android:ems="10"
-                    android:inputType="textPassword"
-                    android:textColor="@color/letras_cinzas"
-                    />
+                android:autofillHints="emailAddress"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:textColor="@color/letras_cinzas" />
 
 
-            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/bt_continue"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                style="@style/Widget.AppNubank.Button"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bt_continue"
+            style="@style/Widget.AppNubank.Button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/bt_cancel"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="30dp"
-                android:backgroundTint="@android:color/transparent"
-                app:strokeColor="@color/roxo_fundo"
-                android:text="@string/button_cancel"
-                android:textColor="@color/roxo_fundo"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bt_cancel"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="@android:color/transparent"
+            android:text="@string/button_cancel"
+            android:textColor="@color/roxo_fundo"
+            app:strokeColor="@color/roxo_fundo" />
 
-        </LinearLayout>
+    </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
