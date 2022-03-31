@@ -1,12 +1,14 @@
 package com.example.nubank.ui;
 
-import android.content.DialogInterface;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -57,7 +59,24 @@ public class Authetication extends AppCompatActivity {
 
         clickListenerNewUser();
         clickListenerForgotPassword();
+        clickListenerInputs();
     }
+
+    private void clickListenerInputs() {
+        binding.editEmail.setOnKeyListener((view, i, keyEvent) -> handleKeyEvent(view, i));
+        binding.editPassword.setOnKeyListener((view, i, keyEvent) -> handleKeyEvent(view, i));
+
+    }
+
+    private boolean handleKeyEvent(View view, int keyCode) {
+        if (keyCode == KeyEvent.KEYCODE_ENTER) {
+            InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            return true;
+        }
+        return false;
+    }
+
 
     private boolean validarCampos() {
         binding.tfEmail.setError(null);

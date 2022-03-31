@@ -1,11 +1,14 @@
 package com.example.nubank.ui;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,12 +33,30 @@ public class CreateUserActivity extends AppCompatActivity {
 
         clickListenerButtonEmailPassword();
         clickListenerButtonCancel();
+        clickListenerInputs();
+
+    }
+
+    private void clickListenerInputs() {
+        binding.editName.setOnKeyListener((view, i, keyEvent) -> handleKeyEvent(view, i));
+        binding.editEmail.setOnKeyListener((view, i, keyEvent) -> handleKeyEvent(view, i));
+        binding.editPassword.setOnKeyListener((view, i, keyEvent) -> handleKeyEvent(view, i));
+
+    }
+
+    private boolean handleKeyEvent(View view, int keyCode) {
+        if (keyCode == KeyEvent.KEYCODE_ENTER) {
+            InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            return true;
+        }
+        return false;
     }
 
     private void clickListenerButtonEmailPassword() {
         binding.btContinue.setOnClickListener(view -> {
             if (validarCampos()) {
-                String nome = binding.editNome.getText().toString();
+                String nome = binding.editName.getText().toString();
                 String email = binding.editEmail.getText().toString();
                 String password = binding.editPassword.getText().toString();
 
