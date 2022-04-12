@@ -387,7 +387,7 @@
                     android:layout_width="16dp"
                     android:layout_height="33dp"
                     android:contentDescription="@string/dc_credit_car"
-                    app:srcCompat="@drawable/ic_celular" />
+                    app:srcCompat="@drawable/ic_card" />
 
                 <TextView
                     android:id="@+id/tv_meus_cartoes"
@@ -498,7 +498,7 @@
             android:contentDescription="@string/dc_credit_car"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider"
-            app:srcCompat="@drawable/ic_celular" />
+            app:srcCompat="@drawable/ic_card" />
 
         <TextView
             android:id="@+id/tv_cartao"
