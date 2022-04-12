@@ -72,10 +72,9 @@ public class CreateUserActivity extends AppCompatActivity {
                                 Log.i("createUser", "Erro ao logar usuário");
                                 Log.i("createUser", "Resultado", task.getException());
                                 if(task.getException() instanceof FirebaseAuthUserCollisionException){
-                                    FirebaseAuthUserCollisionException exception = (FirebaseAuthUserCollisionException) task.getException();
-                                    Toast.makeText(getApplicationContext(), "Já existe um usuário com esse e-mail", Toast.LENGTH_LONG).show();
+                                    binding.tfEmail.setError("Já existe um usuário com esse e-mail");
+                                    binding.editEmail.requestFocus();
                                 }
-
                             }
                         });
             }
