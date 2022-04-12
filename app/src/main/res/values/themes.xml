@@ -33,4 +33,12 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">40dp</item>
     </style>
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/ic_logo_nubank_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_logo_nubank_foreground</item>
+        <item name="windowSplashScreenAnimationDuration">200</item>
+        <item name="postSplashScreenTheme">@style/Theme.Nubank</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
 </resources>

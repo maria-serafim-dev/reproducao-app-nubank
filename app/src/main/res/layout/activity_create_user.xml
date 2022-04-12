@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:autofillHints="emailAddress"
                 android:ems="10"
-                android:inputType="textEmailAddress"
+                android:inputType="textPersonName"
                 android:textColor="@color/input_letras_cinzas" />
 
         </com.google.android.material.textfield.TextInputLayout>

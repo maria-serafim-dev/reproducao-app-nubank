@@ -12,6 +12,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.splashscreen.SplashScreen;
 
 import com.example.nubank.R;
 import com.example.nubank.databinding.ActivityAutheticationBinding;
@@ -45,6 +46,7 @@ public class Authetication extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SplashScreen.installSplashScreen(this);
         super.onCreate(savedInstanceState);
         binding = ActivityAutheticationBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
