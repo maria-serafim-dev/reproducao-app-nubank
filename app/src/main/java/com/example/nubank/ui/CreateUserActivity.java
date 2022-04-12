@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nubank.databinding.ActivityCreateUserBinding;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
@@ -63,15 +64,18 @@ public class CreateUserActivity extends AppCompatActivity {
                 auth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(CreateUserActivity.this, task -> {
                             if (task.isSuccessful()) {
-                                Log.i("signIn", "Sucesso ao logar usuário");
+                                Log.i("createUser", "Sucesso ao logar usuário");
                                 Toast.makeText(getApplicationContext(), "Usuário Criado com sucesso", Toast.LENGTH_LONG).show();
                                 FirebaseUser userId = auth.getCurrentUser();
                                 atualizarUsuario(userId, nome);
-
                             } else {
-                                Log.i("signIn", "Erro ao logar usuário");
-                                Log.i("signIn", task.getResult().toString());
-                                Toast.makeText(getApplicationContext(), "Usuário Criado com sucesso", Toast.LENGTH_LONG).show();
+                                Log.i("createUser", "Erro ao logar usuário");
+                                Log.i("createUser", "Resultado", task.getException());
+                                if(task.getException() instanceof FirebaseAuthUserCollisionException){
+                                    FirebaseAuthUserCollisionException exception = (FirebaseAuthUserCollisionException) task.getException();
+                                    Toast.makeText(getApplicationContext(), "Já existe um usuário com esse e-mail", Toast.LENGTH_LONG).show();
+                                }
+
                             }
                         });
             }
