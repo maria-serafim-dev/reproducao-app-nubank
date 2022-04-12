@@ -99,6 +99,7 @@ public class CreateUserActivity extends AppCompatActivity {
     private boolean validarCampos() {
         binding.tfEmail.setError(null);
         binding.tfPassword.setError(null);
+        binding.tfName.setError(null);
 
         boolean retorno = true;
 
@@ -115,6 +116,12 @@ public class CreateUserActivity extends AppCompatActivity {
         } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(binding.editEmail.getText()).matches()) {
             binding.tfEmail.setError("E-mail inválido");
             binding.editEmail.requestFocus();
+            retorno = false;
+        }
+
+        if (TextUtils.isEmpty(binding.editName.getText()) || binding.editName.getText() == null) {
+            binding.tfName.setError("Dígite um nome");
+            binding.editName.requestFocus();
             retorno = false;
         }
 

@@ -34,7 +34,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tf_nome"
+            android:id="@+id/tf_name"
             style="@style/Widget.AppNubank.TextInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
