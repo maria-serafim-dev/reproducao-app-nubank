@@ -1,4 +1,4 @@
-package com.example.nubank.ui;
+package com.example.nubank.model;
 
 public class Usuario {
     private String nome;
