@@ -1,10 +1,11 @@
-package com.example.nubank;
+package com.example.nubank.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
 import com.example.nubank.databinding.ActivityCreditCardInformationBinding;
+import com.example.nubank.ui.adapter.TabViewPagerAdapter;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 public class CreditCardInformationActivity extends AppCompatActivity {

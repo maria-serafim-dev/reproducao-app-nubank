@@ -10,7 +10,7 @@
     android:gravity="center"
     android:background="@color/roxo_fundo"
     android:padding="20dp"
-    tools:context=".ui.Authetication">
+    tools:context=".ui.activity.Authetication">
 
     <ScrollView
         android:layout_width="match_parent"

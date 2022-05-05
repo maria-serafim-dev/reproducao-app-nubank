@@ -1,4 +1,4 @@
-package com.example.nubank;
+package com.example.nubank.ui.fragment;
 
 import android.os.Bundle;
 
@@ -9,13 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.nubank.databinding.FragmentAllInvoiceBinding;
+import com.example.nubank.databinding.FragmentCurrentInvoiceBinding;
 
 
-public class AllInvoiceFragment extends Fragment {
+public class CurrentInvoiceFragment extends Fragment {
 
-    private FragmentAllInvoiceBinding binding;
-
+    private FragmentCurrentInvoiceBinding binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,7 +24,13 @@ public class AllInvoiceFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentAllInvoiceBinding.inflate(inflater, container, false);
+        binding = FragmentCurrentInvoiceBinding.inflate(inflater, container, false);
         return binding.getRoot();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }
