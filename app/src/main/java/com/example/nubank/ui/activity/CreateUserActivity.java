@@ -1,4 +1,4 @@
-package com.example.nubank.ui;
+package com.example.nubank.ui.activity;
 
 
 import android.content.Context;

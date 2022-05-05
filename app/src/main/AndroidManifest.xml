@@ -12,16 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nubank">
         <activity
-            android:name=".CreditCardInformationActivity"
+            android:name=".ui.activity.CreditCardInformationActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.CreateUserActivity"
+            android:name=".ui.activity.CreateUserActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.Authetication"
+            android:name=".ui.activity.Authetication"
             android:exported="true"
             android:theme="@style/Theme.App.Starting">
             <intent-filter>

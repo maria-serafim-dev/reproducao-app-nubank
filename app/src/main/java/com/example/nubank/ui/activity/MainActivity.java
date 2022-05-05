@@ -1,4 +1,4 @@
-package com.example.nubank.ui;
+package com.example.nubank.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,6 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 
-import com.example.nubank.CreditCardInformationActivity;
 import com.example.nubank.R;
 import com.example.nubank.databinding.ActivityMainBinding;
 import com.facebook.login.LoginManager;

@@ -9,7 +9,7 @@
     android:gravity="center"
     android:background="@color/roxo_fundo"
     android:padding="20dp"
-    tools:context=".ui.CreateUserActivity">
+    tools:context=".ui.activity.CreateUserActivity">
 
     <ScrollView
         android:layout_width="match_parent"
