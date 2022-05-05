@@ -66,4 +66,6 @@
     <string name="txt_not_send_email">E-mail não existente</string>
     <string name="text_reset_password">Insira o e-mail para recuperar a senha</string>
 
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

@@ -7,6 +7,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.nubank.CreditCardInformationActivity;
 import com.example.nubank.R;
 import com.example.nubank.databinding.ActivityMainBinding;
 import com.facebook.login.LoginManager;
@@ -36,7 +37,15 @@ public class MainActivity extends AppCompatActivity {
         initializeName();
         initializeListennerImageEye();
         clickListenerButtonLogout();
+        clickListenerButtonAccount();
 
+    }
+
+    private void clickListenerButtonAccount() {
+        binding.imgArrowRight.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), CreditCardInformationActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void initializeListennerImageEye() {
@@ -47,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     binding.tvSaldoConta.setText(R.string.txt_balance_hidden);
                     binding.imgEyes.setImageDrawable(getDrawable(R.drawable.ic_eyes_closed));
                     binding.imgEyes.setContentDescription(getString(R.string.dc_eyes_closed));
-                }else{
+                } else {
                     binding.tvSaldoConta.setText(R.string.txt_balance);
                     binding.imgEyes.setImageDrawable(getDrawable(R.drawable.ic_eyes_open));
                     binding.imgEyes.setContentDescription(getString(R.string.dc_eyes_open));
