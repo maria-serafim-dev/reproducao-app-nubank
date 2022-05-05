@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 
 import com.example.nubank.CreditCardInformationActivity;
 import com.example.nubank.R;
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private ActivityMainBinding binding;
-    private FirebaseAuth auth = FirebaseAuth.getInstance();
+    private final FirebaseAuth auth = FirebaseAuth.getInstance();
 
     private GoogleSignInClient mGoogleSignInClient;
 
@@ -49,18 +50,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initializeListennerImageEye() {
-        binding.imgEyes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (binding.imgEyes.getContentDescription().equals(getString(R.string.dc_eyes_open))) {
-                    binding.tvSaldoConta.setText(R.string.txt_balance_hidden);
-                    binding.imgEyes.setImageDrawable(getDrawable(R.drawable.ic_eyes_closed));
-                    binding.imgEyes.setContentDescription(getString(R.string.dc_eyes_closed));
-                } else {
-                    binding.tvSaldoConta.setText(R.string.txt_balance);
-                    binding.imgEyes.setImageDrawable(getDrawable(R.drawable.ic_eyes_open));
-                    binding.imgEyes.setContentDescription(getString(R.string.dc_eyes_open));
-                }
+        binding.imgEyes.setOnClickListener(view -> {
+            if (binding.imgEyes.getContentDescription().equals(getString(R.string.dc_eyes_open))) {
+                binding.tvSaldoConta.setText(R.string.txt_balance_hidden);
+                binding.imgEyes.setImageDrawable(AppCompatResources.getDrawable(this, R.drawable.ic_eyes_closed));
+                binding.imgEyes.setContentDescription(getString(R.string.dc_eyes_closed));
+            } else {
+                binding.tvSaldoConta.setText(R.string.txt_balance);
+                binding.imgEyes.setImageDrawable(AppCompatResources.getDrawable(this, R.drawable.ic_eyes_open));
+                binding.imgEyes.setContentDescription(getString(R.string.dc_eyes_open));
             }
         });
 
