@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FF0000</color>
     <color name="red_light">#e53935</color>
+    <color name="orange">#FF6600</color>
     <color name="circulo">#F0F1F5</color>
     <color name="letras_cinzas">#7E8081</color>
     <color name="input_letras_cinzas">#555657</color>
