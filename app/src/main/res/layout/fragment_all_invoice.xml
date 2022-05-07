@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,16 +18,12 @@
             style="@style/TextAppearance.MaterialComponents.Body1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/text_valor_limite"
+            android:text="@string/text_valor_limite_teste"
             android:textColor="@color/black"
-            android:textStyle="bold" />
+            app:drawableEndCompat="@drawable/ic_flecha_direita"
+            app:drawableStartCompat="@drawable/ic_circle"
+            android:drawablePadding="10dp"/>
 
-        <TextView
-            style="@style/TextAppearance.MaterialComponents.Body1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/text_limite_disponivel"
-            android:textColor="@color/letras_cinzas" />
 
         <TextView
             style="@style/TextAppearance.MaterialComponents.Body1"
@@ -35,14 +32,9 @@
             android:layout_marginTop="10dp"
             android:text="@string/text_valor_fatura_fechada"
             android:textColor="@color/black"
-            android:textStyle="bold" />
-
-        <TextView
-            style="@style/TextAppearance.MaterialComponents.Body1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/text_fatura_fechada"
-            android:textColor="@color/letras_cinzas" />
+            app:drawableEndCompat="@drawable/ic_flecha_direita"
+            app:drawableStartCompat="@drawable/ic_circle"
+            android:drawablePadding="10dp"/>
 
         <TextView
             style="@style/TextAppearance.MaterialComponents.Body1"
@@ -50,15 +42,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="@string/text_valor_fatura_atual"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+            app:drawableEndCompat="@drawable/ic_flecha_direita"
+            app:drawableStartCompat="@drawable/ic_circle"
+            android:drawablePadding="10dp"/>
 
-        <TextView
-            style="@style/TextAppearance.MaterialComponents.Body1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/text_fatura_atual"
-            android:textColor="@color/letras_cinzas" />
 
         <TextView
             style="@style/TextAppearance.MaterialComponents.Body1"
@@ -67,14 +54,11 @@
             android:layout_marginTop="10dp"
             android:text="@string/text_valor_proxima_fatura"
             android:textColor="@color/black"
-            android:textStyle="bold" />
+            app:drawableEndCompat="@drawable/ic_flecha_direita"
+            app:drawableStartCompat="@drawable/ic_circle"
+            android:drawablePadding="10dp"/>
 
-        <TextView
-            style="@style/TextAppearance.MaterialComponents.Body1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/text_proximas_fatura"
-            android:textColor="@color/letras_cinzas" />
+
     </LinearLayout>
 
     <LinearLayout
