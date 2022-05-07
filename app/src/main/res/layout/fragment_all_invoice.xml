@@ -90,6 +90,8 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/red_light"
             android:text="@string/text_btn_pay"
+            android:textAllCaps="false"
+            style="@style/Widget.MaterialComponents.Button"
             android:layout_marginBottom="50dp"
             android:textColor="@color/white" />
 
@@ -98,6 +100,8 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/orange"
             android:text="@string/text_btn_anticipate"
+            android:textAllCaps="false"
+            style="@style/Widget.MaterialComponents.Button"
             android:textColor="@color/white" />
 
     </LinearLayout>

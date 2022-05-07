@@ -84,5 +84,7 @@
     <string name="text_nome_empresa_compra">Apple.ComBill</string>
     <string name="text_hora_compra">16:10</string>
     <string name="text_valor_compra">R$ 3,50</string>
+    <string name="text_data_vencimento">Vence em 10 MAI</string>
+    <string name="text_btn_parcelar">Parcelar</string>
 
 </resources>

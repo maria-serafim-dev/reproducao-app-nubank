@@ -2,22 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".ui.fragment.CurrentInvoiceFragment"
     android:padding="20dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fatura fechada"
+        android:text="@string/text_fatura_fechada"
         android:textColor="@color/letras_cinzas"
         android:textStyle="bold"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="R$ 1.159,90"
+        android:text="@string/text_valor_fatura_fechada"
         android:textColor="@color/black"
         android:textStyle="bold"
         style="@style/TextAppearance.MaterialComponents.Headline6"/>
@@ -26,31 +27,33 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Limite disponívrl R$ 187,62" />
+        android:text="@string/text_valor_limite" />
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Vence em 10 MAI" />
+        android:text="@string/text_data_vencimento" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/red_light"
-            android:text="Pagar"
+            android:text="@string/text_btn_pay"
+            style="@style/Widget.MaterialComponents.Button"
             android:textAllCaps="false" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/circulo"
-            android:text="Parcelar"
+            style="@style/Widget.MaterialComponents.Button"
+            android:text="@string/text_btn_parcelar"
             android:layout_marginStart="20dp"
             android:textAllCaps="false"
             android:textColor="@color/black" />
