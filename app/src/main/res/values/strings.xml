@@ -81,5 +81,8 @@
     <string name="txt_cartoes">Meus cartões</string>
     <string name="txt_inidicar_amigos">Indicar Amigos</string>
     <string name="txt_pagar_fatura">Pagar fatura</string>
+    <string name="text_nome_empresa_compra">Apple.ComBill</string>
+    <string name="text_hora_compra">16:10</string>
+    <string name="text_valor_compra">R$ 3,50</string>
 
 </resources>
