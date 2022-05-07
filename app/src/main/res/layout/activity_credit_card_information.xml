@@ -11,7 +11,8 @@
         android:id="@+id/view_pager_information"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="4"
+        android:layout_marginHorizontal="24dp"/>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout_information"
@@ -20,5 +21,199 @@
         app:tabBackground="@drawable/tab_pager_selector"
         app:tabGravity="center"
         app:tabIndicatorHeight="0dp"
-        android:layout_gravity="bottom"/>
+        android:layout_gravity="bottom" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontal_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="24dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_pix"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="15dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="0dp"
+                app:cardPreventCornerOverlap="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/img_circle_pix"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@color/circulo"
+                        android:contentDescription="@string/dc_pix"
+                        android:scaleType="centerInside"
+                        app:shapeAppearanceOverlay="@style/circulo"
+                        app:srcCompat="@drawable/ic_linear_scale"
+                        app:tint="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/tv_pix"
+                        style="@style/Widget.AppNubank.TextView.Circle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/txt_ajustar_limite" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="15dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="0dp"
+                app:cardPreventCornerOverlap="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/img_circle_pay"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@color/circulo"
+                        android:contentDescription="@string/dc_barcode"
+                        android:scaleType="centerInside"
+                        app:shapeAppearanceOverlay="@style/circulo"
+                        app:srcCompat="@drawable/ic_list"
+                        app:tint="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/tv_pay"
+                        style="@style/Widget.AppNubank.TextView.Circle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/txt_resumo_fatura" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_transfer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="15dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="0dp"
+                app:cardPreventCornerOverlap="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/img_circle_transfer"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@color/circulo"
+                        android:contentDescription="@string/dc_transfer"
+                        android:scaleType="centerInside"
+                        app:shapeAppearanceOverlay="@style/circulo"
+                        app:srcCompat="@drawable/ic_card" />
+
+                    <TextView
+                        android:id="@+id/text_trasfer"
+                        style="@style/Widget.AppNubank.TextView.Circle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/txt_cartoes" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_deposit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="15dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="0dp"
+                app:cardPreventCornerOverlap="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/img_circle_deposit"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@color/circulo"
+                        android:contentDescription="@string/dc_deposit"
+                        android:scaleType="centerInside"
+                        app:shapeAppearanceOverlay="@style/circulo"
+                        app:srcCompat="@drawable/ic_favorite_border"
+                        app:tint="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/tv_deposit"
+                        style="@style/Widget.AppNubank.TextView.Circle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/txt_inidicar_amigos" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_recharge"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="15dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="0dp"
+                app:cardPreventCornerOverlap="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/img_circle_recharge"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@color/circulo"
+                        android:contentDescription="@string/dc_cell_phone"
+                        android:scaleType="centerInside"
+                        app:shapeAppearanceOverlay="@style/circulo"
+                        app:srcCompat="@drawable/ic_pagar" />
+
+                    <TextView
+                        android:id="@+id/tv_recharge"
+                        style="@style/Widget.AppNubank.TextView.Circle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/txt_pagar_fatura" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
 </LinearLayout>

@@ -76,5 +76,10 @@
     <string name="text_valor_fatura_fechada">R$ 69,75</string>
     <string name="text_limite_disponivel">Limite disponível</string>
     <string name="text_valor_limite">R$ 1.159,90</string>
+    <string name="txt_ajustar_limite">Ajustar Limite</string>
+    <string name="txt_resumo_fatura">Resumo de faturas</string>
+    <string name="txt_cartoes">Meus cartões</string>
+    <string name="txt_inidicar_amigos">Indicar Amigos</string>
+    <string name="txt_pagar_fatura">Pagar fatura</string>
 
 </resources>
