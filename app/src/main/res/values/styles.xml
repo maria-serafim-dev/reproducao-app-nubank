@@ -4,7 +4,7 @@
         <item name="android:minHeight">24dp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:textColor">@color/letras_cinzas</item>
-        <item name="android:textAppearance">?attr/textAppearanceSubtitle2</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.TitleMedium</item>
         <item name="android:layout_marginStart">24dp</item>
         <item name="android:layout_marginTop">8dp</item>
     </style>
@@ -13,7 +13,9 @@
         <item name="android:minHeight">24dp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:textAppearance">?attr/textAppearanceBody2</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.BodyMedium</item>
+
+
     </style>
 
     <style name="Widget.AppNubank.TextInput" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
