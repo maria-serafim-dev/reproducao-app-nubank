@@ -39,7 +39,6 @@
         <item name="cornerSize">0dp</item>
     </style>
 
-
     <style name="Widget.AppNubank.Button.Outline" parent="Widget.Material3.Button.OutlinedButton">
         <item name="android:textColor">@color/roxo_fundo</item>
         <item name="strokeColor">@color/roxo_fundo</item>
@@ -48,4 +47,27 @@
         <item name="android:layout_marginTop">10dp</item>
         <item name="shapeAppearanceOverlay">@style/Widget.ShapeApperance.Buttom</item>
     </style>
+
+    <style name="Widget.AppNubank.Button.Gray" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:backgroundTint">@color/circulo</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.AppNubank.Button.Red" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">@color/red_light</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.AppNubank.Button.Orange" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">@color/orange</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.AppNubank.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
 </resources>

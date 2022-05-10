@@ -258,7 +258,7 @@ public class Authetication extends AppCompatActivity {
     }
 
     private void clickListenerNewUser() {
-        binding.tvNewUser.setOnClickListener(view -> nextActivityNewUser());
+        binding.btnNewUser.setOnClickListener(view -> nextActivityNewUser());
     }
 
     private void messageErro(String provedor) {
@@ -268,7 +268,7 @@ public class Authetication extends AppCompatActivity {
 
     private void clickListenerForgotPassword() {
 
-        binding.tvEsqueciSenha.setOnClickListener(view -> {
+        binding.btnEsqueciSenha.setOnClickListener(view -> {
             View customAlertDialogView = LayoutInflater.from(this)
                     .inflate(R.layout.custom_dialog, null, false);
             MaterialAlertDialogBuilder materialAlertDialogBuilder = new MaterialAlertDialogBuilder(Authetication.this);
@@ -292,9 +292,9 @@ public class Authetication extends AppCompatActivity {
         auth.sendPasswordResetEmail(email)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        Snackbar.make(binding.tvEsqueciSenha, R.string.txt_send_email, Snackbar.LENGTH_SHORT).show();
+                        Snackbar.make(binding.btnEsqueciSenha, R.string.txt_send_email, Snackbar.LENGTH_SHORT).show();
                     } else {
-                        Snackbar.make(binding.tvEsqueciSenha, R.string.txt_not_send_email, Snackbar.LENGTH_SHORT).show();
+                        Snackbar.make(binding.btnEsqueciSenha, R.string.txt_not_send_email, Snackbar.LENGTH_SHORT).show();
                     }
                 });
     }

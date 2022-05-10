@@ -26,7 +26,7 @@
     <string name="txt_current_invoice">Fatura Atual</string>
     <string name="txt_invoice_amount">R$ 1.685,94</string>
     <string name="txt_limit">Limite disponível de R$ 2.485,83</string>
-    <string name="txt_split_purchases">Parcelar compras</string>
+    <string name="txt_btn_split_purchases">Parcelar compras</string>
 
     <!-- Content Description-->
     <string name="dc_heart">Icone de um coração</string>
@@ -57,8 +57,8 @@
     <string name="hint_password">Senha*</string>
     <string name="button_continue">Continuar</string>
     <string name="button_cancel">Cancelar</string>
-    <string name="txt_forget_password">Esqueci minha senha</string>
-    <string name="txt_no_client">Ainda não sou cliente</string>
+    <string name="txt_btn_forget_password">Esqueci minha senha</string>
+    <string name="txt_btn_no_client">Ainda não sou cliente</string>
 
 
     <string name="txt_title_create_user">Crie sua conta</string>
