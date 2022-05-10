@@ -165,8 +165,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="15dp"
                     app:cardBackgroundColor="@color/white"
-                    app:cardElevation="0dp"
-                    app:cardPreventCornerOverlap="false">
+                    style="@style/Widget.Material3.CardView.Filled">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -200,8 +199,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="15dp"
                     app:cardBackgroundColor="@color/white"
-                    app:cardElevation="0dp"
-                    app:cardPreventCornerOverlap="false">
+                    style="@style/Widget.Material3.CardView.Filled">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -235,8 +233,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="15dp"
                     app:cardBackgroundColor="@color/white"
-                    app:cardElevation="0dp"
-                    app:cardPreventCornerOverlap="false">
+                    style="@style/Widget.Material3.CardView.Filled">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -270,8 +267,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="15dp"
                     app:cardBackgroundColor="@color/white"
-                    app:cardElevation="0dp"
-                    app:cardPreventCornerOverlap="false">
+                    style="@style/Widget.Material3.CardView.Filled">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -305,8 +301,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="15dp"
                     app:cardBackgroundColor="@color/white"
-                    app:cardElevation="0dp"
-                    app:cardPreventCornerOverlap="false">
+                    style="@style/Widget.Material3.CardView.Filled">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -344,12 +339,11 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="36dp"
             android:layout_marginEnd="24dp"
+            style="@style/Widget.Material3.CardView.Elevated"
             app:cardBackgroundColor="@color/circulo"
-            app:cardElevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/horizontal_scroll_view"
-            app:shapeAppearanceOverlay="@style/card">
+            app:layout_constraintTop_toBottomOf="@+id/horizontal_scroll_view">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -397,12 +391,12 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.Material3.CardView.Elevated"
                     android:layout_width="300dp"
                     android:layout_height="80dp"
                     android:layout_marginEnd="20dp"
-                    app:cardBackgroundColor="@color/circulo"
-                    app:cardElevation="0dp"
-                    app:shapeAppearanceOverlay="@style/card">
+                    android:layout_marginVertical="20dp"
+                    app:cardBackgroundColor="@color/circulo">
 
                     <TextView
                         android:id="@+id/tv_card_emprestismo"
@@ -415,12 +409,12 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.Material3.CardView.Elevated"
                     android:layout_width="300dp"
                     android:layout_height="80dp"
                     android:layout_marginEnd="20dp"
-                    app:cardBackgroundColor="@color/circulo"
-                    app:cardElevation="0dp"
-                    app:shapeAppearanceOverlay="@style/card">
+                    android:layout_marginVertical="20dp"
+                    app:cardBackgroundColor="@color/circulo">
 
                     <LinearLayout
                         android:layout_width="match_parent"
