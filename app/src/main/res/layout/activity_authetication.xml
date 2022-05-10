@@ -76,7 +76,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/bt_continue"
                 style="@style/Widget.AppNubank.Button"
                 android:layout_width="match_parent"
