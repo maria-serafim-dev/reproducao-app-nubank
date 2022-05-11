@@ -67,7 +67,14 @@
     <style name="Widget.AppNubank.Button.Text" parent="Widget.Material3.Button.TextButton">
         <item name="android:textAllCaps">false</item>
         <item name="android:textStyle">bold</item>
+    </style>
 
+
+    <style name="Widget.AppNubank.TextView.Two.Icon" parent="Widget.MaterialComponents.TextView">
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.BodyLarge</item>
+        <item name="drawableEndCompat">@drawable/ic_flecha_direita</item>
     </style>
 
 </resources>

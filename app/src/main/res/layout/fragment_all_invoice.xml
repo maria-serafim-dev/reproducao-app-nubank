@@ -14,50 +14,37 @@
         android:layout_gravity="center"
         android:orientation="vertical">
 
-
         <TextView
-            style="@style/TextAppearance.MaterialComponents.Body1"
+            style="@style/Widget.AppNubank.TextView.Two.Icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/text_valor_limite_teste"
-            android:textColor="@color/black"
-            app:drawableEndCompat="@drawable/ic_flecha_direita"
-            app:drawableStartCompat="@drawable/ic_circle"
-            android:drawablePadding="10dp"/>
-
+            app:drawableStartCompat="@drawable/ic_circle" />
 
         <TextView
-            style="@style/TextAppearance.MaterialComponents.Body1"
+            style="@style/Widget.AppNubank.TextView.Two.Icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="@string/text_valor_fatura_fechada"
-            android:textColor="@color/black"
-            app:drawableEndCompat="@drawable/ic_flecha_direita"
             app:drawableStartCompat="@drawable/ic_circle"
-            android:drawablePadding="10dp"/>
+            />
 
         <TextView
-            style="@style/TextAppearance.MaterialComponents.Body1"
+            style="@style/Widget.AppNubank.TextView.Two.Icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="@string/text_valor_fatura_atual"
-            app:drawableEndCompat="@drawable/ic_flecha_direita"
-            app:drawableStartCompat="@drawable/ic_circle"
-            android:drawablePadding="10dp"/>
-
+            app:drawableStartCompat="@drawable/ic_circle" />
 
         <TextView
-            style="@style/TextAppearance.MaterialComponents.Body1"
+            style="@style/Widget.AppNubank.TextView.Two.Icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="@string/text_valor_proxima_fatura"
-            android:textColor="@color/black"
-            app:drawableEndCompat="@drawable/ic_flecha_direita"
-            app:drawableStartCompat="@drawable/ic_circle"
-            android:drawablePadding="10dp"/>
+            app:drawableStartCompat="@drawable/ic_circle" />
 
 
     </LinearLayout>

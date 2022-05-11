@@ -74,7 +74,7 @@
     <string name="text_fatura_atual">Fatura atual</string>
     <string name="text_valor_fatura_atual"><b>R$ 346,65</b> \n<font color="#7E8081">Fatura atual</font></string>
     <string name="text_fatura_fechada">Fatura fechada</string>
-    <string name="text_valor_fatura_fechada"><b> R$ 69,75 </b> \n<font color="#7E8081"> Fatura fechada </font></string>
+    <string name="text_valor_fatura_fechada"><b>R$ 69,75 </b> \n<font color="#7E8081">Fatura fechada </font></string>
     <string name="text_limite_disponivel">Limite disponível</string>
     <string name="text_valor_limite">R$ 1.159,90</string>
     <string name="txt_ajustar_limite">Ajustar Limite</string>
