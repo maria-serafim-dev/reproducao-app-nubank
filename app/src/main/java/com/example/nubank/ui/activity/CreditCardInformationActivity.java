@@ -1,8 +1,9 @@
 package com.example.nubank.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nubank.databinding.ActivityCreditCardInformationBinding;
 import com.example.nubank.ui.adapter.TabViewPagerAdapter;
@@ -18,6 +19,8 @@ public class CreditCardInformationActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         initializeInvoiceSlides();
+        clickListenerButtonCards();
+
     }
 
     private void initializeInvoiceSlides() {
@@ -25,6 +28,15 @@ public class CreditCardInformationActivity extends AppCompatActivity {
         binding.viewPagerInformation.setAdapter(adapter);
 
         new TabLayoutMediator(binding.tabLayoutInformation, binding.viewPagerInformation, (tab, position) ->{}).attach();
+
+    }
+
+
+    private void clickListenerButtonCards() {
+        binding.cardMyCards.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), MyCardActivity.class);
+            startActivity(intent);
+        });
 
     }
 }

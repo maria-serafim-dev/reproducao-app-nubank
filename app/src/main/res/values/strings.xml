@@ -88,4 +88,10 @@
     <string name="text_data_vencimento">Vence em 10 MAI</string>
     <string name="text_btn_parcelar">Parcelar</string>
     <string name="text_valor_limite_teste"><b>R$ 1.159,90 </b> \n<font color="#7E8081">Limite disponível </font></string>
+
+    <string name="text_name_client"><b> Veridiana o Serafim </b> \n<font color="#7E8081"> ... 4512 </font></string>
+
+
+    <string name="text_cartao_virtual">Cartão Virtual</string>
+    <string name="text_cartao_fisico">Cartão Físico</string>
 </resources>

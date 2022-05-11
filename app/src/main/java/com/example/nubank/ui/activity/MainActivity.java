@@ -38,6 +38,16 @@ public class MainActivity extends AppCompatActivity {
         initializeListennerImageEye();
         clickListenerButtonLogout();
         clickListenerButtonAccount();
+        clickListenerButtonCards();
+
+    }
+
+    private void clickListenerButtonCards() {
+        binding.cardMeusCartoes.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), MyCardActivity.class);
+            startActivity(intent);
+
+        });
 
     }
 
