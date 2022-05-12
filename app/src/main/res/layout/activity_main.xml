@@ -148,6 +148,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:fillViewport="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_saldo_conta">
@@ -160,8 +161,9 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_pix"
                     style="@style/Widget.Material3.CardView.Filled"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="15dp"
                     app:cardBackgroundColor="@color/white">
@@ -169,12 +171,13 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/img_circle_pix"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="74dp"
+                            android:layout_height="74dp"
                             android:background="@color/circulo"
                             android:contentDescription="@string/dc_pix"
                             android:scaleType="centerInside"
@@ -195,20 +198,22 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_pay"
                     style="@style/Widget.Material3.CardView.Filled"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
                     app:cardBackgroundColor="@color/white">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
                         android:orientation="vertical">
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/img_circle_pay"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="74dp"
+                            android:layout_height="74dp"
                             android:background="@color/circulo"
                             android:contentDescription="@string/dc_barcode"
                             android:scaleType="centerInside"
@@ -229,20 +234,22 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_transfer"
                     style="@style/Widget.Material3.CardView.Filled"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_marginEnd="15dp"
                     app:cardBackgroundColor="@color/white">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/img_circle_transfer"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="74dp"
+                            android:layout_height="74dp"
                             android:background="@color/circulo"
                             android:contentDescription="@string/dc_transfer"
                             android:scaleType="centerInside"
@@ -263,20 +270,22 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_deposit"
                     style="@style/Widget.Material3.CardView.Filled"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
                     app:cardBackgroundColor="@color/white">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/img_circle_deposit"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="74dp"
+                            android:layout_height="74dp"
                             android:background="@color/circulo"
                             android:contentDescription="@string/dc_deposit"
                             android:scaleType="centerInside"
@@ -297,20 +306,22 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_recharge"
                     style="@style/Widget.Material3.CardView.Filled"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_marginEnd="24dp"
                     app:cardBackgroundColor="@color/white">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/img_circle_recharge"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="74dp"
+                            android:layout_height="74dp"
                             android:background="@color/circulo"
                             android:contentDescription="@string/dc_cell_phone"
                             android:scaleType="centerInside"
