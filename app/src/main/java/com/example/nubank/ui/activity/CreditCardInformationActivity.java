@@ -22,7 +22,6 @@ public class CreditCardInformationActivity extends AppCompatActivity {
         initializeInvoiceSlides();
         clickListenerButtonMyCards();
         clickListenerButtonInvoicePayment();
-
     }
 
     private void initializeInvoiceSlides() {
@@ -32,7 +31,6 @@ public class CreditCardInformationActivity extends AppCompatActivity {
         new TabLayoutMediator(binding.tabLayoutInformation, binding.viewPagerInformation, (tab, position) ->{}).attach();
 
     }
-
 
     private void clickListenerButtonMyCards() {
         binding.cardMyCards.setOnClickListener(view -> {
@@ -46,10 +44,6 @@ public class CreditCardInformationActivity extends AppCompatActivity {
         binding.cardInvoicePayment.setOnClickListener(view->{
             InvoicePaymentFragment modalBottom = new InvoicePaymentFragment();
             modalBottom.show(getSupportFragmentManager(), "ModalBottomSheet");
-           /*final BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from();
-            bottomSheetBehavior.saveFlags = BottomSheetBehavior.SAVE_ALL;*/
-
         });
-
     }
 }
