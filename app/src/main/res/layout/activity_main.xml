@@ -30,60 +30,61 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="12dp"
             android:contentDescription="@string/dc_user"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/view"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_users" />
 
-        <ImageView
-            android:id="@+id/img_eyes"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="20dp"
-            android:contentDescription="@string/dc_eyes_open"
-            app:layout_constraintEnd_toStartOf="@id/img_help"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_marginEnd="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/img_user"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_eyes_open" />
+            app:layout_constraintTop_toTopOf="@+id/img_user"
+            app:layout_constraintBottom_toBottomOf="@+id/img_user">
 
-        <ImageView
-            android:id="@+id/img_help"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:contentDescription="@string/dc_help"
-            app:layout_constraintEnd_toStartOf="@id/img_favorite"
-            app:layout_constraintStart_toEndOf="@+id/img_eyes"
-            app:layout_constraintTop_toTopOf="@+id/view"
-            app:srcCompat="@drawable/ic_help" />
+            <ImageView
+                android:id="@+id/img_eyes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/dc_eyes_open"
+                app:srcCompat="@drawable/ic_eyes_open" />
 
-        <ImageView
-            android:id="@+id/img_favorite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:contentDescription="@string/dc_heart"
-            app:layout_constraintEnd_toStartOf="@id/img_logout"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/img_help"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_favorite" />
+            <ImageView
+                android:id="@+id/img_help"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/dc_help"
+                app:srcCompat="@drawable/ic_help" />
 
-        <ImageView
-            android:id="@+id/img_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="18dp"
-            android:contentDescription="@string/dc_logout"
-            app:layout_constraintEnd_toEndOf="@+id/view"
-            app:layout_constraintStart_toEndOf="@+id/img_favorite"
-            app:layout_constraintTop_toTopOf="@+id/view"
-            app:srcCompat="@drawable/ic_logout" />
+            <ImageView
+                android:id="@+id/img_favorite"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/dc_heart"
+                app:srcCompat="@drawable/ic_favorite" />
 
+            <ImageView
+                android:id="@+id/img_logout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/dc_logout"
+                app:srcCompat="@drawable/ic_logout" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tv_greetings"
@@ -118,7 +119,6 @@
             android:id="@+id/img_arrow_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="280dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="24dp"
             android:contentDescription="@string/dc_arrow_right"
@@ -159,12 +159,12 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_pix"
+                    style="@style/Widget.Material3.CardView.Filled"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="15dp"
-                    app:cardBackgroundColor="@color/white"
-                    style="@style/Widget.Material3.CardView.Filled">
+                    app:cardBackgroundColor="@color/white">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -183,22 +183,22 @@
 
                         <TextView
                             android:id="@+id/tv_pix"
+                            style="@style/Widget.AppNubank.TextView.Circle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="@string/txt_pix"
-                            style="@style/Widget.AppNubank.TextView.Circle" />
+                            android:text="@string/txt_pix" />
 
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_pay"
+                    style="@style/Widget.Material3.CardView.Filled"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="15dp"
-                    app:cardBackgroundColor="@color/white"
-                    style="@style/Widget.Material3.CardView.Filled">
+                    app:cardBackgroundColor="@color/white">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -217,22 +217,22 @@
 
                         <TextView
                             android:id="@+id/tv_pay"
+                            style="@style/Widget.AppNubank.TextView.Circle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="@string/txt_pay"
-                            style="@style/Widget.AppNubank.TextView.Circle" />
+                            android:text="@string/txt_pay" />
 
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_transfer"
+                    style="@style/Widget.Material3.CardView.Filled"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="15dp"
-                    app:cardBackgroundColor="@color/white"
-                    style="@style/Widget.Material3.CardView.Filled">
+                    app:cardBackgroundColor="@color/white">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -262,11 +262,11 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_deposit"
+                    style="@style/Widget.Material3.CardView.Filled"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="15dp"
-                    app:cardBackgroundColor="@color/white"
-                    style="@style/Widget.Material3.CardView.Filled">
+                    app:cardBackgroundColor="@color/white">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -285,22 +285,22 @@
 
                         <TextView
                             android:id="@+id/tv_deposit"
+                            style="@style/Widget.AppNubank.TextView.Circle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="@string/txt_deposit"
-                            style="@style/Widget.AppNubank.TextView.Circle" />
+                            android:text="@string/txt_deposit" />
 
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_recharge"
+                    style="@style/Widget.Material3.CardView.Filled"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="24dp"
-                    app:cardBackgroundColor="@color/white"
-                    style="@style/Widget.Material3.CardView.Filled">
+                    app:cardBackgroundColor="@color/white">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -319,11 +319,11 @@
 
                         <TextView
                             android:id="@+id/tv_recharge"
+                            style="@style/Widget.AppNubank.TextView.Circle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="@string/txt_recharge"
-                            style="@style/Widget.AppNubank.TextView.Circle" />
+                            android:text="@string/txt_recharge" />
 
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -333,12 +333,12 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_meus_cartoes"
+            style="@style/Widget.Material3.CardView.Elevated"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="36dp"
             android:layout_marginEnd="24dp"
-            style="@style/Widget.Material3.CardView.Elevated"
             app:cardBackgroundColor="@color/circulo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -391,10 +391,10 @@
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Widget.Material3.CardView.Elevated"
-                    android:layout_width="300dp"
+                    android:layout_width="250dp"
                     android:layout_height="80dp"
-                    android:layout_marginEnd="20dp"
                     android:layout_marginVertical="20dp"
+                    android:layout_marginEnd="20dp"
                     app:cardBackgroundColor="@color/circulo">
 
                     <TextView
@@ -409,10 +409,10 @@
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Widget.Material3.CardView.Elevated"
-                    android:layout_width="300dp"
+                    android:layout_width="250dp"
                     android:layout_height="80dp"
-                    android:layout_marginEnd="20dp"
                     android:layout_marginVertical="20dp"
+                    android:layout_marginEnd="20dp"
                     app:cardBackgroundColor="@color/circulo">
 
                     <LinearLayout
@@ -471,11 +471,10 @@
             android:layout_marginTop="8dp"
             android:text="@string/txt_credit_card"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/img_seta_baixo"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_card_baixo" />
@@ -485,7 +484,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="24dp"
             android:contentDescription="@string/dc_credit_car"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -495,12 +494,12 @@
 
         <TextView
             android:id="@+id/tv_fatura"
+            style="@style/Widget.AppNubank.TextView.Subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txt_current_invoice"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_cartao"
-            style="@style/Widget.AppNubank.TextView.Subtitle"/>
+            app:layout_constraintTop_toBottomOf="@+id/tv_cartao" />
 
         <TextView
             android:id="@+id/tv_valor_fatura"
@@ -517,25 +516,25 @@
 
         <TextView
             android:id="@+id/tv_limite"
+            style="@style/Widget.AppNubank.TextView.Subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.AppNubank.TextView.Subtitle"
             android:text="@string/txt_limit"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_valor_fatura" />
 
-            <Button
-                android:id="@+id/btn_card_parcelar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/txt_btn_split_purchases"
-                style="@style/Widget.AppNubank.Button.Gray"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_limite"/>
+        <Button
+            android:id="@+id/btn_card_parcelar"
+            style="@style/Widget.AppNubank.Button.Gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/txt_btn_split_purchases"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_limite" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
