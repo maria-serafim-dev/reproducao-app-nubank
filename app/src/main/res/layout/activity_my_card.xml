@@ -15,6 +15,7 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="16dp"
         android:scaleType="fitStart"
+        android:contentDescription="@string/text_cd_icon_close"
         android:src="@drawable/ic_close"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +23,7 @@
 
     <TextView
         android:id="@+id/tv_my_cards"
-        style="@style/TextAppearance.Material3.HeadlineLarge"
+        style="@style/TextAppearance.Material3.HeadlineMedium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"

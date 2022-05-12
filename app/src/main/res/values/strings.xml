@@ -94,4 +94,8 @@
 
     <string name="text_cartao_virtual">Cartão Virtual</string>
     <string name="text_cartao_fisico">Cartão Físico</string>
+
+    <string name="text_valor_a_pagar">Quanto você quer pagar?</string>
+    <string name="text_informacoes_fatura_aberta">A fatura continuará aberta, com o fechamento dia 04 JUN.</string>
+    <string name="text_cd_icon_close">Ícone em forma de X para o usuário fechar SheetBottom</string>
 </resources>

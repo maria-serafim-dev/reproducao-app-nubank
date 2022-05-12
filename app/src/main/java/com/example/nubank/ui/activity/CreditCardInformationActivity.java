@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nubank.databinding.ActivityCreditCardInformationBinding;
 import com.example.nubank.ui.adapter.TabViewPagerAdapter;
+import com.example.nubank.ui.fragment.InvoicePaymentFragment;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 public class CreditCardInformationActivity extends AppCompatActivity {
@@ -19,7 +20,8 @@ public class CreditCardInformationActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         initializeInvoiceSlides();
-        clickListenerButtonCards();
+        clickListenerButtonMyCards();
+        clickListenerButtonInvoicePayment();
 
     }
 
@@ -32,10 +34,21 @@ public class CreditCardInformationActivity extends AppCompatActivity {
     }
 
 
-    private void clickListenerButtonCards() {
+    private void clickListenerButtonMyCards() {
         binding.cardMyCards.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), MyCardActivity.class);
             startActivity(intent);
+        });
+
+    }
+
+    private void clickListenerButtonInvoicePayment() {
+        binding.cardInvoicePayment.setOnClickListener(view->{
+            InvoicePaymentFragment modalBottom = new InvoicePaymentFragment();
+            modalBottom.show(getSupportFragmentManager(), "ModalBottomSheet");
+           /*final BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from();
+            bottomSheetBehavior.saveFlags = BottomSheetBehavior.SAVE_ALL;*/
+
         });
 
     }
