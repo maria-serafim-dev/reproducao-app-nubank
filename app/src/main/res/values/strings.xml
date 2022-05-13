@@ -99,4 +99,12 @@
     <string name="text_informacoes_fatura_aberta">A fatura continuará aberta, com o fechamento dia 04 JUN.</string>
     <string name="text_cd_icon_close">Ícone em forma de X para o usuário fechar SheetBottom</string>
     <string name="text_btn_fazer_login">Fazer Login</string>
+    <string name="dc_medication">Ícone de um ponte com um símbolo de mais  no interior representando um medicamento</string>
+    <string name="text_nome_empresa_compra_medicamento">Drogasil</string>
+    <string name="text_hora_compra_medicamento">15:48</string>
+    <string name="text_valor_compra_medicamento">R$ 8,50</string>
+    <string name="dc_controller">Ícone de um controle de vídeo game</string>
+    <string name="text_nome_empresa_compra_jogos">Steam</string>
+    <string name="text_hora_compra_jogos">12:32</string>
+    <string name="text_valor_compra_jogos">R$ 45,00</string>
 </resources>
