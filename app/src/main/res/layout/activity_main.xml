@@ -34,7 +34,7 @@
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+            app:srcCompat="@drawable/ic_account_circle" />
 
         <LinearLayout
             android:id="@+id/linearLayout3"
@@ -56,7 +56,7 @@
                 android:layout_weight="2"
                 android:layout_marginStart="20dp"
                 android:contentDescription="@string/dc_eyes_open"
-                app:srcCompat="@drawable/ic_eyes_open" />
+                app:srcCompat="@drawable/ic_eye_closed" />
 
             <ImageView
                 android:id="@+id/img_help"
@@ -150,6 +150,7 @@
             android:layout_marginTop="12dp"
             android:fillViewport="true"
             app:layout_constraintEnd_toEndOf="parent"
+            android:scrollbars="none"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_saldo_conta">
 

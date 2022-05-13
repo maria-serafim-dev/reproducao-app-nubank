@@ -62,11 +62,11 @@ public class MainActivity extends AppCompatActivity {
         binding.imgEyes.setOnClickListener(view -> {
             if (binding.imgEyes.getContentDescription().equals(getString(R.string.dc_eyes_open))) {
                 binding.tvSaldoConta.setText(R.string.txt_balance_hidden);
-                binding.imgEyes.setImageDrawable(AppCompatResources.getDrawable(this, R.drawable.ic_eyes_closed));
+                binding.imgEyes.setImageDrawable(AppCompatResources.getDrawable(this, R.drawable.ic_eye_open));
                 binding.imgEyes.setContentDescription(getString(R.string.dc_eyes_closed));
             } else {
                 binding.tvSaldoConta.setText(R.string.txt_balance);
-                binding.imgEyes.setImageDrawable(AppCompatResources.getDrawable(this, R.drawable.ic_eyes_open));
+                binding.imgEyes.setImageDrawable(AppCompatResources.getDrawable(this, R.drawable.ic_eye_closed));
                 binding.imgEyes.setContentDescription(getString(R.string.dc_eyes_open));
             }
         });

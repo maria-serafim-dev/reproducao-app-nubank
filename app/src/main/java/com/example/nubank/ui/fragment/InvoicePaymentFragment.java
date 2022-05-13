@@ -34,5 +34,6 @@ public class InvoicePaymentFragment extends BottomSheetDialogFragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.imgClose.setOnClickListener(view1 -> dismiss());
+        binding.editValor.requestFocus();
     }
 }
