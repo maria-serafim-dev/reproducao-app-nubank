@@ -25,8 +25,8 @@
 
         <ImageView
             android:id="@+id/img_user"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="12dp"
             android:contentDescription="@string/dc_user"
@@ -176,8 +176,8 @@
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/img_circle_pix"
-                            android:layout_width="74dp"
-                            android:layout_height="74dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
                             android:background="@color/circulo"
                             android:contentDescription="@string/dc_pix"
                             android:scaleType="centerInside"
@@ -212,8 +212,8 @@
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/img_circle_pay"
-                            android:layout_width="74dp"
-                            android:layout_height="74dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
                             android:background="@color/circulo"
                             android:contentDescription="@string/dc_barcode"
                             android:scaleType="centerInside"
@@ -248,8 +248,8 @@
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/img_circle_transfer"
-                            android:layout_width="74dp"
-                            android:layout_height="74dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
                             android:background="@color/circulo"
                             android:contentDescription="@string/dc_transfer"
                             android:scaleType="centerInside"
@@ -284,8 +284,8 @@
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/img_circle_deposit"
-                            android:layout_width="74dp"
-                            android:layout_height="74dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
                             android:background="@color/circulo"
                             android:contentDescription="@string/dc_deposit"
                             android:scaleType="centerInside"
@@ -309,6 +309,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:minWidth="120dp"
                     android:layout_marginEnd="24dp"
                     app:cardBackgroundColor="@color/white">
 
@@ -320,8 +321,8 @@
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/img_circle_recharge"
-                            android:layout_width="74dp"
-                            android:layout_height="74dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
                             android:background="@color/circulo"
                             android:contentDescription="@string/dc_cell_phone"
                             android:scaleType="centerInside"
