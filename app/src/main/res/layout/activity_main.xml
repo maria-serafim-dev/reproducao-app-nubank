@@ -182,7 +182,7 @@
                             android:contentDescription="@string/dc_pix"
                             android:scaleType="centerInside"
                             app:shapeAppearanceOverlay="@style/circulo"
-                            app:srcCompat="@drawable/ic_area_pix" />
+                            app:srcCompat="@drawable/ic_pix" />
 
                         <TextView
                             android:id="@+id/tv_pix"
@@ -218,7 +218,7 @@
                             android:contentDescription="@string/dc_barcode"
                             android:scaleType="centerInside"
                             app:shapeAppearanceOverlay="@style/circulo"
-                            app:srcCompat="@drawable/ic_pagar" />
+                            app:srcCompat="@drawable/ic_barcode" />
 
                         <TextView
                             android:id="@+id/tv_pay"
@@ -254,7 +254,7 @@
                             android:contentDescription="@string/dc_transfer"
                             android:scaleType="centerInside"
                             app:shapeAppearanceOverlay="@style/circulo"
-                            app:srcCompat="@drawable/ic_tranferir" />
+                            app:srcCompat="@drawable/ic_transfer" />
 
                         <TextView
                             android:id="@+id/text_trasfer"
@@ -290,7 +290,7 @@
                             android:contentDescription="@string/dc_deposit"
                             android:scaleType="centerInside"
                             app:shapeAppearanceOverlay="@style/circulo"
-                            app:srcCompat="@drawable/ic_depositar" />
+                            app:srcCompat="@drawable/ic_deposit" />
 
                         <TextView
                             android:id="@+id/tv_deposit"
@@ -326,7 +326,7 @@
                             android:contentDescription="@string/dc_cell_phone"
                             android:scaleType="centerInside"
                             app:shapeAppearanceOverlay="@style/circulo"
-                            app:srcCompat="@drawable/ic_recarga" />
+                            app:srcCompat="@drawable/ic_phone" />
 
                         <TextView
                             android:id="@+id/tv_recharge"
