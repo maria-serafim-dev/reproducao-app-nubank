@@ -134,7 +134,7 @@
                         android:contentDescription="@string/dc_transfer"
                         android:scaleType="centerInside"
                         app:shapeAppearanceOverlay="@style/circulo"
-                        app:srcCompat="@drawable/ic_card" />
+                        app:srcCompat="@drawable/ic_credit_card" />
 
                     <TextView
                         android:id="@+id/text_trasfer"
@@ -205,7 +205,7 @@
                         android:contentDescription="@string/dc_cell_phone"
                         android:scaleType="centerInside"
                         app:shapeAppearanceOverlay="@style/circulo"
-                        app:srcCompat="@drawable/ic_pagar" />
+                        app:srcCompat="@drawable/ic_barcode" />
 
                     <TextView
                         android:id="@+id/tv_invoice_payment"
