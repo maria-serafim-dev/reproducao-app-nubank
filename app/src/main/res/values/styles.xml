@@ -87,8 +87,15 @@
     <style name="Widget.AppNubank.TextView.Two.Icon" parent="Widget.MaterialComponents.TextView">
         <item name="android:drawablePadding">10dp</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:textAppearance">@style/TextAppearance.Material3.BodyLarge</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.BodyMedium</item>
         <item name="drawableEndCompat">@drawable/ic_flecha_direita</item>
+    </style>
+
+    <style name="Widget.AppNubank.TextView.One.Icon" parent="Widget.MaterialComponents.TextView">
+        <item name="android:drawablePadding">10dp</item>
+        <item name="drawableTint">@color/roxo_fundo</item>
+        <item name="android:textColor">@color/roxo_fundo</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.BodyLarge</item>
     </style>
 
 </resources>
