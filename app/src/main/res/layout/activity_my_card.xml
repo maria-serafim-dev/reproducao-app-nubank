@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".ui.activity.MyCardActivity">
 
 
@@ -16,39 +17,27 @@
         android:layout_marginTop="16dp"
         android:scaleType="fitStart"
         android:contentDescription="@string/text_cd_icon_close"
-        android:src="@drawable/ic_close"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:src="@drawable/ic_close" />
 
     <TextView
         android:id="@+id/tv_my_cards"
         style="@style/TextAppearance.Material3.HeadlineMedium"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="16dp"
         android:text="@string/txt_card"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_close"/>
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/tv_cartao_virtual"
-        style="@style/TextAppearance.Material3.BodyLarge"
-        android:layout_width="0dp"
+        style="@style/TextAppearance.Material3.BodySmall"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="40dp"
         android:text="@string/text_cartao_virtual"
-        android:textColor="@color/letras_cinzas"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_my_cards" />
+        android:textColor="@color/letras_cinzas" />
 
 
     <TextView
@@ -58,27 +47,18 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:text="@string/text_name_client"
-        app:drawableStartCompat="@drawable/ic_card"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_cartao_virtual" />
+        app:drawableStartCompat="@drawable/ic_credit_card"/>
 
 
     <TextView
         android:id="@+id/tv_cartao_virtual_fisico"
-        style="@style/TextAppearance.Material3.BodyLarge"
-        android:layout_width="0dp"
+        style="@style/TextAppearance.Material3.BodySmall"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="40dp"
         android:text="@string/text_cartao_fisico"
-        android:textColor="@color/letras_cinzas"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_cartao_virtual_card" />
+        android:textColor="@color/letras_cinzas"/>
 
 
     <TextView
@@ -88,10 +68,23 @@
         android:layout_margin="20dp"
         android:layout_height="wrap_content"
         android:text="@string/text_name_client"
-        app:drawableStartCompat="@drawable/ic_card"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_cartao_virtual_fisico" />
+        app:drawableStartCompat="@drawable/ic_credit_card" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:dividerColor="@color/circulo"
+        app:dividerThickness="2dp" />
+
+    <TextView
+        android:id="@+id/tv_criar_cartao_virtual_card"
+        style="@style/Widget.AppNubank.TextView.One.Icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/text_novo_cartao_virtual"
+        app:drawableStartCompat="@drawable/ic_add" />
+
+</LinearLayout>

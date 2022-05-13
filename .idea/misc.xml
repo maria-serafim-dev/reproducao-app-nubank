@@ -8,14 +8,18 @@
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/div_cinza.xml" value="0.3828125" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/div_cinza_maior.xml" value="0.3758974358974359" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_barcode.xml" value="0.209" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.3385" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_baseline_favorite_border.xml" value="0.3635" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_celular_xml.xml" value="0.3828125" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_circle.xml" value="0.2775" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_circulo.xml" value="0.3828125" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_close.xml" value="0.195" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_credit_card.xml" value="0.209" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_deposit.xml" value="0.209" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_email.xml" value="0.19" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_eyes_open.xml" value="0.19" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_favorite.xml" value="0.3828125" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_favorite_border.xml" value="0.1945" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_fecha_direita.xml" value="0.3828125" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_flecha_direita.xml" value="0.3758974358974359" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_google.xml" value="0.1" />
@@ -24,23 +28,27 @@
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_linear_scale.xml" value="0.3635" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_list.xml" value="0.3635" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_logout.xml" value="0.1" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_outline_controller.xml" value="0.1945" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_outline_medication.xml" value="0.1945" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_phone.xml" value="0.209" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_pix.xml" value="0.209" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/ic_transfer.xml" value="0.209" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/progress_bar_custom.xml" value="0.148" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/progress_bar_theme.xml" value="0.148" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/selected_pager_dot.xml" value="0.2775" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/tab_pager_selector.xml" value="0.2775" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/drawable/teste_indicator.xml" value="0.3635" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/layout/activity_account.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/layout/activity_authetication.xml" value="0.25" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/layout/activity_authetication_two.xml" value="0.1" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/layout/activity_create_user.xml" value="0.25" />
-        <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/layout/activity_credit_card_information.xml" value="0.3387404580152672" />
-        <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/layout/activity_main.xml" value="0.3893280632411067" />
-        <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/layout/activity_my_card.xml" value="0.33" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/layout/activity_credit_card_information.xml" value="0.20988953182535508" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/layout/activity_main.xml" value="0.25614591593973035" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/layout/activity_my_card.xml" value="0.67" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/layout/custom_dialog.xml" value="0.25" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/layout/fragment_all_invoice.xml" value="0.33" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/layout/fragment_current_invoice.xml" value="0.36004056795131845" />
-        <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/layout/fragment_invoice_payment.xml" value="0.25" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/layout/fragment_invoice_payment.xml" value="0.5" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/layout/fragment_modal_bottom_sheet.xml" value="0.33" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/layout/item_teste.xml" value="0.2929506120726045" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/nubank/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />

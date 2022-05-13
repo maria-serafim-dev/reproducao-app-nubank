@@ -28,13 +28,17 @@
         android:layout_marginHorizontal="20dp"/>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tf_valor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:hint="@string/text_valor_limite"
-        style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox">
+        app:boxStrokeWidth="0dp"
+        app:boxBackgroundColor="@color/white"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_valor"
+            android:text="@string/text_valor_limite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -44,6 +48,7 @@
         android:layout_height="wrap_content"
         style="@style/TextAppearance.Material3.BodyMedium"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="100dp"
         android:textColor="@color/letras_cinzas"
         android:text="@string/text_informacoes_fatura_aberta" />
 

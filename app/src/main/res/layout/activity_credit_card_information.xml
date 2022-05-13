@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
     android:background="@color/white"
+    android:fillViewport="true"
     tools:context=".ui.activity.CreditCardInformationActivity">
 
     <LinearLayout
@@ -16,230 +16,249 @@
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/view_pager_information"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
-            android:layout_weight="4" />
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="30dp" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout_information"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:elevation="0dp"
             app:tabBackground="@drawable/tab_pager_selector"
             app:tabGravity="center"
-            app:tabIndicatorHeight="0dp" />
+            app:tabIndicator="@drawable/selected_pager_dot"
+            app:tabIndicatorColor="@android:color/black"
+            app:tabIndicatorGravity="center"
+            app:tabIndicatorHeight="8dp"
+            app:tabPaddingEnd="8dp"
+            app:tabPaddingStart="8dp" />
 
         <HorizontalScrollView
             android:id="@+id/horizontal_scroll_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-           >
+            android:fillViewport="true">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_pix"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="15dp"
-                android:layout_marginStart="20dp"
-                app:cardBackgroundColor="@color/white"
-                style="@style/Widget.Material3.CardView.Filled">
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_pix"
+                    style="@style/Widget.Material3.CardView.Filled"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="15dp"
+                    app:cardBackgroundColor="@color/white">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_circle_pix"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@color/circulo"
+                            android:contentDescription="@string/dc_pix"
+                            android:scaleType="centerInside"
+                            app:shapeAppearanceOverlay="@style/circulo"
+                            app:srcCompat="@drawable/ic_linear_scale"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_pix"
+                            style="@style/Widget.AppNubank.TextView.Circle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/txt_ajustar_limite" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_pay"
+                    style="@style/Widget.Material3.CardView.Filled"
+                    android:layout_width="0dp"
+                    android:minWidth="100dp"
+                    android:layout_weight="1"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_marginEnd="15dp"
+                    app:cardBackgroundColor="@color/white">
 
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/img_circle_pix"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:background="@color/circulo"
-                        android:contentDescription="@string/dc_pix"
-                        android:scaleType="centerInside"
-                        app:shapeAppearanceOverlay="@style/circulo"
-                        app:srcCompat="@drawable/ic_linear_scale"
-                        app:tint="@color/black"/>
-
-                    <TextView
-                        android:id="@+id/tv_pix"
-                        style="@style/Widget.AppNubank.TextView.Circle"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/txt_ajustar_limite" />
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
 
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_circle_pay"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@color/circulo"
+                            android:contentDescription="@string/dc_barcode"
+                            android:scaleType="centerInside"
+                            app:shapeAppearanceOverlay="@style/circulo"
+                            app:srcCompat="@drawable/ic_list"/>
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_pay"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="15dp"
-                app:cardBackgroundColor="@color/white"
-                style="@style/Widget.Material3.CardView.Filled">
+                        <TextView
+                            android:id="@+id/tv_pay"
+                            style="@style/Widget.AppNubank.TextView.Circle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/txt_resumo_fatura" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_my_cards"
+                    style="@style/Widget.Material3.CardView.Filled"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp">
 
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/img_circle_pay"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:background="@color/circulo"
-                        android:contentDescription="@string/dc_barcode"
-                        android:scaleType="centerInside"
-                        app:shapeAppearanceOverlay="@style/circulo"
-                        app:srcCompat="@drawable/ic_list"
-                        app:tint="@color/black"/>
-
-                    <TextView
-                        android:id="@+id/tv_pay"
-                        style="@style/Widget.AppNubank.TextView.Circle"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/txt_resumo_fatura" />
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
 
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_circle_transfer"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@color/circulo"
+                            android:contentDescription="@string/dc_transfer"
+                            android:scaleType="centerInside"
+                            app:shapeAppearanceOverlay="@style/circulo"
+                            app:srcCompat="@drawable/ic_credit_card" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_my_cards"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="15dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardElevation="0dp"
-                style="@style/Widget.Material3.CardView.Filled">
+                        <TextView
+                            android:id="@+id/text_trasfer"
+                            style="@style/Widget.AppNubank.TextView.Circle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/txt_cartoes" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_deposit"
+                    style="@style/Widget.Material3.CardView.Filled"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_marginEnd="15dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp">
 
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/img_circle_transfer"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:background="@color/circulo"
-                        android:contentDescription="@string/dc_transfer"
-                        android:scaleType="centerInside"
-                        app:shapeAppearanceOverlay="@style/circulo"
-                        app:srcCompat="@drawable/ic_credit_card" />
-
-                    <TextView
-                        android:id="@+id/text_trasfer"
-                        style="@style/Widget.AppNubank.TextView.Circle"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/txt_cartoes" />
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
 
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_circle_deposit"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@color/circulo"
+                            android:contentDescription="@string/dc_deposit"
+                            android:scaleType="centerInside"
+                            app:shapeAppearanceOverlay="@style/circulo"
+                            app:srcCompat="@drawable/ic_favorite_border"/>
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_deposit"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="15dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardElevation="0dp"
-                style="@style/Widget.Material3.CardView.Filled">
+                        <TextView
+                            android:id="@+id/tv_deposit"
+                            style="@style/Widget.AppNubank.TextView.Circle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/txt_inidicar_amigos" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_invoice_payment"
+                    style="@style/Widget.Material3.CardView.Filled"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_marginEnd="24dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp">
 
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/img_circle_deposit"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:background="@color/circulo"
-                        android:contentDescription="@string/dc_deposit"
-                        android:scaleType="centerInside"
-                        app:shapeAppearanceOverlay="@style/circulo"
-                        app:srcCompat="@drawable/ic_favorite_border"
-                        app:tint="@color/black"/>
-
-                    <TextView
-                        android:id="@+id/tv_deposit"
-                        style="@style/Widget.AppNubank.TextView.Circle"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/txt_inidicar_amigos" />
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
 
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_circle_invoice_payment"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@color/circulo"
+                            android:contentDescription="@string/dc_cell_phone"
+                            android:scaleType="centerInside"
+                            app:shapeAppearanceOverlay="@style/circulo"
+                            app:srcCompat="@drawable/ic_barcode" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_invoice_payment"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="24dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardElevation="0dp"
-                style="@style/Widget.Material3.CardView.Filled">
+                        <TextView
+                            android:id="@+id/tv_invoice_payment"
+                            style="@style/Widget.AppNubank.TextView.Circle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/txt_pagar_fatura" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/img_circle_invoice_payment"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:background="@color/circulo"
-                        android:contentDescription="@string/dc_cell_phone"
-                        android:scaleType="centerInside"
-                        app:shapeAppearanceOverlay="@style/circulo"
-                        app:srcCompat="@drawable/ic_barcode" />
-
-                    <TextView
-                        android:id="@+id/tv_invoice_payment"
-                        style="@style/Widget.AppNubank.TextView.Circle"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/txt_pagar_fatura" />
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
         </HorizontalScrollView>
 
         <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:cardBackgroundColor="@color/white"
-            style="@style/Widget.Material3.CardView.Filled">
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/white">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
+                android:layout_margin="20dp"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:scaleType="fitStart"
-                    android:src="@drawable/ic_users"
-                    app:tint="@color/circulo" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/img_circle_medication"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@color/circulo"
+                    android:contentDescription="@string/dc_medication"
+                    android:scaleType="centerInside"
+                    app:shapeAppearanceOverlay="@style/circulo.menor"
+                    app:srcCompat="@drawable/ic_outline_medication" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -252,7 +271,7 @@
                         style="@style/TextAppearance.MaterialComponents.Body1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/text_nome_empresa_compra"
+                        android:text="@string/text_nome_empresa_compra_medicamento"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -261,7 +280,7 @@
                         style="@style/TextAppearance.MaterialComponents.Body1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/text_hora_compra"
+                        android:text="@string/text_hora_compra_medicamento"
                         android:textColor="@color/letras_cinzas" />
                 </LinearLayout>
 
@@ -272,7 +291,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:gravity="end"
-                    android:text="@string/text_valor_compra"
+                    android:text="@string/text_valor_compra_medicamento"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -287,26 +306,29 @@
                 app:dividerThickness="2dp" />
 
         </com.google.android.material.card.MaterialCardView>
+
         <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:cardBackgroundColor="@color/white"
-            style="@style/Widget.Material3.CardView.Filled">
+            app:cardBackgroundColor="@color/white">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
+                android:layout_margin="20dp"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:scaleType="fitStart"
-                    android:src="@drawable/ic_users"
-                    app:tint="@color/circulo" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/img_circle_controller"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@color/circulo"
+                    android:contentDescription="@string/dc_controller"
+                    android:scaleType="centerInside"
+                    app:shapeAppearanceOverlay="@style/circulo.menor"
+                    app:srcCompat="@drawable/ic_outline_controller"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -319,7 +341,7 @@
                         style="@style/TextAppearance.MaterialComponents.Body1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/text_nome_empresa_compra"
+                        android:text="@string/text_nome_empresa_compra_jogos"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -328,7 +350,7 @@
                         style="@style/TextAppearance.MaterialComponents.Body1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/text_hora_compra"
+                        android:text="@string/text_hora_compra_jogos"
                         android:textColor="@color/letras_cinzas" />
                 </LinearLayout>
 
@@ -339,7 +361,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:gravity="end"
-                    android:text="@string/text_valor_compra"
+                    android:text="@string/text_valor_compra_jogos"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -354,5 +376,6 @@
                 app:dividerThickness="2dp" />
 
         </com.google.android.material.card.MaterialCardView>
+
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
