@@ -75,7 +75,7 @@
     <string name="text_valor_fatura_atual"><b>R$ 346,65</b> \n<font color="#7E8081">Fatura atual</font></string>
     <string name="text_fatura_fechada">Fatura fechada</string>
     <string name="text_valor_fatura_fechada"><b>R$ 69,75 </b> \n<font color="#7E8081">Fatura fechada </font></string>
-    <string name="text_limite_disponivel">Limite disponível</string>
+    <string name="text_limite_disponivel">Limite disponível <b>R$ 69,75 </b></string>
     <string name="text_valor_limite">R$ 1.159,90</string>
     <string name="txt_ajustar_limite">Ajustar Limite</string>
     <string name="txt_resumo_fatura">Resumo de faturas</string>
@@ -85,7 +85,7 @@
     <string name="text_nome_empresa_compra">Apple.ComBill</string>
     <string name="text_hora_compra">16:10</string>
     <string name="text_valor_compra">R$ 3,50</string>
-    <string name="text_data_vencimento">Vence em 10 MAI</string>
+    <string name="text_data_vencimento">Vence em <b> 10 MAI </b></string>
     <string name="text_btn_parcelar">Parcelar</string>
     <string name="text_valor_limite_teste"><b>R$ 1.159,90 </b> \n<font color="#7E8081">Limite disponível </font></string>
 
