@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Widget.AppNubank.TextView.Subtitle" parent="Widget.MaterialComponents.TextView">
+    <style name="Widget.AppNubank.TextView.Subtitle" parent="TextAppearance.Material3.TitleMedium">
         <item name="android:minHeight">24dp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:textColor">@color/letras_cinzas</item>
-        <item name="android:textAppearance">@style/TextAppearance.Material3.TitleMedium</item>
         <item name="android:layout_marginStart">24dp</item>
         <item name="android:layout_marginTop">8dp</item>
     </style>
 
-    <style name="Widget.AppNubank.TextView.Circle" parent="Widget.MaterialComponents.TextView">
+    <style name="Widget.AppNubank.TextView.Circle" parent="TextAppearance.Material3.BodyMedium">
         <item name="android:minHeight">60dp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:textAppearance">@style/TextAppearance.Material3.BodyMedium</item>
     </style>
 
     <style name="Widget.AppNubank.TextInput" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
@@ -84,18 +82,16 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="Widget.AppNubank.TextView.Two.Icon" parent="Widget.MaterialComponents.TextView">
+    <style name="Widget.AppNubank.TextView.Two.Icon" parent="TextAppearance.Material3.BodyMedium">
         <item name="android:drawablePadding">10dp</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:textAppearance">@style/TextAppearance.Material3.BodyMedium</item>
         <item name="drawableEndCompat">@drawable/ic_flecha_direita</item>
     </style>
 
-    <style name="Widget.AppNubank.TextView.One.Icon" parent="Widget.MaterialComponents.TextView">
+    <style name="Widget.AppNubank.TextView.One.Icon" parent="TextAppearance.Material3.BodyLarge">
         <item name="android:drawablePadding">10dp</item>
         <item name="drawableTint">@color/roxo_fundo</item>
         <item name="android:textColor">@color/roxo_fundo</item>
-        <item name="android:textAppearance">@style/TextAppearance.Material3.BodyLarge</item>
     </style>
 
     <style name="ThemeOverlay.App.MaterialAlertDialog" parent="@style/ThemeOverlay.Material3.MaterialAlertDialog">
