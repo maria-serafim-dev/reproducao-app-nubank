@@ -98,4 +98,28 @@
         <item name="android:textAppearance">@style/TextAppearance.Material3.BodyLarge</item>
     </style>
 
+    <style name="ThemeOverlay.App.MaterialAlertDialog" parent="@style/ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/Titutlo.AlertDialog</item>
+
+        <item name="materialAlertDialogBodyTextStyle">@style/Corpo.AlertDialog</item>
+
+        <item name="buttonBarPositiveButtonStyle">@style/Botoes.AlertDialog</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Botoes.AlertDialog</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Botoes.AlertDialog</item>
+    </style>
+
+    <style name="Botoes.AlertDialog" parent="@style/Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/roxo_fundo</item>
+    </style>
+
+    <style name="Titutlo.AlertDialog" parent="@style/MaterialAlertDialog.Material3.Title.Text">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Corpo.AlertDialog" parent="@style/TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 </resources>
