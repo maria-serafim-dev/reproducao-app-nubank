@@ -18,7 +18,7 @@
         android:textColorHint="@color/roxo_fundo"
         app:startIconTint="@color/roxo_fundo"
         app:boxStrokeColor="@color/roxo_fundo"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_email_reset_password"

@@ -14,7 +14,7 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="Widget.AppNubank.TextInput" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+    <style name="Widget.AppNubank.TextInput" parent="Widget.Material3.TextInputLayout.FilledBox">
         <item name="android:textColorHint">@color/roxo_fundo</item>
         <item name="hintTextColor">@color/roxo_fundo</item>
         <item name="boxStrokeColor">@color/roxo_fundo</item>
