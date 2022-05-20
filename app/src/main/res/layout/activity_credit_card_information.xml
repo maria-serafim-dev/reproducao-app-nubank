@@ -269,7 +269,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/TextAppearance.MaterialComponents.Body1"
+                        style="@style/TextAppearance.Material3.BodyLarge"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/text_nome_empresa_compra_medicamento"
@@ -278,7 +278,7 @@
 
 
                     <TextView
-                        style="@style/TextAppearance.MaterialComponents.Body1"
+                        style="@style/TextAppearance.Material3.BodyLarge"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/text_hora_compra_medicamento"
@@ -287,7 +287,7 @@
 
 
                 <TextView
-                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    style="@style/TextAppearance.Material3.BodyLarge"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -339,7 +339,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/TextAppearance.MaterialComponents.Body1"
+                        style="@style/TextAppearance.Material3.BodyLarge"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/text_nome_empresa_compra_jogos"
@@ -348,7 +348,7 @@
 
 
                     <TextView
-                        style="@style/TextAppearance.MaterialComponents.Body1"
+                        style="@style/TextAppearance.Material3.BodyLarge"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/text_hora_compra_jogos"
@@ -357,7 +357,7 @@
 
 
                 <TextView
-                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    style="@style/TextAppearance.Material3.BodyLarge"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
