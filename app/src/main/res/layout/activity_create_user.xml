@@ -43,68 +43,68 @@
                 android:hint="@string/hint_nome">
 
                 <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_name"
+                    android:id="@+id/edit_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="emailAddress"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/input_letras_cinzas" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_email"
+                style="@style/Widget.AppNubank.TextInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints="emailAddress"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textColor="@color/input_letras_cinzas" />
+                android:layout_marginTop="20dp"
+                android:hint="@string/hint_email">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="emailAddress"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/input_letras_cinzas" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tf_email"
-            style="@style/Widget.AppNubank.TextInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="@string/hint_email">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_email"
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_password"
+                style="@style/Widget.AppNubank.TextInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints="emailAddress"
-                android:ems="10"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/input_letras_cinzas" />
+                android:layout_marginTop="20dp"
+                android:hint="@string/hint_password"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/roxo_fundo">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="emailAddress"
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    android:textColor="@color/input_letras_cinzas" />
 
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tf_password"
-            style="@style/Widget.AppNubank.TextInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="@string/hint_password"
-            app:endIconMode="password_toggle"
-            app:endIconTint="@color/roxo_fundo">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_password"
+            <Button
+                android:id="@+id/bt_continue"
+                style="@style/Widget.AppNubank.Button"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autofillHints="emailAddress"
-                android:ems="10"
-                android:inputType="textPassword"
-                android:textColor="@color/input_letras_cinzas" />
+                android:layout_height="60dp" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:id="@+id/bt_continue"
-            style="@style/Widget.AppNubank.Button"
-            android:layout_width="match_parent"
-            android:layout_height="60dp" />
-
-        <Button
-            android:id="@+id/bt_cancel"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            style="@style/Widget.AppNubank.Button.Outline"/>
+            <Button
+                android:id="@+id/bt_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                style="@style/Widget.AppNubank.Button.Outline"/>
 
         </LinearLayout>
 

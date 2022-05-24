@@ -7,9 +7,11 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.nubank.R;
 import com.example.nubank.databinding.ActivityMainBinding;
+import com.example.nubank.viewModel.AccountViewModel;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private final FirebaseAuth auth = FirebaseAuth.getInstance();
 
     private GoogleSignInClient mGoogleSignInClient;
+    private AccountViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        viewModel = new ViewModelProvider(this).get(AccountViewModel.class);
+
+        inicializeValues();
+
+
         initializeGoogle();
         initializeName();
         initializeListennerImageEye();
@@ -40,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
         clickListenerButtonAccount();
         clickListenerButtonCards();
 
+    }
+
+    private void inicializeValues() {
+        viewModel.balance.observe(this, it -> binding.tvSaldoConta.setText(it));
+
+        viewModel.totalFatura.observe(this, it -> binding.tvValorFatura.setText(it));
     }
 
     private void clickListenerButtonCards() {

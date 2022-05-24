@@ -15,6 +15,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tv_limite"
             style="@style/Widget.AppNubank.TextView.Two.Icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,6 +23,7 @@
             app:drawableStartCompat="@drawable/ic_circle" />
 
         <TextView
+            android:id="@+id/tv_total_fatura_atual"
             style="@style/Widget.AppNubank.TextView.Two.Icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,6 +33,7 @@
             />
 
         <TextView
+            android:id="@+id/tv_fatura_atual"
             style="@style/Widget.AppNubank.TextView.Two.Icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,6 +42,7 @@
             app:drawableStartCompat="@drawable/ic_circle" />
 
         <TextView
+            android:id="@+id/tv_proxima_fatura"
             style="@style/Widget.AppNubank.TextView.Two.Icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
