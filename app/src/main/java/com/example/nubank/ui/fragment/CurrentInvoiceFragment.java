@@ -36,7 +36,7 @@ public class CurrentInvoiceFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        viewModel = new ViewModelProvider(this).get(AccountViewModel.class);
+        viewModel = new ViewModelProvider(requireActivity()).get(AccountViewModel.class);
         inicializeValues();
     }
 
