@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         viewModel.balance.observe(this, it -> binding.tvSaldoConta.setText(it));
 
         viewModel.totalFatura.observe(this, it -> binding.tvValorFatura.setText(it));
+
+        viewModel.limite.observe(this, it -> binding.tvLimite.setText(getString(R.string.txt_limit, it)));
     }
 
     private void clickListenerButtonCards() {

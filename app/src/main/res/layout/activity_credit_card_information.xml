@@ -51,7 +51,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card_pix"
+                    android:id="@+id/card_change_credit_limit"
                     style="@style/Widget.Material3.CardView.Filled"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
                         android:gravity="center_horizontal">
 
                         <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/img_circle_pix"
+                            android:id="@+id/img_circle_change_credit_limit"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:background="@color/circulo"
@@ -78,7 +78,7 @@
                             />
 
                         <TextView
-                            android:id="@+id/tv_pix"
+                            android:id="@+id/tv_change_credit_limit"
                             style="@style/Widget.AppNubank.TextView.Circle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

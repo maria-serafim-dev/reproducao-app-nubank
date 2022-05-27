@@ -25,7 +25,7 @@
     <string name="txt_credit_card">Cartão de crédito</string>
     <string name="txt_current_invoice">Fatura Atual</string>
     <string name="txt_invoice_amount">R$ 1.685,94</string>
-    <string name="txt_limit">Limite disponível de R$ 2.485,83</string>
+    <string name="txt_limit">Limite disponível de %s</string>
     <string name="txt_btn_split_purchases">Parcelar compras</string>
 
     <!-- Content Description-->
@@ -108,4 +108,7 @@
     <string name="text_hora_compra_jogos">12:32</string>
     <string name="text_valor_compra_jogos">R$ 45,00</string>
     <string name="text_novo_cartao_virtual">Criar carão virtual</string>
+    <string name="text_titulo_toobar">Ajuste de Limite</string>
+    <string name="text_pedir_limite">Pedir Limite</string>
+    <string name="text_limite_disponivel_uso">%s disponível para uso</string>
 </resources>

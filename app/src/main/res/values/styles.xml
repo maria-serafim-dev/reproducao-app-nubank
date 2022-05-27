@@ -118,4 +118,24 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="Widget.App.FloatingActionButton.Primary" parent="@style/Widget.Material3.FloatingActionButton.Primary">
+        <item name="android:backgroundTint">@color/circulo</item>
+        <item name="shapeAppearanceOverlay">@style/Widget.ShapeApperance.FloatingActionButon</item>
+    </style>
+
+    <style name="Widget.ShapeApperance.FloatingActionButon" parent="ShapeAppearanceOverlay.Material3.FloatingActionButton">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="Widget.App.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/white</item>
+        <item name="navigationIconTint">@color/black</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Toolbar" parent="">
+        <item name="colorSurface">@color/black</item>
+        <item name="colorOnSurface">@color/white</item>
+
+    </style>
 </resources>
