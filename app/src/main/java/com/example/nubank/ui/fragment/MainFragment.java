@@ -1,18 +1,25 @@
-package com.example.nubank.ui.activity;
+package com.example.nubank.ui.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
-import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.nubank.R;
 import com.example.nubank.databinding.ActivityMainBinding;
-import com.example.nubank.ui.fragment.MainFragment;
+import com.example.nubank.databinding.FragmentAllInvoiceBinding;
+import com.example.nubank.databinding.FragmentMainBinding;
+import com.example.nubank.ui.activity.Authetication;
+import com.example.nubank.ui.activity.CreditCardInformationActivity;
 import com.example.nubank.ui.fragment.MyCardFragment;
 import com.example.nubank.viewModel.AccountViewModel;
 import com.facebook.login.LoginManager;
@@ -23,30 +30,34 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class MainFragment extends Fragment {
 
 
-    private ActivityMainBinding binding;
+    private FragmentMainBinding binding;
     private final FirebaseAuth auth = FirebaseAuth.getInstance();
 
     private GoogleSignInClient mGoogleSignInClient;
     private AccountViewModel viewModel;
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
-
-        viewModel = new ViewModelProvider(this).get(AccountViewModel.class);
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .add(R.id.fragment_main, MainFragment.class, null)
-                .commit();
     }
-        /*inicializeValues();
+
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        binding = FragmentMainBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        viewModel = new ViewModelProvider(requireActivity()).get(AccountViewModel.class);
+        inicializeValues();
 
 
         initializeGoogle();
@@ -55,28 +66,35 @@ public class MainActivity extends AppCompatActivity {
         clickListenerButtonLogout();
         clickListenerButtonAccount();
         clickListenerButtonCards();
-
     }
 
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
+
+
     private void inicializeValues() {
-        viewModel.balance.observe(this, it -> binding.tvSaldoConta.setText(it));
+        viewModel.balance.observe(getViewLifecycleOwner(), it -> binding.tvSaldoConta.setText(it));
 
-        viewModel.totalFatura.observe(this, it -> binding.tvValorFatura.setText(it));
+        viewModel.totalFatura.observe(getViewLifecycleOwner(), it -> binding.tvValorFatura.setText(it));
 
-        viewModel.limite.observe(this, it -> binding.tvLimite.setText(getString(R.string.txt_limit, it)));
+        viewModel.limite.observe(getViewLifecycleOwner(), it -> binding.tvLimite.setText(getString(R.string.txt_limit, it)));
     }
 
     private void clickListenerButtonCards() {
         binding.cardMeusCartoes.setOnClickListener(view -> {
             MyCardFragment modalBottom = new MyCardFragment();
-            modalBottom.show(getSupportFragmentManager(), "ModalBottomSheet");
+            modalBottom.show(getChildFragmentManager(), "ModalBottomSheet");
         });
 
     }
 
     private void clickListenerButtonAccount() {
         binding.imgArrowRight.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), CreditCardInformationActivity.class);
+            Intent intent = new Intent(getActivity(), CreditCardInformationActivity.class);
             startActivity(intent);
         });
     }
@@ -85,11 +103,11 @@ public class MainActivity extends AppCompatActivity {
         binding.imgEyes.setOnClickListener(view -> {
             if (binding.imgEyes.getContentDescription().equals(getString(R.string.dc_eyes_open))) {
                 binding.tvSaldoConta.setText(R.string.txt_balance_hidden);
-                binding.imgEyes.setImageDrawable(AppCompatResources.getDrawable(this, R.drawable.ic_eye_open));
+                binding.imgEyes.setImageDrawable(AppCompatResources.getDrawable(getContext(), R.drawable.ic_eye_open));
                 binding.imgEyes.setContentDescription(getString(R.string.dc_eyes_closed));
             } else {
                 binding.tvSaldoConta.setText(R.string.txt_balance);
-                binding.imgEyes.setImageDrawable(AppCompatResources.getDrawable(this, R.drawable.ic_eye_closed));
+                binding.imgEyes.setImageDrawable(AppCompatResources.getDrawable(getContext(), R.drawable.ic_eye_closed));
                 binding.imgEyes.setContentDescription(getString(R.string.dc_eyes_open));
             }
         });
@@ -97,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initializeName() {
-        String nome = this.getIntent().getStringExtra("nome");
+        String nome = getActivity().getIntent().getStringExtra("nome");
         binding.tvGreetings.setText(getString(R.string.txt_greetings, nome));
     }
 
@@ -106,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 .requestEmail()
                 .build();
 
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        mGoogleSignInClient = GoogleSignIn.getClient(getContext(), gso);
     }
 
     private void clickListenerButtonLogout() {
@@ -120,9 +138,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void nextAcitivity(){
-        Intent intent = new Intent(this, Authetication.class);
+        Intent intent = new Intent(getContext(), Authetication.class);
         startActivity(intent);
-        finish();
+        getActivity().finish();
     }
 
     private void signOut() {
@@ -138,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
 
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getContext());
         FirebaseUser currentUser = auth.getCurrentUser();
 
         if (account != null || currentUser != null) {
@@ -148,5 +166,5 @@ public class MainActivity extends AppCompatActivity {
             Log.i("Mensagem", "Usuário não logado");
         }
 
-    }*/
+    }
 }
