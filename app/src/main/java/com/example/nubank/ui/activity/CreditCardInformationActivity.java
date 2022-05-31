@@ -1,6 +1,5 @@
 package com.example.nubank.ui.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +8,7 @@ import com.example.nubank.databinding.ActivityCreditCardInformationBinding;
 import com.example.nubank.ui.adapter.TabViewPagerAdapter;
 import com.example.nubank.ui.fragment.ChangeCreditLimitFragment;
 import com.example.nubank.ui.fragment.InvoicePaymentFragment;
+import com.example.nubank.ui.fragment.MyCardFragment;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 public class CreditCardInformationActivity extends AppCompatActivity {
@@ -36,8 +36,8 @@ public class CreditCardInformationActivity extends AppCompatActivity {
 
     private void clickListenerButtonMyCards() {
         binding.cardMyCards.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), MyCardActivity.class);
-            startActivity(intent);
+            MyCardFragment modalBottom = new MyCardFragment();
+            modalBottom.show(getSupportFragmentManager(), "ModalBottomSheet");
         });
 
     }

@@ -11,9 +11,7 @@
         android:roundIcon="@mipmap/ic_logo_nubank_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nubank">
-        <activity
-            android:name=".ui.activity.MyCardActivity"
-            android:exported="false" />
+
         <activity
             android:name=".ui.activity.CreditCardInformationActivity"
             android:exported="false" />

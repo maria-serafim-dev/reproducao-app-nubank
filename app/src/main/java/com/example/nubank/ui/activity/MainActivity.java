@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.nubank.R;
 import com.example.nubank.databinding.ActivityMainBinding;
+import com.example.nubank.ui.fragment.MyCardFragment;
 import com.example.nubank.viewModel.AccountViewModel;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -60,9 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void clickListenerButtonCards() {
         binding.cardMeusCartoes.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), MyCardActivity.class);
-            startActivity(intent);
-
+            MyCardFragment modalBottom = new MyCardFragment();
+            modalBottom.show(getSupportFragmentManager(), "ModalBottomSheet");
         });
 
     }
