@@ -13,9 +13,6 @@
         android:theme="@style/Theme.Nubank">
 
         <activity
-            android:name=".ui.activity.CreditCardInformationActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.activity.CreateUserActivity"
             android:exported="false" />
         <activity

@@ -14,8 +14,8 @@ public class TabViewPagerAdapter extends FragmentStateAdapter {
 
     private ArrayList<Fragment> fragments = new ArrayList<>();
 
-    public TabViewPagerAdapter( FragmentActivity fragmentActivity) {
-        super(fragmentActivity);
+    public TabViewPagerAdapter( Fragment fragment) {
+        super(fragment);
         fragments.add(new CurrentInvoiceFragment());
         fragments.add(new AllInvoiceFragment());
     }

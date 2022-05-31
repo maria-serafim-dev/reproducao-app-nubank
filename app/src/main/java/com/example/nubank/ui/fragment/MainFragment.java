@@ -9,18 +9,14 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.nubank.R;
-import com.example.nubank.databinding.ActivityMainBinding;
-import com.example.nubank.databinding.FragmentAllInvoiceBinding;
 import com.example.nubank.databinding.FragmentMainBinding;
 import com.example.nubank.ui.activity.Authetication;
-import com.example.nubank.ui.activity.CreditCardInformationActivity;
-import com.example.nubank.ui.fragment.MyCardFragment;
 import com.example.nubank.viewModel.AccountViewModel;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -94,8 +90,10 @@ public class MainFragment extends Fragment {
 
     private void clickListenerButtonAccount() {
         binding.imgArrowRight.setOnClickListener(view -> {
-            Intent intent = new Intent(getActivity(), CreditCardInformationActivity.class);
-            startActivity(intent);
+            FragmentManager fragmentManager = getChildFragmentManager();
+            fragmentManager.beginTransaction()
+                    .add(R.id.fragment_main, CreditCardInformationFragment.class, null)
+                    .commit();
         });
     }
 
