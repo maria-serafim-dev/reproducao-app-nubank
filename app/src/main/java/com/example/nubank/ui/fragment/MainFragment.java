@@ -11,8 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 
 import com.example.nubank.R;
 import com.example.nubank.databinding.FragmentMainBinding;
@@ -82,18 +83,16 @@ public class MainFragment extends Fragment {
 
     private void clickListenerButtonCards() {
         binding.cardMeusCartoes.setOnClickListener(view -> {
-            MyCardFragment modalBottom = new MyCardFragment();
-            modalBottom.show(getChildFragmentManager(), "ModalBottomSheet");
+            NavDirections action = MainFragmentDirections.actionMainFragment2ToMyCardFragment();
+            Navigation.findNavController(view).navigate(action);
         });
 
     }
 
     private void clickListenerButtonAccount() {
         binding.imgArrowRight.setOnClickListener(view -> {
-            FragmentManager fragmentManager = getChildFragmentManager();
-            fragmentManager.beginTransaction()
-                    .add(R.id.fragment_main, CreditCardInformationFragment.class, null)
-                    .commit();
+            NavDirections action = MainFragmentDirections.actionMainFragment2ToCreditCardInformationFragment();
+            Navigation.findNavController(view).navigate(action);
         });
     }
 

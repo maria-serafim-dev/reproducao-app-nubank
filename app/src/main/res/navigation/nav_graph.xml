@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment2">
+    <fragment
+        android:id="@+id/mainFragment2"
+        android:name="com.example.nubank.ui.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment2_to_creditCardInformationFragment"
+            app:destination="@id/creditCardInformationFragment" />
+        <action
+            android:id="@+id/action_mainFragment2_to_myCardFragment"
+            app:destination="@id/myCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/creditCardInformationFragment"
+        android:name="com.example.nubank.ui.fragment.CreditCardInformationFragment"
+        android:label="fragment_credit_card_information"
+        tools:layout="@layout/fragment_credit_card_information" >
+        <action
+            android:id="@+id/action_creditCardInformationFragment_to_changeCreditLimitFragment"
+            app:destination="@id/changeCreditLimitFragment" />
+        <action
+            android:id="@+id/action_creditCardInformationFragment_to_myCardFragment"
+            app:destination="@id/myCardFragment" />
+        <action
+            android:id="@+id/action_creditCardInformationFragment_to_invoicePaymentFragment"
+            app:destination="@id/invoicePaymentFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/changeCreditLimitFragment"
+        android:name="com.example.nubank.ui.fragment.ChangeCreditLimitFragment"
+        android:label="ChangeCreditLimitFragment"
+        tools:layout="@layout/fragment_change_credit_limit"/>
+    <dialog
+        android:id="@+id/myCardFragment"
+        android:name="com.example.nubank.ui.fragment.MyCardFragment"
+        android:label="MyCardFragment"
+        tools:layout="@layout/fragment_my_card"/>
+    <dialog
+        android:id="@+id/invoicePaymentFragment"
+        android:name="com.example.nubank.ui.fragment.InvoicePaymentFragment"
+        android:label="fragment_invoice_payment"
+        tools:layout="@layout/fragment_invoice_payment" />
+</navigation>

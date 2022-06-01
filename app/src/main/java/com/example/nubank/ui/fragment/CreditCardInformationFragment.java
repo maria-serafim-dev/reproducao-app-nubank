@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 
-import com.example.nubank.R;
 import com.example.nubank.databinding.FragmentCreditCardInformationBinding;
 import com.example.nubank.ui.adapter.TabViewPagerAdapter;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -54,23 +54,23 @@ public class CreditCardInformationFragment extends Fragment {
 
     private void clickListenerButtonMyCards() {
         binding.cardMyCards.setOnClickListener(view -> {
-            MyCardFragment modalBottom = new MyCardFragment();
-            modalBottom.show(getChildFragmentManager(), "ModalBottomSheet");
+            NavDirections action = CreditCardInformationFragmentDirections.actionCreditCardInformationFragmentToMyCardFragment();
+            Navigation.findNavController(view).navigate(action);
         });
 
     }
 
     private void clickListenerButtonInvoicePayment() {
         binding.cardInvoicePayment.setOnClickListener(view->{
-            InvoicePaymentFragment modalBottom = new InvoicePaymentFragment();
-            modalBottom.show(getChildFragmentManager(), "ModalBottomSheet");
+            NavDirections action = CreditCardInformationFragmentDirections.actionCreditCardInformationFragmentToInvoicePaymentFragment();
+            Navigation.findNavController(view).navigate(action);
         });
     }
 
     private void clickListenerChangeCreditLimit() {
         binding.cardChangeCreditLimit.setOnClickListener(view->{
-            ChangeCreditLimitFragment modalBottom = new ChangeCreditLimitFragment();
-            modalBottom.show(getChildFragmentManager(), "ModalBottomSheet");
+            NavDirections action = CreditCardInformationFragmentDirections.actionCreditCardInformationFragmentToChangeCreditLimitFragment();
+            Navigation.findNavController(view).navigate(action);
         });
     }
 }
