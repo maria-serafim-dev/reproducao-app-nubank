@@ -27,6 +27,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.text.NumberFormat;
+
 public class MainFragment extends Fragment {
 
 
@@ -76,9 +78,9 @@ public class MainFragment extends Fragment {
     private void inicializeValues() {
         viewModel.balance.observe(getViewLifecycleOwner(), it -> binding.tvSaldoConta.setText(it));
 
-        viewModel.totalFatura.observe(getViewLifecycleOwner(), it -> binding.tvValorFatura.setText(it));
+        viewModel.totalFaturaFechada.observe(getViewLifecycleOwner(), it -> binding.tvValorFatura.setText(it));
 
-        viewModel.limite.observe(getViewLifecycleOwner(), it -> binding.tvLimite.setText(getString(R.string.txt_limit, it)));
+        viewModel.limiteDisponivel.observe(getViewLifecycleOwner(), it -> binding.tvLimite.setText(getString(R.string.txt_limit, NumberFormat.getCurrencyInstance().format(it))));
     }
 
     private void clickListenerButtonCards() {

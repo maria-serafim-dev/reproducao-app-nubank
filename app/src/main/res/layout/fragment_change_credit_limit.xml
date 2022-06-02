@@ -62,20 +62,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tf_valor" />
 
-
-        <SeekBar
-            android:id="@+id/seekBar"
-            style="@android:style/Widget.Material.Light.SeekBar"
+        <com.google.android.material.slider.RangeSlider
+            android:id="@+id/rangerSlider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="52dp"
             android:layout_marginEnd="16dp"
-            android:max="5000"
-            android:progress="50"
+            android:valueFrom="0.0"
+            android:valueTo="100.0"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_limite_disponivel_uso" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_limite_disponivel_uso"
+            app:values="@array/initial_slider_values" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton"
@@ -88,10 +87,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seekBar"
+            app:layout_constraintTop_toBottomOf="@+id/rangerSlider"
             app:layout_constraintVertical_bias="1.0"
             app:layout_constraintVertical_chainStyle="packed"
             app:srcCompat="@drawable/ic_add" />
+
 
         <TextView
             android:id="@+id/textView"

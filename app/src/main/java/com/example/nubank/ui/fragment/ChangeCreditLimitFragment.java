@@ -11,12 +11,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.nubank.R;
 import com.example.nubank.databinding.FragmentChangeCreditLimitBinding;
 import com.example.nubank.viewModel.AccountViewModel;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+
+import java.text.NumberFormat;
+import java.util.ArrayList;
 
 
 public class ChangeCreditLimitFragment extends BottomSheetDialogFragment {
@@ -44,9 +46,33 @@ public class ChangeCreditLimitFragment extends BottomSheetDialogFragment {
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
         viewModel = new ViewModelProvider(requireActivity()).get(AccountViewModel.class);
         binding.editValor.requestFocus();
-        binding.editValor.setText(viewModel.limite.getValue());
-        binding.tvLimiteDisponivelUso.setText(getString(R.string.text_limite_disponivel_uso, viewModel.limite.getValue()));
+
+        inicializeValues();
     }
+
+    private void inicializeValues() {
+        ArrayList<Float> range = new ArrayList<>();
+        range.add(0.0F);
+        range.add(0.0F);
+        viewModel.limiteDisponivel.observe(getViewLifecycleOwner(), it -> {
+            binding.tvLimiteDisponivelUso.setText(NumberFormat.getCurrencyInstance().format(it));
+            range.remove(0);
+            range.add(0, it);
+            binding.rangerSlider.setValues(range);
+        });
+
+        viewModel.limiteAtual.observe(getViewLifecycleOwner(), it -> {
+            binding.editValor.setText(NumberFormat.getCurrencyInstance().format(it));
+            range.remove(1);
+            range.add(1, it);
+            binding.rangerSlider.setValues(range);
+
+        });
+
+        viewModel.limiteTotal.observe(getViewLifecycleOwner(), it -> binding.rangerSlider.setValueTo(it));
+
+    }
+
 
     @NonNull
     @Override

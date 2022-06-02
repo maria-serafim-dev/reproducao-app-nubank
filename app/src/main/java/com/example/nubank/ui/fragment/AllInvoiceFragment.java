@@ -15,6 +15,8 @@ import com.example.nubank.R;
 import com.example.nubank.databinding.FragmentAllInvoiceBinding;
 import com.example.nubank.viewModel.AccountViewModel;
 
+import java.text.NumberFormat;
+
 
 public class AllInvoiceFragment extends Fragment {
 
@@ -43,8 +45,8 @@ public class AllInvoiceFragment extends Fragment {
     }
 
     private void inicializeValues() {
-        viewModel.totalFatura.observe(getViewLifecycleOwner(), it -> binding.tvTotalFaturaAtual.setText(getString(R.string.text_valor_fatura_fechada, it)));
-        viewModel.limite.observe(getViewLifecycleOwner(), it -> binding.tvLimite.setText(getString(R.string.text_valor_limite_teste, it)));
+        viewModel.totalFaturaFechada.observe(getViewLifecycleOwner(), it -> binding.tvTotalFaturaAtual.setText(getString(R.string.text_valor_fatura_fechada, it)));
+        viewModel.limiteDisponivel.observe(getViewLifecycleOwner(), it -> binding.tvLimite.setText(getString(R.string.text_valor_limite_teste, NumberFormat.getCurrencyInstance().format(it))));
         viewModel.faturaAtual.observe(getViewLifecycleOwner(), it -> binding.tvFaturaAtual.setText(getString(R.string.text_valor_fatura_atual, it)));
         viewModel.proximaFatura.observe(getViewLifecycleOwner(), it -> binding.tvProximaFatura.setText(getString(R.string.text_valor_proxima_fatura, it)));
     }
