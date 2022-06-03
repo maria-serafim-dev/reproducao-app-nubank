@@ -1,55 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@color/white"
-    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-    tools:context=".ui.fragment.InvoicePaymentFragment">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/img_close"
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="16dp"
-        android:scaleType="fitStart"
-        android:contentDescription="@string/text_cd_icon_close"
-        android:src="@drawable/ic_close"/>
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".ui.fragment.InvoicePaymentFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        style="@style/TextAppearance.Material3.HeadlineMedium"
-        android:text="@string/text_valor_a_pagar"
-        android:layout_marginHorizontal="20dp"/>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tf_valor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        app:boxStrokeWidth="0dp"
-        app:boxBackgroundColor="@color/white"
-        style="@style/Widget.Material3.TextInputLayout.FilledBox">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_valor"
-            android:text="@string/text_valor_limite"
+        <ImageView
+            android:id="@+id/img_close"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/text_cd_icon_close"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_close"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/TextAppearance.Material3.BodyMedium"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="100dp"
-        android:textColor="@color/letras_cinzas"
-        android:text="@string/text_informacoes_fatura_aberta" />
+        <TextView
+            style="@style/TextAppearance.Material3.HeadlineMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="@string/text_valor_a_pagar"
+            android:textColor="@color/black"/>
 
-</LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tf_valor"
+            style="@style/Widget.Material3.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:boxBackgroundColor="@color/white"
+            app:boxStrokeWidth="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_valor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_valor_limite" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="300dp"
+            android:text="@string/text_informacoes_fatura_aberta"
+            android:textColor="@color/letras_cinzas" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerColor="@color/circulo" />
+
+        <Button
+            style="@style/Widget.AppNubank.Button.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_continue"
+            android:textAllCaps="true"
+            android:textStyle="normal" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
