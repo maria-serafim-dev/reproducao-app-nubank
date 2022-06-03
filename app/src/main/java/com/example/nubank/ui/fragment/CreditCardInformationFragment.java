@@ -9,17 +9,20 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import com.example.nubank.databinding.FragmentCreditCardInformationBinding;
 import com.example.nubank.ui.adapter.PurcheseAdapter;
 import com.example.nubank.ui.adapter.TabViewPagerAdapter;
+import com.example.nubank.viewModel.AccountViewModel;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 public class CreditCardInformationFragment extends Fragment {
 
     private FragmentCreditCardInformationBinding binding;
+    private AccountViewModel viewModel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,7 @@ public class CreditCardInformationFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        viewModel = new ViewModelProvider(requireActivity()).get(AccountViewModel.class);
 
         initializeInvoiceSlides();
         clickListenerButtonMyCards();
@@ -77,7 +81,6 @@ public class CreditCardInformationFragment extends Fragment {
     }
 
     private void iniciarRecyclerView(){
-        binding.recyclePurchase.setAdapter(new PurcheseAdapter());
-
+        viewModel.listaCompras.observe(getViewLifecycleOwner(), item -> binding.recyclePurchase.setAdapter(new PurcheseAdapter(item)));
     }
 }

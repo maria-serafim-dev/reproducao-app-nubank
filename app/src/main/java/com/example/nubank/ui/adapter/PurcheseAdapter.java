@@ -10,17 +10,13 @@ import com.example.nubank.databinding.ItemPurchaseBinding;
 import com.example.nubank.model.Purchase;
 
 import java.text.NumberFormat;
-import java.util.ArrayList;
+import java.util.List;
 
 public class PurcheseAdapter extends RecyclerView.Adapter<PurcheseAdapter.PurcheseViewHolder> {
 
-    Purchase p1 = new Purchase("Apple", "25/03/2022", "15:32", 7534656, 52.65, 3, 2);
-    Purchase p2 = new Purchase("Amazon", "21/02/2022", "15:32", 7534656, 100.00, 5, 1);
-    ArrayList<Purchase> lista = new ArrayList<>();
-
-    public PurcheseAdapter(){
-        lista.add(p1);
-        lista.add(p2);
+    List<Purchase> lista;
+    public PurcheseAdapter(List<Purchase> lista){
+        this.lista = lista;
     }
 
     @NonNull
