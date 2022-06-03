@@ -13,6 +13,7 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import com.example.nubank.databinding.FragmentCreditCardInformationBinding;
+import com.example.nubank.ui.adapter.PurcheseAdapter;
 import com.example.nubank.ui.adapter.TabViewPagerAdapter;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -42,6 +43,7 @@ public class CreditCardInformationFragment extends Fragment {
         clickListenerButtonMyCards();
         clickListenerButtonInvoicePayment();
         clickListenerChangeCreditLimit();
+        iniciarRecyclerView();
     }
 
     private void initializeInvoiceSlides() {
@@ -72,5 +74,10 @@ public class CreditCardInformationFragment extends Fragment {
             NavDirections action = CreditCardInformationFragmentDirections.actionCreditCardInformationFragmentToChangeCreditLimitFragment();
             Navigation.findNavController(view).navigate(action);
         });
+    }
+
+    private void iniciarRecyclerView(){
+        binding.recyclePurchase.setAdapter(new PurcheseAdapter());
+
     }
 }
