@@ -13,29 +13,29 @@ import com.example.nubank.model.Purchase;
 
 import java.text.NumberFormat;
 
-public class PurcheseAdapter extends ListAdapter<Purchase, PurcheseAdapter.PurcheseViewHolder> {
+public class PurchaseAdapter extends ListAdapter<Purchase, PurchaseAdapter.PurchaseViewHolder> {
 
     ItemPurchaseBinding binding;
-    public PurcheseAdapter(){
-        super(new PurcheseCallback());
+    public PurchaseAdapter(){
+        super(new PurchaseCallback());
     }
 
     @NonNull
     @Override
-    public PurcheseAdapter.PurcheseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public PurchaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         binding = ItemPurchaseBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
-        return new PurcheseViewHolder(binding);
+        return new PurchaseViewHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PurcheseAdapter.PurcheseViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PurchaseViewHolder holder, int position) {
         holder.bind(getItem(position));
     }
 
-    static class PurcheseViewHolder extends RecyclerView.ViewHolder {
+    static class PurchaseViewHolder extends RecyclerView.ViewHolder {
 
         ItemPurchaseBinding binding;
-        public PurcheseViewHolder(ItemPurchaseBinding itemView) {
+        public PurchaseViewHolder(ItemPurchaseBinding itemView) {
             super(itemView.getRoot());
             this.binding = itemView;
         }
@@ -48,7 +48,7 @@ public class PurcheseAdapter extends ListAdapter<Purchase, PurcheseAdapter.Purch
     }
 }
 
-class PurcheseCallback extends DiffUtil.ItemCallback<Purchase>{
+class PurchaseCallback extends DiffUtil.ItemCallback<Purchase>{
 
         @Override
         public boolean areItemsTheSame(Purchase oldItem, Purchase newItem) {

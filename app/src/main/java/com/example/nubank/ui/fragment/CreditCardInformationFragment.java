@@ -14,7 +14,7 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import com.example.nubank.databinding.FragmentCreditCardInformationBinding;
-import com.example.nubank.ui.adapter.PurcheseAdapter;
+import com.example.nubank.ui.adapter.PurchaseAdapter;
 import com.example.nubank.ui.adapter.TabViewPagerAdapter;
 import com.example.nubank.viewModel.AccountViewModel;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -82,7 +82,7 @@ public class CreditCardInformationFragment extends Fragment {
 
     private void iniciarRecyclerView(){
         viewModel.listaCompras.observe(getViewLifecycleOwner(), item -> {
-            PurcheseAdapter adapter = new PurcheseAdapter();
+            PurchaseAdapter adapter = new PurchaseAdapter();
             adapter.submitList(item);
             binding.recyclePurchase.setAdapter(adapter);
 
