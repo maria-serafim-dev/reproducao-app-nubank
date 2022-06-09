@@ -81,6 +81,11 @@ public class CreditCardInformationFragment extends Fragment {
     }
 
     private void iniciarRecyclerView(){
-        viewModel.listaCompras.observe(getViewLifecycleOwner(), item -> binding.recyclePurchase.setAdapter(new PurcheseAdapter(item)));
+        viewModel.listaCompras.observe(getViewLifecycleOwner(), item -> {
+            PurcheseAdapter adapter = new PurcheseAdapter();
+            adapter.submitList(item);
+            binding.recyclePurchase.setAdapter(adapter);
+
+        });
     }
 }

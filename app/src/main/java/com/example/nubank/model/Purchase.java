@@ -2,7 +2,7 @@ package com.example.nubank.model;
 
 public class Purchase {
 
-    public Purchase(String nomeEmpresa, String dataCompra, String horarioCompra, int numeroCartao, double valorCompra, int qtdeParcelas, int tipoCompra) {
+    public Purchase(String nomeEmpresa, String dataCompra, String horarioCompra, int numeroCartao, double valorCompra, int qtdeParcelas, int tipoCompra, int id) {
         this.nomeEmpresa = nomeEmpresa;
         this.dataCompra = dataCompra;
         this.horarioCompra = horarioCompra;
@@ -10,6 +10,7 @@ public class Purchase {
         this.valorCompra = valorCompra;
         this.qtdeParcelas = qtdeParcelas;
         this.tipoCompra = tipoCompra;
+        this.id = id;
     }
 
     private String nomeEmpresa;
@@ -19,6 +20,7 @@ public class Purchase {
     private double valorCompra;
     private int qtdeParcelas;
     private int tipoCompra;
+    private int id;
 
     public String getNomeEmpresa() {
         return nomeEmpresa;
@@ -74,5 +76,13 @@ public class Purchase {
 
     public void setTipoCompra(int tipoCompra) {
         this.tipoCompra = tipoCompra;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
