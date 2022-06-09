@@ -1,7 +1,6 @@
 package com.example.nubank.ui.adapter;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -52,7 +51,7 @@ public class PurchaseAdapter extends ListAdapter<Purchase, PurchaseAdapter.Purch
             this.binding.tvHorarioCompra.setText(purchase.getHorarioCompra());
             this.binding.tvValorCompra.setText(NumberFormat.getCurrencyInstance().format(purchase.getValorCompra()));
 
-            this.binding.layoutItemPurchase.setOnClickListener(view -> onItemClickListener.onItemClick(view));
+            this.binding.layoutItemPurchase.setOnClickListener(view -> onItemClickListener.onItemClick(view, purchase));
         }
     }
 }

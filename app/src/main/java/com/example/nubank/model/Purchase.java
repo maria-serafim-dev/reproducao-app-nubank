@@ -1,6 +1,9 @@
 package com.example.nubank.model;
 
-public class Purchase {
+import java.io.Serializable;
+
+public class Purchase implements Serializable {
+
 
     public Purchase(String nomeEmpresa, String dataCompra, String horarioCompra, int numeroCartao, double valorCompra, int qtdeParcelas, int tipoCompra, int id) {
         this.nomeEmpresa = nomeEmpresa;
@@ -11,6 +14,7 @@ public class Purchase {
         this.qtdeParcelas = qtdeParcelas;
         this.tipoCompra = tipoCompra;
         this.id = id;
+        this.valorParcela = this.valorCompra / this.qtdeParcelas;
     }
 
     private String nomeEmpresa;
@@ -18,6 +22,7 @@ public class Purchase {
     private String horarioCompra;
     private int numeroCartao;
     private double valorCompra;
+    private double valorParcela;
     private int qtdeParcelas;
     private int tipoCompra;
     private int id;
@@ -84,5 +89,13 @@ public class Purchase {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public double getValorParcela() {
+        return valorParcela;
+    }
+
+    public void setValorParcela(double valorParcela) {
+        this.valorParcela = valorParcela;
     }
 }

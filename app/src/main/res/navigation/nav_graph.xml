@@ -52,5 +52,10 @@
     <dialog
         android:id="@+id/purchaseInformationFragment"
         android:name="com.example.nubank.ui.fragment.PurchaseInformationFragment"
-        android:label="PurchaseInformationFragment" />
+        android:label="PurchaseInformationFragment"
+        tools:layout="@layout/fragment_purchase_information">
+        <argument
+            android:name="purchase"
+            app:argType="com.example.nubank.model.Purchase" />
+    </dialog>
 </navigation>

@@ -111,4 +111,6 @@
     <string name="text_titulo_toobar">Ajuste de Limite</string>
     <string name="text_pedir_limite">Pedir Limite</string>
     <string name="text_limite_disponivel_uso">%s disponível para uso</string>
+    <string name="text_cartao_compra">Cartão virtual ..... %d</string>
+    <string name="text_parcelas_compras">%d x %s</string>
 </resources>

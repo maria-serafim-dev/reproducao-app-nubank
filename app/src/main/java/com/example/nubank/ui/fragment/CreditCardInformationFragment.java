@@ -85,8 +85,8 @@ public class CreditCardInformationFragment extends Fragment {
             PurchaseAdapter adapter = new PurchaseAdapter();
             adapter.submitList(item);
             binding.recyclePurchase.setAdapter(adapter);
-            adapter.setOnItemClickListener(view -> {
-                NavDirections action = CreditCardInformationFragmentDirections.actionCreditCardInformationFragmentToPurchaseInformationFragment();
+            adapter.setOnItemClickListener((view, purchase) -> {
+                NavDirections action = CreditCardInformationFragmentDirections.actionCreditCardInformationFragmentToPurchaseInformationFragment(purchase);
                 Navigation.findNavController(view).navigate(action);
             });
         });
