@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_creditCardInformationFragment_to_invoicePaymentFragment"
             app:destination="@id/invoicePaymentFragment" />
+        <action
+            android:id="@+id/action_creditCardInformationFragment_to_purchaseInformationFragment"
+            app:destination="@id/purchaseInformationFragment" />
     </fragment>
     <dialog
         android:id="@+id/changeCreditLimitFragment"
@@ -46,4 +49,8 @@
         android:name="com.example.nubank.ui.fragment.InvoicePaymentFragment"
         android:label="fragment_invoice_payment"
         tools:layout="@layout/fragment_invoice_payment" />
+    <dialog
+        android:id="@+id/purchaseInformationFragment"
+        android:name="com.example.nubank.ui.fragment.PurchaseInformationFragment"
+        android:label="PurchaseInformationFragment" />
 </navigation>
