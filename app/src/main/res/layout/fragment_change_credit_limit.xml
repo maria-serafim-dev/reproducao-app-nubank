@@ -12,24 +12,29 @@
         android:orientation="vertical"
         tools:context=".ui.fragment.ChangeCreditLimitFragment">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/app_bar"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/img_close"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/text_cd_icon_close"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_close"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/ThemeOverlay.Material3.Dark.ActionBar">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/topAppBar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:navigationIcon="@drawable/ic_close"
-                app:title="@string/text_titulo_toobar"
-                app:titleCentered="true"
-                />
-
-        </com.google.android.material.appbar.AppBarLayout>
+        <TextView
+            android:id="@+id/tv_ajustes"
+            style="@style/TextAppearance.Material3.TitleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="@string/text_titulo_toobar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toEndOf="@+id/img_close"
+            app:layout_constraintTop_toTopOf="@+id/img_close" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tf_valor"
@@ -40,7 +45,7 @@
             app:boxBackgroundColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/app_bar">
+            app:layout_constraintTop_toBottomOf="@id/tv_ajustes">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_valor"
@@ -51,11 +56,11 @@
 
         <TextView
             android:id="@+id/tv_limite_disponivel_uso"
+            style="@style/TextAppearance.Material3.BodyLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
-            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_marginBottom="16dp"
             android:text="@string/text_limite_disponivel_uso"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

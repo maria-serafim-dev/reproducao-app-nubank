@@ -1,7 +1,6 @@
 package com.example.nubank.ui.fragment;
 
 
-import android.app.Dialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +13,6 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.nubank.databinding.FragmentChangeCreditLimitBinding;
 import com.example.nubank.viewModel.AccountViewModel;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.text.NumberFormat;
@@ -42,7 +40,7 @@ public class ChangeCreditLimitFragment extends BottomSheetDialogFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from((View) (view.getParent()));
+        BottomSheetBehavior<View> bottomSheetBehavior = BottomSheetBehavior.from((View) (view.getParent()));
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
         viewModel = new ViewModelProvider(requireActivity()).get(AccountViewModel.class);
         binding.editValor.requestFocus();
@@ -70,13 +68,11 @@ public class ChangeCreditLimitFragment extends BottomSheetDialogFragment {
         });
 
         viewModel.limiteTotal.observe(getViewLifecycleOwner(), it -> binding.rangerSlider.setValueTo(it));
-
+        clickListenerButtonClose();
     }
 
-
-    @NonNull
-    @Override
-    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        return (BottomSheetDialog) super.onCreateDialog(savedInstanceState);
+    private void clickListenerButtonClose() {
+        binding.imgClose.setOnClickListener(view -> dismiss());
     }
+
 }
