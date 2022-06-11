@@ -46,28 +46,21 @@ public class ChangeCreditLimitFragment extends BottomSheetDialogFragment {
         binding.editValor.requestFocus();
 
         inicializeValues();
-        clickListenerButtonClose();
     }
 
     private void inicializeValues() {
         ArrayList<Float> range = new ArrayList<>();
         range.add(0.0F);
         range.add(0.0F);
-
-        observables(range);
-
-    }
-
-    private void observables(ArrayList<Float> range) {
         viewModel.limiteDisponivel.observe(getViewLifecycleOwner(), it -> {
-            binding.tvLimiteDisponivelUso.setText(getFormat(it));
+            binding.tvLimiteDisponivelUso.setText(NumberFormat.getCurrencyInstance().format(it));
             range.remove(0);
             range.add(0, it);
             binding.rangerSlider.setValues(range);
         });
 
         viewModel.limiteAtual.observe(getViewLifecycleOwner(), it -> {
-            binding.editValor.setText(getFormat(it));
+            binding.editValor.setText(NumberFormat.getCurrencyInstance().format(it));
             range.remove(1);
             range.add(1, it);
             binding.rangerSlider.setValues(range);
@@ -75,10 +68,7 @@ public class ChangeCreditLimitFragment extends BottomSheetDialogFragment {
         });
 
         viewModel.limiteTotal.observe(getViewLifecycleOwner(), it -> binding.rangerSlider.setValueTo(it));
-    }
-
-    private String getFormat(Float it) {
-        return NumberFormat.getCurrencyInstance().format(it);
+        clickListenerButtonClose();
     }
 
     private void clickListenerButtonClose() {
