@@ -63,8 +63,8 @@ class PurchaseCallback extends DiffUtil.ItemCallback<Purchase>{
             return oldItem.getId() == newItem.getId();
         }
         @Override
-        public boolean areContentsTheSame(Purchase oldItem, Purchase newItem) {
-            return oldItem.getValorCompra() == newItem.getValorCompra();
+        public boolean areContentsTheSame(Purchase oldItem, @NonNull Purchase newItem) {
+            return oldItem.equals(newItem);
         }
 
 }

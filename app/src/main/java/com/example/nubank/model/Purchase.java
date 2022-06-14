@@ -1,6 +1,7 @@
 package com.example.nubank.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Purchase implements Serializable {
 
@@ -97,5 +98,18 @@ public class Purchase implements Serializable {
 
     public void setValorParcela(double valorParcela) {
         this.valorParcela = valorParcela;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Purchase purchase = (Purchase) o;
+        return numeroCartao == purchase.numeroCartao && Double.compare(purchase.valorCompra, valorCompra) == 0 && Double.compare(purchase.valorParcela, valorParcela) == 0 && qtdeParcelas == purchase.qtdeParcelas && tipoCompra == purchase.tipoCompra && id == purchase.id && nomeEmpresa.equals(purchase.nomeEmpresa) && dataCompra.equals(purchase.dataCompra) && horarioCompra.equals(purchase.horarioCompra);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nomeEmpresa, dataCompra, horarioCompra, numeroCartao, valorCompra, valorParcela, qtdeParcelas, tipoCompra, id);
     }
 }
