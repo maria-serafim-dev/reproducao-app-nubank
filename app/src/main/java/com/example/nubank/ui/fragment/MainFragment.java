@@ -63,7 +63,7 @@ public class MainFragment extends Fragment {
         initializeName();
         initializeListennerImageEye();
         clickListenerButtonLogout();
-        clickListenerButtonAccount();
+        clickListenerButtonCreditCard();
         clickListenerButtonCards();
     }
 
@@ -91,8 +91,8 @@ public class MainFragment extends Fragment {
 
     }
 
-    private void clickListenerButtonAccount() {
-        binding.imgArrowRight.setOnClickListener(view -> {
+    private void clickListenerButtonCreditCard() {
+        binding.imgArrowCreditCard.setOnClickListener(view -> {
             NavDirections action = MainFragmentDirections.actionMainFragment2ToCreditCardInformationFragment();
             Navigation.findNavController(view).navigate(action);
         });

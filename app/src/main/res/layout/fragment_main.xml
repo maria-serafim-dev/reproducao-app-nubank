@@ -109,14 +109,14 @@
             android:text="@string/txt_account"
             android:textColor="@color/black"
             android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/img_arrow_right"
+            app:layout_constraintEnd_toStartOf="@+id/img_arrow_account"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view" />
 
         <ImageView
-            android:id="@+id/img_arrow_right"
+            android:id="@+id/img_arrow_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -486,14 +486,14 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/img_seta_baixo"
+            app:layout_constraintEnd_toStartOf="@+id/img_arrow_credit_card"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_card_baixo" />
 
         <ImageView
-            android:id="@+id/img_seta_baixo"
+            android:id="@+id/img_arrow_credit_card"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
