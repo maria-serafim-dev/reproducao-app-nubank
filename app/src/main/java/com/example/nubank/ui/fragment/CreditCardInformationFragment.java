@@ -23,7 +23,8 @@ public class CreditCardInformationFragment extends Fragment {
 
     private FragmentCreditCardInformationBinding binding;
     private AccountViewModel viewModel;
-
+    private PurchaseAdapter adapter = new PurchaseAdapter();
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +48,20 @@ public class CreditCardInformationFragment extends Fragment {
         clickListenerButtonMyCards();
         clickListenerButtonInvoicePayment();
         clickListenerChangeCreditLimit();
-        iniciarRecyclerView();
+        iniciarObserve();
+        setAdapter();
+        setOnClick();
+    }
+
+    private void setAdapter() {
+        binding.recyclePurchase.setAdapter(adapter);
+    }
+
+    private void setOnClick() {
+        adapter.setOnItemClickListener((view, purchase) -> {
+            NavDirections action = CreditCardInformationFragmentDirections.actionCreditCardInformationFragmentToPurchaseInformationFragment(purchase);
+            Navigation.findNavController(view).navigate(action);
+        });
     }
 
     private void initializeInvoiceSlides() {
@@ -80,15 +94,7 @@ public class CreditCardInformationFragment extends Fragment {
         });
     }
 
-    private void iniciarRecyclerView(){
-        viewModel.listaCompras.observe(getViewLifecycleOwner(), item -> {
-            PurchaseAdapter adapter = new PurchaseAdapter();
-            adapter.submitList(item);
-            binding.recyclePurchase.setAdapter(adapter);
-            adapter.setOnItemClickListener((view, purchase) -> {
-                NavDirections action = CreditCardInformationFragmentDirections.actionCreditCardInformationFragmentToPurchaseInformationFragment(purchase);
-                Navigation.findNavController(view).navigate(action);
-            });
-        });
+    private void iniciarObserve(){
+        viewModel.listaCompras.observe(getViewLifecycleOwner(), item -> adapter.submitList(item));
     }
 }
