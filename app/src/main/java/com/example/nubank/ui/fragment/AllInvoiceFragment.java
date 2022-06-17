@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,7 +43,15 @@ public class AllInvoiceFragment extends Fragment {
 
         viewModel = new ViewModelProvider(requireActivity()).get(AccountViewModel.class);
         inicializeValues();
+        clickListenerChangeCreditLimit();
 
+    }
+
+    private void clickListenerChangeCreditLimit() {
+        binding.tvLimite.setOnClickListener(view1 -> {
+            NavDirections actions = CreditCardInformationFragmentDirections.actionCreditCardInformationFragmentToChangeCreditLimitFragment();
+            Navigation.findNavController(view1).navigate(actions);
+        });
     }
 
     private void inicializeValues() {
