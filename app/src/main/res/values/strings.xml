@@ -114,4 +114,5 @@
     <string name="text_cartao_compra">Cartão virtual ..... %d</string>
     <string name="text_parcelas_compras">%d x %s</string>
     <string name="text_informacoes_faturas">Aqui você verá a lista de todas as suas faturas pagas, fechadas, abertas e futuras (como compras parceladas)</string>
+    <string name="text_titulo_toobar_faturas">Resumo de faturas</string>
 </resources>
