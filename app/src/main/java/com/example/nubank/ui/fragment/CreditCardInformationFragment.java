@@ -23,7 +23,7 @@ public class CreditCardInformationFragment extends Fragment {
 
     private FragmentCreditCardInformationBinding binding;
     private AccountViewModel viewModel;
-    private PurchaseAdapter adapter = new PurchaseAdapter();
+    private final PurchaseAdapter adapter = new PurchaseAdapter();
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,9 +48,17 @@ public class CreditCardInformationFragment extends Fragment {
         clickListenerButtonMyCards();
         clickListenerButtonInvoicePayment();
         clickListenerChangeCreditLimit();
+        clickListenerSummaryOfInvoices();
         iniciarObserve();
         setAdapter();
         setOnClick();
+    }
+
+    private void clickListenerSummaryOfInvoices() {
+        binding.summaryOfInvoices.setOnClickListener(view -> {
+            NavDirections actions = CreditCardInformationFragmentDirections.actionCreditCardInformationFragmentToSummaryOfInvoicesFragment();
+            Navigation.findNavController(view).navigate(actions);
+        });
     }
 
     private void setAdapter() {

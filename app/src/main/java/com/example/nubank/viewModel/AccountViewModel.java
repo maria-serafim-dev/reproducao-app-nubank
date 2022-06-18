@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModel;
 
+import com.example.nubank.model.Invoice;
 import com.example.nubank.model.Purchase;
 
 import java.text.NumberFormat;
@@ -54,6 +55,8 @@ public class AccountViewModel extends ViewModel {
     private final MutableLiveData<List<Purchase>> _listaCompras = new MutableLiveData<>(criarLista());
     public LiveData<List<Purchase>>  listaCompras = _listaCompras;
 
+    private final MutableLiveData<List<Invoice>> _listaInvoice = new MutableLiveData<>(criarListaFaturas());
+    public LiveData<List<Invoice>>  listaInvoice = _listaInvoice;
 
     public List<Purchase> criarLista(){
         Purchase p1 = new Purchase("Apple", "25/03/2022", "15:32", 7534656, 52.65, 3, 2, 1);
@@ -63,4 +66,16 @@ public class AccountViewModel extends ViewModel {
         lista.add(p2);
         return lista;
     }
+
+    public List<Invoice> criarListaFaturas(){
+        Invoice i1 = new Invoice("JUN.", 2018, 25.65, 1);
+        Invoice i2 = new Invoice("MAI.", 2018, 4678.65, 1);
+        Invoice i3 = new Invoice("ABR.", 2018, 897.00, 1);
+        ArrayList<Invoice> lista = new ArrayList<>();
+        lista.add(i1);
+        lista.add(i2);
+        lista.add(i3);
+        return lista;
+    }
+
 }

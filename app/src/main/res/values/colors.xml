@@ -12,6 +12,8 @@
     <color name="orange">#FF6600</color>
     <color name="circulo">#F0F1F5</color>
     <color name="letras_cinzas">#7E8081</color>
+    <color name="gray_background">#EDE9E9</color>
     <color name="input_letras_cinzas">#555657</color>
+    <color name="verde">#8CD500</color>
     <color name="roxo_fundo" tools:override="true">#7500CB</color>
 </resources>
