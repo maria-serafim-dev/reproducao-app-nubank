@@ -16,4 +16,5 @@
     <color name="input_letras_cinzas">#555657</color>
     <color name="verde">#8CD500</color>
     <color name="roxo_fundo" tools:override="true">#7500CB</color>
+    <color name="background">#dddddd</color>
 </resources>

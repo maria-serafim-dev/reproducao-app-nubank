@@ -102,7 +102,21 @@ public class CreditCardInformationFragment extends Fragment {
         });
     }
 
-    private void iniciarObserve(){
-        viewModel.listaCompras.observe(getViewLifecycleOwner(), item -> adapter.submitList(item));
+    private void iniciarObserve() {
+        viewModel.listaCompras.observe(getViewLifecycleOwner(), (item -> {
+            adapter.submitList(item);
+            stopShimmerAnimation();
+        }));
+    }
+
+    private void stopShimmerAnimation() {
+        binding.shimmerViewContainer.stopShimmerAnimation();
+        binding.shimmerViewContainer.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        binding.shimmerViewContainer.startShimmerAnimation();
     }
 }
