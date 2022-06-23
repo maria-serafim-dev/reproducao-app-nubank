@@ -44,6 +44,7 @@ public class SummaryOfInvoicesFragment extends BottomSheetDialogFragment {
         iniciarObserve();
         setAdapter();
         clickListenerButtonClose();
+
     }
 
     private void iniciarObserve() {
@@ -52,10 +53,23 @@ public class SummaryOfInvoicesFragment extends BottomSheetDialogFragment {
 
     private void setAdapter() {
         binding.recyclerSummaryOfInvoices.setAdapter(adapter);
+        stopShimmerAnimation();
     }
 
     private void clickListenerButtonClose() {
         binding.imgClose.setOnClickListener(view -> dismiss());
+    }
+
+
+    private void stopShimmerAnimation() {
+        binding.shimmerViewContainer.stopShimmerAnimation();
+        binding.shimmerViewContainer.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        binding.shimmerViewContainer.startShimmerAnimation();
     }
 
 }

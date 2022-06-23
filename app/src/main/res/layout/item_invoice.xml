@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
-    android:padding="16dp"
+    android:padding="20dp"
 
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -17,7 +17,7 @@
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="JUL." />
+        tools:text="JUL. 2018" />
 
 
     <TextView
